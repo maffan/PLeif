@@ -14,8 +14,23 @@ public class InfoPanel extends JPanel{
     private InventoryPanel inventoryPanel;
 
     public InfoPanel(){
-        add(new JLabel("Info"));
         setPreferredSize(new Dimension(200,500));
+        setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
+        add(new JLabel("Info"));
         setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        makePanels();
+    }
+
+    private void makePanels() {
+        namePanel = new NamePanel();
+        portraitPanel = new PortraitPanel();
+        statsInfoPanel = new StatsInfoPanel();
+        equippedPanel = new EquippedPanel();
+        inventoryPanel = new InventoryPanel();
+        add(namePanel);
+        add(portraitPanel);
+        add(statsInfoPanel);
+        add(equippedPanel);
+        add(inventoryPanel);
     }
 }

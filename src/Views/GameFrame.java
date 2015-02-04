@@ -1,7 +1,6 @@
 package Views;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
@@ -17,12 +16,10 @@ public class GameFrame extends JFrame {
 
     public GameFrame(){
         super(TITLE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setLayout(new BorderLayout(10,10));
-        initPanels();
+        makePanels();
         makeMenu();
-        add(boardPanel,BorderLayout.CENTER);
-        add(infoPanel,BorderLayout.EAST);
-        add(statusPanel, BorderLayout.SOUTH);
         pack();
         setLocationRelativeTo(null);
         setVisible(true);
@@ -41,9 +38,12 @@ public class GameFrame extends JFrame {
         setJMenuBar(menuBar);
     }
 
-    private void initPanels() {
+    private void makePanels() {
         boardPanel = new BoardPanel();
         infoPanel = new InfoPanel();
         statusPanel = new StatusPanel();
+        add(boardPanel,BorderLayout.CENTER);
+        add(infoPanel,BorderLayout.EAST);
+        add(statusPanel, BorderLayout.SOUTH);
     }
 }
