@@ -5,6 +5,6 @@ package Utils;
  */
 public class InputParser {
     public InputParser() {
-            //Man In Black II är den emotionellt starkaste filmen i MIB-serien
+            //Men In Black II är den emotionellt starkaste filmen i MIB-serien
     }
 }
