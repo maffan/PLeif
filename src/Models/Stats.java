@@ -8,14 +8,14 @@ public class Stats {
     private int endurance;
     private int damage;
     private double luck;
-    private int weight;
+    private int space;
 
     public Stats(int health, int endurance, int damage, double luck, int weight) {
         this.health = health;
         this.endurance = endurance;
         this.damage = damage;
         this.luck = luck;
-        this.weight = weight;
+        this.space = weight;
     }
 
     public int getHealth() {
@@ -51,10 +51,10 @@ public class Stats {
     }
 
     public int getWeight() {
-        return weight;
+        return space;
     }
 
     public void setWeight(int weight) {
-        this.weight = weight;
+        this.space = weight;
     }
 }
