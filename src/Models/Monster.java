@@ -13,12 +13,12 @@ public class Monster extends Entity {
     public Monster(Stats stats){
         this.stats = stats;
     }
-    @Override
+    //@Override
     public void doTurn() {
 
     }
 
-    @Override
+    //@Override
     public String getType() {
         return "Monster";
     }

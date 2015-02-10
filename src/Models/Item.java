@@ -16,8 +16,8 @@ public abstract class Item extends Entity {
         this.stats = stats;
     }
 
-    public Item(Stats stats, Point pos){
-        super(pos);
+    public Item(Stats stats, int x, int y){
+        super(x, y);
         this.stats = stats;
     }
 
