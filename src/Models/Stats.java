@@ -10,12 +10,12 @@ public class Stats {
     private double luck;
     private int space;
 
-    public Stats(int health, int endurance, int damage, double luck, int weight) {
+    public Stats(int health, int endurance, int damage, double luck, int space) {
         this.health = health;
         this.endurance = endurance;
         this.damage = damage;
         this.luck = luck;
-        this.space = weight;
+        this.space = space;
     }
 
     public int getHealth() {
