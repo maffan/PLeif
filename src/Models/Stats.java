@@ -5,6 +5,7 @@ package Models;
  */
  
  //Testar kommentarer
+    //En kommentar till
 public class Stats {
     private int health;
     private int endurance;
