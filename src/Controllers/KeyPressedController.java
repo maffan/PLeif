@@ -11,6 +11,8 @@ import java.awt.event.KeyListener;
 
 /**
  * Created by Marcus on 2/11/2015.
+ * Denna klass kommer, enligt vår nuvarande plan, inte att behövas i slutprodukten, då spelaren skall kontrolleras
+ * via en konsol* *
  */
 public class KeyPressedController extends KeyAdapter {
     private Player player;
