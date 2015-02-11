@@ -1,8 +1,9 @@
 package Models;
 
 import java.awt.*;
+import java.util.Observable;
 
-public class Entity //abstract class Entity implements Drawable
+public class Entity extends Observable
 {
 	private Point p;
 	private SpriteID id;
