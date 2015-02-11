@@ -1,5 +1,7 @@
 package Views;
 
+import Controllers.InputController;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -48,7 +50,8 @@ public class GameFrame extends JFrame {
         boardPanel = new BoardPanel();
         infoPanel = new InfoPanel();
         statusPanel = new StatusPanel();
-        add(boardPanel,BorderLayout.CENTER);
+        statusPanel.addInputListener(new InputController(statusPanel,boardPanel));
+        add(boardPanel, BorderLayout.CENTER);
         add(infoPanel,BorderLayout.EAST);
         add(statusPanel, BorderLayout.SOUTH);
     }

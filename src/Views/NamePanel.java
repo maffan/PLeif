@@ -21,10 +21,10 @@ public class NamePanel extends JPanel {
 	{
 		super.paintComponent(g);	
 
-		Player player = BoardPanel.getPlayer();
+		//Player player = BoardPanel.getPlayer();
 
 		g.setColor(Color.black);
-		g.drawString(player.getPlayerName() + "     LVL: Göteborgare", 20, 40);
-		g.drawString("At position X: " + player.getX() + " Y: " + player.getY(), 20, 55);
+		//g.drawString(player.getPlayerName() + "     LVL: Gï¿½teborgare", 20, 40);
+		//g.drawString("At position X: " + player.getX() + " Y: " + player.getY(), 20, 55);
 	}
 }

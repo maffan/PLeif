@@ -1,7 +1,10 @@
 package Views;
 
+import Controllers.InputController;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 /**
  * Created by Marcus on 2/4/2015.
@@ -22,5 +25,14 @@ public class StatusPanel extends JPanel{
         outputPanel = new OutputPanel();
         add(outputPanel, BorderLayout.CENTER);
         add(inputPanel,BorderLayout.SOUTH);
+    }
+
+
+    public InputPanel getInputPanel() {
+        return inputPanel;
+    }
+
+    public void addInputListener(ActionListener listener) {
+        inputPanel.addSubmitController(listener);
     }
 }

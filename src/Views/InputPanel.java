@@ -53,6 +53,6 @@ public class InputPanel extends JPanel {
     public String getCommand() {
         String input = inputField.getText();
         inputField.setText("");
-        
+        return input;
     }
 }

@@ -33,6 +33,12 @@ public class InputController implements ActionListener {
         this.boardPanel = boardPanel;
     }
 
+    public InputController(StatusPanel statusPanel, BoardPanel boardPanel) {
+        this.inputPanel = statusPanel.getInputPanel();
+        this.boardPanel = boardPanel;
+        this.player = boardPanel.getPlayer();
+    }
+
     public void setInputPanel(InputPanel inputPanel) {
         this.inputPanel = inputPanel;
     }

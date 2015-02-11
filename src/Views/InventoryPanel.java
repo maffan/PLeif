@@ -17,14 +17,14 @@ public class InventoryPanel extends JPanel {
 	{
 		super.paintComponent(g);	
 
-		Player player = BoardPanel.getPlayer();
+		//Player player = BoardPanel.getPlayer();
 		
 		int offset = 40;
 		g.drawString("You got: ", 20, 40);
-		for(Entity e: player.getEntities())
-		{
-			offset += 15;
-			g.drawString(e.getSpriteID().toString(), 20, offset);
-		}
+//		for(Entity e: player.getEntities())
+//		{
+//			offset += 15;
+//			g.drawString(e.getSpriteID().toString(), 20, offset);
+//		}
 	}
 }
