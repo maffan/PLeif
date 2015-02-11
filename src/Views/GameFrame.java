@@ -37,7 +37,7 @@ public class GameFrame extends JFrame {
         JMenu fileMenu = new JMenu("File");
         menuBar.add(fileMenu);
         JMenuItem quitItem = new JMenuItem("Quit");
-        //quitItem.addActionListener(e -> {System.exit(0);}); // Gave me an error, just want to run and test the damn thing! MJ
+        quitItem.addActionListener(e -> {System.exit(0);});
         quitItem.setMnemonic(KeyEvent.VK_Q);
         quitItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, ActionEvent.CTRL_MASK));
         fileMenu.add(quitItem);
