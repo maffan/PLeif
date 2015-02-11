@@ -48,11 +48,15 @@ public class Entity extends Observable
 	public void setX(int x)
 	{
 		p.x = x;
+        setChanged();
+        notifyObservers();
 	}
 	
 	public void setY(int y)
 	{
 		p.y = y;
+        setChanged();
+        notifyObservers();
 	}
 
     /**
