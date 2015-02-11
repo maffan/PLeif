@@ -1,5 +1,6 @@
 package Views;
 
+import Controllers.KeyPressedController;
 import Models.Aesthetics;
 import Models.Enemy;
 import Models.Entity; // Should these imports be avoided somehow? MJ
@@ -11,9 +12,11 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 import javax.swing.*;
 
-public class BoardPanel extends JPanel
+public class BoardPanel extends JPanel implements Observer
 {
     
 	private final int gridSize = 50;
@@ -33,49 +36,19 @@ public class BoardPanel extends JPanel
         setPreferredSize(new Dimension(500,500)); //GameDimensions.getWorldDimensions());
 		
 		player = new Player("Glenn");
+        player.addObserver(this);
 		entities = new ArrayList<Entity>();
 		entities.add(player);
 
 		setBackground(Color.white);
-		addKeyListener(new KeyAdapter(){
-			@Override
-			public void keyPressed(KeyEvent e) {
-				keyPress(e);
-			}
-		});
 		
+        addKeyListener(new KeyPressedController(player,this));
+        
 		//TESTING
 		AddTestEntitys();
 	}
 
-	private void keyPress(KeyEvent e)
-	{
-		if (e.getKeyCode() == KeyEvent.VK_UP)
-			if(!hasCollision(player.getX(),player.getY()-1))
-			{
-				player.setY(Math.max(0,player.getY()-1));
-			}
-		if (e.getKeyCode() == KeyEvent.VK_DOWN)
-			if(!hasCollision(player.getX(),player.getY()+1))
-			{
-				player.setY(Math.min(height/gridSize,player.getY()+1));
-			}
-		if (e.getKeyCode() == KeyEvent.VK_LEFT)
-			if(!hasCollision(player.getX()-1,player.getY()))
-			{
-				player.setX(Math.max(0,player.getX()-1));
-			}
-		if (e.getKeyCode() == KeyEvent.VK_RIGHT)
-			if(!hasCollision(player.getX()+1,player.getY()))
-			{
-				player.setX(Math.min(width/gridSize,player.getX()+1));
-			}
-
-		GameFrame.infoPanelUpdate();
-		GameFrame.statusPanelUpdate();
-		
-		repaint();
-	}
+	
 
 	@Override
 	public void paintComponent(Graphics g)
@@ -158,27 +131,18 @@ public class BoardPanel extends JPanel
 		}
 	}
 	//hasStuff() ?
-	private boolean hasCollision(int x, int y)
-	{
-		for(Entity e : entities)
-		{
-			if(e instanceof Aesthetics && ((Aesthetics) e).hasCollision())
-			{
-				if(e.getX() == x && e.getY() == y)
-				{
-					return true;
-				}
-			}
-		}
-		return false;
-	}
+	
 	
 	public static Player getPlayer()
 	{
 		return player;
 	}
 
-	private void AddTestEntitys()
+    public List<Entity> getEntities() {
+        return entities;
+    }
+
+    private void AddTestEntitys()
 	{
 		entities.add(new Entity(1, 1, SpriteID.Test));
 		entities.add(new Entity(3, 6, SpriteID.Test));
@@ -193,4 +157,9 @@ public class BoardPanel extends JPanel
 		player.addItem(new Entity(SpriteID.Sword));
 		player.addItem(new Entity(SpriteID.Shield));
 	}
+
+    @Override
+    public void update(Observable o, Object arg) {
+        repaint();
+    }
 }
