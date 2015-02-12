@@ -55,29 +55,44 @@ public class InputController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String command = inputPanel.getCommand();
         //This way of checking command does not look nice
-        switch (command){
-            case "north":
-                if(!hasCollision(player.getX(),player.getY()-1)) {
-                    player.setY(Math.max(0, player.getY() - 1));
-                }
-                break;
-            case "east":
-                if(!hasCollision(player.getX()+1,player.getY())) {
-                    player.setX(Math.min(width / gridSize, player.getX() + 1));
-                }
-                break;
-            case "south":
-                if(!hasCollision(player.getX(),player.getY()+1)) {
-                    player.setY(Math.min(height / gridSize, player.getY() + 1));
-                }
-                break;
-            case "west":
-                if(!hasCollision(player.getX()-1,player.getY())) {
-                    player.setX(Math.max(0, player.getX() - 1));
-                }
-                break;
-            default:
-                
+        if (command.equals("north") || command.equals("n")) {
+            goNorth();
+
+        } else if (command.equals("east") || command.equals("e")) {
+            goEast();
+
+        } else if (command.equals("south") || command.equals("s")) {
+            goSouth();
+
+        } else if (command.equals("west") || command.equals("w")) {
+            goWest();
+
+        } else {
+            System.out.println("Invalid command");
+        }
+    }
+
+    private void goWest() {
+        if(!hasCollision(player.getX()-1,player.getY())) {
+            player.setX(Math.max(0, player.getX() - 1));
+        }
+    }
+
+    private void goSouth() {
+        if(!hasCollision(player.getX(),player.getY()+1)) {
+            player.setY(Math.min(height / gridSize, player.getY() + 1));
+        }
+    }
+
+    private void goEast() {
+        if(!hasCollision(player.getX()+1,player.getY())) {
+            player.setX(Math.min(width / gridSize, player.getX() + 1));
+        }
+    }
+
+    private void goNorth() {
+        if(!hasCollision(player.getX(),player.getY()-1)) {
+            player.setY(Math.max(0, player.getY() - 1));
         }
     }
 
