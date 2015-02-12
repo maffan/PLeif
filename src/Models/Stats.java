@@ -3,6 +3,9 @@ package Models;
 /**
  * Created by Marcus on 2/3/2015.
  */
+ 
+ //Testar kommentarer
+    //En kommentar till
 public class Stats {
     private int health;
     private int endurance;
