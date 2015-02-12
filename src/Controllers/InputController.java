@@ -53,7 +53,7 @@ public class InputController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        String command = inputPanel.getCommand();
+        String command = inputPanel.getCommand().toLowerCase().trim();
         //This way of checking command does not look nice
         if (command.equals("north") || command.equals("n")) {
             goNorth();
