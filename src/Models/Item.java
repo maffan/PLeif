@@ -17,7 +17,7 @@ public abstract class Item extends Entity {
     }
 
     public Item(Stats stats, int x, int y){
-        super(x, y);
+        super(x, y, SpriteID.None, "None");
         this.stats = stats;
     }
 

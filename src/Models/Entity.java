@@ -7,32 +7,28 @@ public class Entity extends Observable
 {
 	private Point p;
 	private SpriteID id;
+	private String name;
 	
 	public Entity()
 	{
 		
 	}
 	
-	public Entity(int x, int y)
-	{
-		this.p = new Point(x,y);
-	}
-	
-	public Entity(int x, int y, SpriteID id)
+	public Entity(int x, int y, SpriteID id, String name)
 	{
 		this.p = new Point(x,y);
 		this.id = id;
-	}
-	
-	public Entity(SpriteID id)
-	{
-		this.p = new Point(0,0);
-		this.id = id;
+		this.name = name;
 	}
 	
 	public SpriteID getSpriteID()
 	{
 		return id;
+	}
+	
+	public String getName()
+	{
+		return name;
 	}
 	
 	public int getX()

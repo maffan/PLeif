@@ -5,7 +5,7 @@ public class Aesthetics extends Entity
 	private boolean hasCollision;
 	
 	public Aesthetics(int x, int y, SpriteID id, boolean hasCollision) {
-		super(x, y, id);
+		super(x, y, id, "None");
 		this.hasCollision = hasCollision;
 	}
 	

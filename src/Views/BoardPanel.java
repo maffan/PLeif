@@ -144,18 +144,18 @@ public class BoardPanel extends JPanel implements Observer
 
     private void AddTestEntitys()
 	{
-		entities.add(new Entity(1, 1, SpriteID.Test));
-		entities.add(new Entity(3, 6, SpriteID.Test));
-		entities.add(new Entity(2, 3, SpriteID.Test));
-		entities.add(new Entity(8, 4, SpriteID.Test));
+		entities.add(new Entity(1, 1, SpriteID.Test, "Test"));
+		entities.add(new Entity(3, 6, SpriteID.Test, "Test"));
+		entities.add(new Entity(2, 3, SpriteID.Test, "Test"));
+		entities.add(new Entity(8, 4, SpriteID.Test, "Test"));
 		
 		entities.add(new Enemy(3, 3));
 
 		entities.add(new Aesthetics(4, 4, SpriteID.Wall, true));
 		entities.add(new Aesthetics(4, 5, SpriteID.Path, false));
 
-		player.addItem(new Entity(SpriteID.Sword));
-		player.addItem(new Entity(SpriteID.Shield));
+		player.addItem(new Entity(0, 0, SpriteID.Sword, "Sword of Justice"));
+		player.addItem(new Entity(0, 0, SpriteID.Shield, "Shield of Stuff"));
 	}
 
     @Override
