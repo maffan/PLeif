@@ -4,12 +4,12 @@ import Controllers.KeyPressedController;
 import Models.Aesthetics;
 import Models.Enemy;
 import Models.Entity; // Should these imports be avoided somehow? MJ
+import Models.Item;
 import Models.Player;
 import Models.SpriteID;
+import Models.Stats;
 
 import java.awt.*;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
@@ -18,7 +18,6 @@ import javax.swing.*;
 
 public class BoardPanel extends JPanel implements Observer
 {
-    
 	private final int gridSize = 50;
 	
 	// Hardcoded values? MJ
@@ -34,9 +33,11 @@ public class BoardPanel extends JPanel implements Observer
         setBorder(BorderFactory.createLineBorder(Color.BLACK));
         add(new JLabel("Board",SwingConstants.CENTER),BorderLayout.CENTER);
         setPreferredSize(new Dimension(500,500)); //GameDimensions.getWorldDimensions());
-		
+        
 		player = new Player("Glenn");
         player.addObserver(this);
+        player.addObserver(InfoPanel.getInventoryPanelInstance());
+        player.addObserver(InfoPanel.getNamePanelInstance());
 		entities = new ArrayList<Entity>();
 		entities.add(player);
 
@@ -133,7 +134,7 @@ public class BoardPanel extends JPanel implements Observer
 	//hasStuff() ?
 	
 	
-	public Player getPlayer()
+	public static Player getPlayer()
 	{
 		return player;
 	}
@@ -149,13 +150,13 @@ public class BoardPanel extends JPanel implements Observer
 		entities.add(new Entity(2, 3, SpriteID.Test, "Test"));
 		entities.add(new Entity(8, 4, SpriteID.Test, "Test"));
 		
-		entities.add(new Enemy(3, 3));
+		entities.add(new Enemy(3, 3, ""));
 
-		entities.add(new Aesthetics(4, 4, SpriteID.Wall, true));
-		entities.add(new Aesthetics(4, 5, SpriteID.Path, false));
+		entities.add(new Aesthetics(4, 4, SpriteID.Wall, true, ""));
+		entities.add(new Aesthetics(4, 5, SpriteID.Path, false, ""));
 
-		player.addItem(new Entity(0, 0, SpriteID.Sword, "Sword of Justice"));
-		player.addItem(new Entity(0, 0, SpriteID.Shield, "Shield of Stuff"));
+		player.addItem(new Item(new Stats(), 0, 0, SpriteID.Sword, "Sword of Justice"));
+		player.addItem(new Item(new Stats(), 0, 0, SpriteID.Shield, "Shield of Stuff"));
 	}
 
     @Override

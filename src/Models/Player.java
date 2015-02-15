@@ -1,6 +1,7 @@
 package Models;
 
-import java.awt.*;
+import Models.Item;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -11,7 +12,7 @@ public class Player extends Entity
     private Equippable armor;
     private Equippable weapon;
     private Equippable medallion;
-    private LinkedList<Item> items;
+    private List<Item> items;
     
     public Player(String name, Stats stats, int x, int y)
     {
@@ -19,28 +20,28 @@ public class Player extends Entity
         this.stats = stats;
         items = new LinkedList<Item>();
     }
-    
-	private List<Entity> entities;
 	
 	public Player(String playerName)
 	{	
 		super(5, 5, SpriteID.Player, playerName); // Need to be changed to variable starting point? MJ
-		entities = new ArrayList<Entity>();
+		items = new ArrayList<Item>();
 	}
     
-	public void addItem(Entity e)
+	public void addItem(Item e)
 	{
-		entities.add(e);
+		items.add(e);
+        setChanged();
+        notifyObservers();
 	}
     
-	public void removeItem(Entity e)
+	public void removeItem(Item e)
 	{
-		entities.remove(e);
+		items.remove(e);
 	}
 	
-	public List<Entity> getEntities()
+	public List<Item> getItems()
 	{
-		return entities;
+		return items;
 	}
 
     public void pickUpItem(Item item){

@@ -1,11 +1,9 @@
 package Models;
 
-import java.awt.*;
-
 /**
  * Created by Marcus on 2/3/2015.
  */
-public abstract class Item extends Entity {
+public class Item extends Entity {
     private Stats stats;
 
     public Item(){
@@ -16,8 +14,8 @@ public abstract class Item extends Entity {
         this.stats = stats;
     }
 
-    public Item(Stats stats, int x, int y){
-        super(x, y, SpriteID.None, "None");
+    public Item(Stats stats, int x, int y, SpriteID id, String name){
+        super(x, y, SpriteID.None, name);
         this.stats = stats;
     }
 

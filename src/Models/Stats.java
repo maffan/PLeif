@@ -12,6 +12,11 @@ public class Stats {
     private int damage;
     private double luck;
     private int space;
+    
+    public Stats()
+    {
+    	health = 0; endurance = 0; damage = 0; luck = 0; space = 0;
+    }
 
     public Stats(int health, int endurance, int damage, double luck, int space) {
         this.health = health;

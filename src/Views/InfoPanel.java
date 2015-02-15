@@ -2,16 +2,17 @@ package Views;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Observer;
 
 /**
  * Created by Marcus on 2/4/2015.
  */
 public class InfoPanel extends JPanel{
-    private NamePanel namePanel;
+    private static NamePanel namePanel;
     private PortraitPanel portraitPanel;
     private StatsInfoPanel statsInfoPanel;
     private EquippedPanel equippedPanel;
-    private InventoryPanel inventoryPanel;
+    private static InventoryPanel inventoryPanel;
 
     public InfoPanel(){
         setPreferredSize(new Dimension(200,500));
@@ -33,4 +34,14 @@ public class InfoPanel extends JPanel{
         add(equippedPanel);
         add(inventoryPanel);
     }
+
+    public static InventoryPanel getInventoryPanelInstance()
+    {
+    	return inventoryPanel;
+    }
+
+	public static NamePanel getNamePanelInstance()
+	{
+		return namePanel;
+	}
 }

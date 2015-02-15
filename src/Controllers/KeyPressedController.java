@@ -7,7 +7,6 @@ import Views.BoardPanel;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 
 /**
  * Created by Marcus on 2/11/2015.

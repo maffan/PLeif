@@ -47,8 +47,8 @@ public class GameFrame extends JFrame {
     }
 
     private void makePanels() {
-        boardPanel = new BoardPanel();
         infoPanel = new InfoPanel();
+        boardPanel = new BoardPanel();
         statusPanel = new StatusPanel();
         statusPanel.addInputListener(new InputController(statusPanel,boardPanel));
         add(boardPanel, BorderLayout.CENTER);

@@ -1,6 +1,6 @@
 package Models;
 
-import java.awt.Dimension;
+//import java.awt.Dimension;
 
 public class GameDimensions // Needs to be modified to be usable. MJ
 {

@@ -1,7 +1,5 @@
 package Models;
 
-import java.awt.*;
-
 public interface Drawable{
     /**
      * Gets the position of the object
