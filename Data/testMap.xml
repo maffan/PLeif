@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Det här är en enkel prototyp på hur man kan bygga upp en bana.
+    Vi får lägga till de element vi anser att varje cell behöver
+    
+    description: Den text som visas när man använder kommandot 'look' mot den cellen-->
+<map>
+    <cell><x>0</x><y>0</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>1</x><y>0</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>2</x><y>0</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>3</x><y>0</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>4</x><y>0</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>5</x><y>0</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>6</x><y>0</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>7</x><y>0</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>8</x><y>0</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>9</x><y>0</y><description>Elvis is eating an apple</description></cell>
+
+    <cell><x>0</x><y>1</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>1</x><y>1</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>2</x><y>1</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>3</x><y>1</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>4</x><y>1</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>5</x><y>1</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>6</x><y>1</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>7</x><y>1</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>8</x><y>1</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>9</x><y>1</y><description>Elvis is eating an apple</description></cell>
+
+    <cell><x>0</x><y>2</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>1</x><y>2</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>2</x><y>2</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>3</x><y>2</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>4</x><y>2</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>5</x><y>2</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>6</x><y>2</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>7</x><y>2</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>8</x><y>2</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>9</x><y>2</y><description>Elvis is eating an apple</description></cell>
+
+    <cell><x>0</x><y>3</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>1</x><y>3</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>2</x><y>3</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>3</x><y>3</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>4</x><y>3</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>5</x><y>3</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>6</x><y>3</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>7</x><y>3</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>8</x><y>3</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>9</x><y>3</y><description>Elvis is eating an apple</description></cell>
+
+    <cell><x>0</x><y>4</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>1</x><y>4</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>2</x><y>4</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>3</x><y>4</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>4</x><y>4</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>5</x><y>4</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>6</x><y>4</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>7</x><y>4</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>8</x><y>4</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>9</x><y>4</y><description>Elvis is eating an apple</description></cell>
+
+    <cell><x>0</x><y>5</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>1</x><y>5</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>2</x><y>5</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>3</x><y>5</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>4</x><y>5</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>5</x><y>5</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>6</x><y>5</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>7</x><y>5</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>8</x><y>5</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>9</x><y>5</y><description>Elvis is eating an apple</description></cell>
+
+    <cell><x>0</x><y>6</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>1</x><y>6</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>2</x><y>6</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>3</x><y>6</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>4</x><y>6</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>5</x><y>6</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>6</x><y>6</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>7</x><y>6</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>8</x><y>6</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>9</x><y>6</y><description>Elvis is eating an apple</description></cell>
+
+    <cell><x>0</x><y>7</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>1</x><y>7</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>2</x><y>7</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>3</x><y>7</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>4</x><y>7</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>5</x><y>7</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>6</x><y>7</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>7</x><y>7</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>8</x><y>7</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>9</x><y>7</y><description>Elvis is eating an apple</description></cell>
+
+    <cell><x>0</x><y>8</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>1</x><y>8</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>2</x><y>8</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>3</x><y>8</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>4</x><y>8</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>5</x><y>8</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>6</x><y>8</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>7</x><y>8</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>8</x><y>8</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>9</x><y>8</y><description>Elvis is eating an apple</description></cell>
+
+    <cell><x>0</x><y>9</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>1</x><y>9</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>2</x><y>9</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>3</x><y>9</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>4</x><y>9</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>5</x><y>9</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>6</x><y>9</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>7</x><y>9</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>8</x><y>9</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>9</x><y>9</y><description>Elvis is eating an apple</description></cell>
+</map>
