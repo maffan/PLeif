@@ -65,16 +65,16 @@ public class InputController implements ActionListener {
 		
 		if(command[0].equals("move")){
 
-			if (command[1].equals("north") || command.equals("n")) {
+			if (command[1].equals("north") || command[1].equals("n")) {
 				goNorth();
 
-			} else if (command[1].equals("east") || command.equals("e")) {
+			} else if (command[1].equals("east") || command[1].equals("e")) {
 				goEast();
 
-			} else if (command[1].equals("south") || command.equals("s")) {
+			} else if (command[1].equals("south") || command[1].equals("s")) {
 				goSouth();
 
-			} else if (command[1].equals("west") || command.equals("w")) {
+			} else if (command[1].equals("west") || command[1].equals("w")) {
 				goWest();
 
 			} else {
@@ -84,16 +84,16 @@ public class InputController implements ActionListener {
 
 		else if(command[0].equals("look")){
 			
-			if (command[1].equals("north") || command.equals("n")) {
+			if (command[1].equals("north") || command[1].equals("n")) {
 				lookNorth();
 
-			} else if (command[1].equals("east") || command.equals("e")) {
+			} else if (command[1].equals("east") || command[1].equals("e")) {
 				lookEast();
 
-			} else if (command[1].equals("south") || command.equals("s")) {
+			} else if (command[1].equals("south") || command[1].equals("s")) {
 				lookSouth();
 
-			} else if (command[1].equals("west") || command.equals("w")) {
+			} else if (command[1].equals("west") || command[1].equals("w")) {
 				lookWest();
 
 			} else {
