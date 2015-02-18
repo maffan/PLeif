@@ -20,6 +20,11 @@ import java.util.LinkedList;
 public class MapFileReader {
     private LinkedList<GameCell> cells;
     private HashMap<Point,GameCell> cellMap;
+
+    /**Takes an XML-file and extracts cell information and puts them into a linked list and an hash map
+     * 
+     * @param mapFile A file object representing the xml-file
+     */
     public MapFileReader(File mapFile){
         try {
             cells = new LinkedList<>();
@@ -52,11 +57,19 @@ public class MapFileReader {
             e.printStackTrace();
         }
     }
-    
+
+    /**Get method for retrieving a linked list of all the cells
+     * 
+     * @return A linked list of cells
+     */
     public LinkedList<GameCell> getCells(){
         return cells;
     }
-    
+
+    /**Get method for retrieving an hash map mapping a cells position to the cell object
+     * 
+     * @return an Hash map mapping a position to its corresponding cell
+     */
     public HashMap<Point,GameCell> getCellMap(){
         return cellMap;
     }
