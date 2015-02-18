@@ -10,6 +10,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.awt.*;
 import java.io.File;
+import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
@@ -18,10 +19,11 @@ import java.util.LinkedList;
  */
 public class MapFileReader {
     private LinkedList<GameCell> cells;
+    private HashMap<Point,GameCell> cellMap;
     public MapFileReader(File mapFile){
         try {
             cells = new LinkedList<>();
-            
+            cellMap = new HashMap<>();
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
             Document document = builder.parse(mapFile);
@@ -41,6 +43,10 @@ public class MapFileReader {
                 
                 cells.add(new GameCell(point,description));
             }
+            
+            cells.forEach((cell) -> {
+                cellMap.put(cell.getPoint(),cell);
+            });
         }
         catch (Exception e){
             e.printStackTrace();
@@ -49,5 +55,9 @@ public class MapFileReader {
     
     public LinkedList<GameCell> getCells(){
         return cells;
+    }
+    
+    public HashMap<Point,GameCell> getCellMap(){
+        return cellMap;
     }
 }

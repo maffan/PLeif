@@ -1,3 +1,4 @@
+import Models.GameCell;
 import Utils.MapFileReader;
 
 import java.io.File;
