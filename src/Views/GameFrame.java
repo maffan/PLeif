@@ -25,7 +25,7 @@ public class GameFrame extends JFrame {
         addWindowListener(new WindowAdapter(){
             @Override
             public void windowActivated(WindowEvent e) {
-            	boardPanel.requestFocus();
+            	statusPanel.getInputPanel().getTextField().requestFocus();
             }
         });
         

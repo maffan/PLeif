@@ -55,4 +55,8 @@ public class InputPanel extends JPanel {
         inputField.setText("");
         return input;
     }
+
+    public Component getTextField() {
+        return inputField;
+    }
 }
