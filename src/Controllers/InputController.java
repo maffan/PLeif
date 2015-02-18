@@ -15,99 +15,150 @@ import java.awt.event.ActionListener;
  * Created by Marcus on 2/4/2015.
  */
 public class InputController implements ActionListener {
-    private InputPanel inputPanel;
-    private BoardPanel boardPanel;
-    private Player player;
+	private InputPanel inputPanel;
+	private BoardPanel boardPanel;
+	private Player player;
 
-    private static final int gridSize = 50;
-    private static final int width = 500; //GameDimensions.getWorldDimensions().width;
-    private static final int height = 500; //GameDimensions.getWorldDimensions().height;
-    
-    public InputController() {
-        
-    }
+	private static final int gridSize = 50;
+	private static final int width = 500; //GameDimensions.getWorldDimensions().width;
+	private static final int height = 500; //GameDimensions.getWorldDimensions().height;
 
-    public InputController(InputPanel inputPanel, Player player, BoardPanel boardPanel) {
-        this.inputPanel = inputPanel;
-        this.player = player;
-        this.boardPanel = boardPanel;
-    }
+	public InputController() {
 
-    public InputController(StatusPanel statusPanel, BoardPanel boardPanel) {
-        this.inputPanel = statusPanel.getInputPanel();
-        this.boardPanel = boardPanel;
-        this.player = boardPanel.getPlayer();
-    }
+	}
 
-    public void setInputPanel(InputPanel inputPanel) {
-        this.inputPanel = inputPanel;
-    }
+	public InputController(InputPanel inputPanel, Player player, BoardPanel boardPanel) {
+		this.inputPanel = inputPanel;
+		this.player = player;
+		this.boardPanel = boardPanel;
+	}
 
-    public void setPlayer(Player player) {
-        this.player = player;
-    }
+	public InputController(StatusPanel statusPanel, BoardPanel boardPanel) {
+		this.inputPanel = statusPanel.getInputPanel();
+		this.boardPanel = boardPanel;
+		this.player = boardPanel.getPlayer();
+	}
 
-    public void setBoardPanel(BoardPanel boardPanel) {
-        this.boardPanel = boardPanel;
-    }
+	public void setInputPanel(InputPanel inputPanel) {
+		this.inputPanel = inputPanel;
+	}
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        String command = inputPanel.getCommand().toLowerCase().trim();
-        //This way of checking command does not look nice
-        if (command.equals("north") || command.equals("n")) {
-            goNorth();
+	public void setPlayer(Player player) {
+		this.player = player;
+	}
 
-        } else if (command.equals("east") || command.equals("e")) {
-            goEast();
+	public void setBoardPanel(BoardPanel boardPanel) {
+		this.boardPanel = boardPanel;
+	}
 
-        } else if (command.equals("south") || command.equals("s")) {
-            goSouth();
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		String command = inputPanel.getCommand().toLowerCase().trim();
+		//This way of checking command does not look nice
 
-        } else if (command.equals("west") || command.equals("w")) {
-            goWest();
+		commandAction(command);
+	}
 
-        } else {
-            System.out.println("Invalid command");
-        }
-    }
+	public void commandAction(String action){
 
-    private void goWest() {
-        if(!hasCollision(player.getX()-1,player.getY())) {
-            player.setX(Math.max(0, player.getX() - 1));
-        }
-    }
+		String[] command = action.split(" ");
+		
+		if(command[0].equals("move")){
 
-    private void goSouth() {
-        if(!hasCollision(player.getX(),player.getY()+1)) {
-            player.setY(Math.min(height / gridSize, player.getY() + 1));
-        }
-    }
+			if (command[1].equals("north") || command.equals("n")) {
+				goNorth();
 
-    private void goEast() {
-        if(!hasCollision(player.getX()+1,player.getY())) {
-            player.setX(Math.min(width / gridSize, player.getX() + 1));
-        }
-    }
+			} else if (command[1].equals("east") || command.equals("e")) {
+				goEast();
 
-    private void goNorth() {
-        if(!hasCollision(player.getX(),player.getY()-1)) {
-            player.setY(Math.max(0, player.getY() - 1));
-        }
-    }
+			} else if (command[1].equals("south") || command.equals("s")) {
+				goSouth();
 
-    private boolean hasCollision(int x, int y)
-    {
-        for(Entity e : boardPanel.getEntities())
-        {
-            if(e instanceof Aesthetics && ((Aesthetics) e).hasCollision())
-            {
-                if(e.getX() == x && e.getY() == y)
-                {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
+			} else if (command[1].equals("west") || command.equals("w")) {
+				goWest();
+
+			} else {
+				System.out.println("Invalid command");
+			}       
+		}
+
+		else if(command[0].equals("look")){
+			
+			if (command[1].equals("north") || command.equals("n")) {
+				lookNorth();
+
+			} else if (command[1].equals("east") || command.equals("e")) {
+				lookEast();
+
+			} else if (command[1].equals("south") || command.equals("s")) {
+				lookSouth();
+
+			} else if (command[1].equals("west") || command.equals("w")) {
+				lookWest();
+
+			} else {
+				System.out.println("Invalid command");
+			} 
+
+		}
+	}
+
+	private void goWest() {
+		if(!hasCollision(player.getX()-1,player.getY())) {
+			player.setX(Math.max(0, player.getX() - 1));
+		}
+	}
+
+	private void goSouth() {
+		if(!hasCollision(player.getX(),player.getY()+1)) {
+			player.setY(Math.min(height / gridSize, player.getY() + 1));
+		}
+	}
+
+	private void goEast() {
+		if(!hasCollision(player.getX()+1,player.getY())) {
+			player.setX(Math.min(width / gridSize, player.getX() + 1));
+		}
+	}
+
+	private void goNorth() {
+		if(!hasCollision(player.getX(),player.getY()-1)) {
+			player.setY(Math.max(0, player.getY() - 1));
+		}
+	}
+
+	private void lookEast(){
+		//beskrivning om vad som finns där
+	}
+	
+
+	private void lookNorth(){
+		//beskrivning om vad som finns där
+	}
+
+	private void lookSouth(){
+		//beskrivning om vad som finns där
+	}
+
+	private void lookWest(){
+		//beskrivning om vad som finns där
+	}
+	
+
+
+
+	private boolean hasCollision(int x, int y)
+	{
+		for(Entity e : boardPanel.getEntities())
+		{
+			if(e instanceof Aesthetics && ((Aesthetics) e).hasCollision())
+			{
+				if(e.getX() == x && e.getY() == y)
+				{
+					return true;
+				}
+			}
+		}
+		return false;
+	}
 }
