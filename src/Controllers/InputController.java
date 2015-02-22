@@ -20,8 +20,8 @@ public class InputController implements ActionListener {
 	private Player player;
 
 	private static final int gridSize = 50;
-	private static final int width = 500; //GameDimensions.getWorldDimensions().width;
-	private static final int height = 500; //GameDimensions.getWorldDimensions().height;
+	private static final int width = 500;
+	private static final int height = 500;
 
 	public InputController() {
 
@@ -59,27 +59,13 @@ public class InputController implements ActionListener {
 		commandAction(command);
 	}
 
-	public void commandAction(String action){
-
+	public void commandAction(String action)
+	{
 		String[] command = action.split(" ");
 		
-		if(command[0].equals("move")){
-
-			if (command[1].equals("north") || command[1].equals("n")) {
-				goNorth();
-
-			} else if (command[1].equals("east") || command[1].equals("e")) {
-				goEast();
-
-			} else if (command[1].equals("south") || command[1].equals("s")) {
-				goSouth();
-
-			} else if (command[1].equals("west") || command[1].equals("w")) {
-				goWest();
-
-			} else {
-				System.out.println("Invalid command");
-			}       
+		if(command[0].equals("move"))
+		{
+			BoardPanel.world.player.move(command[1], height / gridSize);
 		}
 
 		else if(command[0].equals("look")){
@@ -102,35 +88,10 @@ public class InputController implements ActionListener {
 
 		}
 	}
-
-	private void goWest() {
-		if(!hasCollision(player.getX()-1,player.getY())) {
-			player.setX(Math.max(0, player.getX() - 1));
-		}
-	}
-
-	private void goSouth() {
-		if(!hasCollision(player.getX(),player.getY()+1)) {
-			player.setY(Math.min(height / gridSize, player.getY() + 1));
-		}
-	}
-
-	private void goEast() {
-		if(!hasCollision(player.getX()+1,player.getY())) {
-			player.setX(Math.min(width / gridSize, player.getX() + 1));
-		}
-	}
-
-	private void goNorth() {
-		if(!hasCollision(player.getX(),player.getY()-1)) {
-			player.setY(Math.max(0, player.getY() - 1));
-		}
-	}
-
+	
 	private void lookEast(){
 		//beskrivning om vad som finns där
 	}
-	
 
 	private void lookNorth(){
 		//beskrivning om vad som finns där
@@ -142,23 +103,5 @@ public class InputController implements ActionListener {
 
 	private void lookWest(){
 		//beskrivning om vad som finns där
-	}
-	
-
-
-
-	private boolean hasCollision(int x, int y)
-	{
-		for(Entity e : boardPanel.getEntities())
-		{
-			if(e instanceof Aesthetics && ((Aesthetics) e).hasCollision())
-			{
-				if(e.getX() == x && e.getY() == y)
-				{
-					return true;
-				}
-			}
-		}
-		return false;
 	}
 }

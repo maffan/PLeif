@@ -39,41 +39,19 @@ public class KeyPressedController extends KeyAdapter {
     }
 
     @Override
-    public void keyPressed(KeyEvent e) {
-        if(e.getKeyCode() == KeyEvent.VK_UP){
-            if(!hasCollision(player.getX(),player.getY()-1)) {
-                player.setY(Math.max(0, player.getY() - 1));
-            }
-        }
-        if(e.getKeyCode() == KeyEvent.VK_RIGHT){
-            if(!hasCollision(player.getX()+1,player.getY())) {
-                player.setX(Math.min(width / gridSize, player.getX() + 1));
-            }
-        }
-        if(e.getKeyCode() == KeyEvent.VK_DOWN){
-            if(!hasCollision(player.getX(),player.getY()+1)) {
-                player.setY(Math.min(height / gridSize, player.getY() + 1));
-            }
-        }
-        if(e.getKeyCode() == KeyEvent.VK_LEFT){
-            if(!hasCollision(player.getX()-1,player.getY())) {
-                player.setX(Math.max(0, player.getX() - 1));
-            }
-        }
-    }
-
-    private boolean hasCollision(int x, int y)
+    public void keyPressed(KeyEvent e)
     {
-        for(Entity e : boardPanel.getEntities())
-        {
-            if(e instanceof Aesthetics && ((Aesthetics) e).hasCollision())
-            {
-                if(e.getX() == x && e.getY() == y)
-                {
-                    return true;
-                }
-            }
-        }
-        return false;
+    	if(e.getKeyCode() == KeyEvent.VK_UP){
+    		BoardPanel.world.player.move("north", height / gridSize);
+    	}
+    	if(e.getKeyCode() == KeyEvent.VK_RIGHT){
+    		BoardPanel.world.player.move("east", height / gridSize);
+    	}
+    	if(e.getKeyCode() == KeyEvent.VK_DOWN){
+    		BoardPanel.world.player.move("south", height / gridSize);
+    	}
+    	if(e.getKeyCode() == KeyEvent.VK_LEFT){
+    		BoardPanel.world.player.move("west", height / gridSize);
+    	}
     }
 }

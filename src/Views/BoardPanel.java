@@ -8,48 +8,47 @@ import Models.Item;
 import Models.Player;
 import Models.SpriteID;
 import Models.Stats;
+import Models.WorldData;
+import Utils.MapFileReader;
 
 import java.awt.*;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
+
 import javax.swing.*;
 
 public class BoardPanel extends JPanel implements Observer
 {
 	private final int gridSize = 50;
 	
-	// Hardcoded values? MJ
-	private int width = 500; //GameDimensions.getWorldDimensions().width;
-	private int height = 500; //GameDimensions.getWorldDimensions().height;
+	private int width = 500;
+	private int height = 500;
 	
-	private List<Entity> entities;
-	private static Player player;
+	public static WorldData world;
 
 	public BoardPanel()
 	{
         setLayout(new BorderLayout());
         setBorder(BorderFactory.createLineBorder(Color.BLACK));
         add(new JLabel("Board",SwingConstants.CENTER),BorderLayout.CENTER);
-        setPreferredSize(new Dimension(500,500)); //GameDimensions.getWorldDimensions());
+        setPreferredSize(new Dimension(500,500));
         
-		player = new Player("Glenn");
-        player.addObserver(this);
-        player.addObserver(InfoPanel.getInventoryPanelInstance());
-        player.addObserver(InfoPanel.getNamePanelInstance());
-		entities = new ArrayList<Entity>();
-		entities.add(player);
+        SetupWorld();
+        
+        world.player.addObserver(this);
+        world.player.addObserver(InfoPanel.getInventoryPanelInstance());
+        world.player.addObserver(InfoPanel.getNamePanelInstance());
 
 		setBackground(Color.white);
 		
-        addKeyListener(new KeyPressedController(player,this));
+        addKeyListener(new KeyPressedController(world.player, this));
         
 		//TESTING
 		AddTestEntitys();
 	}
-
-	
 
 	@Override
 	public void paintComponent(Graphics g)
@@ -67,14 +66,14 @@ public class BoardPanel extends JPanel implements Observer
 		for (int i = 0; i < gridSize*width; i++)
 			g.drawLine(i * gridSize, 0, i * gridSize, height);
 
-		if(!entities.isEmpty())
+		if(!world.entities.isEmpty())
 		{
 			int eW = 20;
 			int eH = 30;
 			int cX;
 			int cY;
 			
-			for(Entity e : entities)
+			for(Entity e : world.entities)
 			{
 				cX = e.getX()*gridSize+gridSize/2-eW/2;
 				cY = e.getY()*gridSize+gridSize/2-eH/2;
@@ -93,20 +92,14 @@ public class BoardPanel extends JPanel implements Observer
 					}
 				}
 			}
+
+			//Player
+			int pX = world.player.getX()*gridSize+gridSize/2-eW/2;;
+			int pY = world.player.getY()*gridSize+gridSize/2-eW/2;;
+			g.setColor(Color.red);
+			g.fillRect(pX, pY, eW, eH);
 			
-			for(Entity e : entities)
-			{
-				cX = e.getX()*gridSize+gridSize/2-eW/2;
-				cY = e.getY()*gridSize+gridSize/2-eH/2;
-				
-				if(e instanceof Player)
-				{
-					g.setColor(Color.red);
-					g.fillRect(cX, cY, eW, eH);
-				}
-			}
-			
-			for(Entity e : entities)
+			for(Entity e : world.entities)
 			{
 				cX = e.getX()*gridSize+gridSize/2-eW/2;
 				cY = e.getY()*gridSize+gridSize/2-eH/2;
@@ -118,7 +111,7 @@ public class BoardPanel extends JPanel implements Observer
 				}
 			}
 			
-			for(Entity e : entities)
+			for(Entity e : world.entities)
 			{
 				cX = e.getX()*gridSize+gridSize/2-eW/2;
 				cY = e.getY()*gridSize+gridSize/2-eH/2;
@@ -131,32 +124,46 @@ public class BoardPanel extends JPanel implements Observer
 			}
 		}
 	}
-	//hasStuff() ?
-	
+
+	private void SetupWorld()
+	{
+		boolean loadSavedMap = false;
+		
+		if(loadSavedMap)
+		{
+			
+		}
+		else
+		{
+			world = new WorldData();
+			world.player = new Player("Glenn");
+			world.mapFile = new MapFileReader(new File("PLeif/Data/testMap.xml"));
+		}
+	}
 	
 	public static Player getPlayer()
 	{
-		return player;
+		return world.player;
 	}
 
     public List<Entity> getEntities() {
-        return entities;
+        return world.entities;
     }
 
     private void AddTestEntitys()
 	{
-		entities.add(new Entity(1, 1, SpriteID.Test, "Test"));
-		entities.add(new Entity(3, 6, SpriteID.Test, "Test"));
-		entities.add(new Entity(2, 3, SpriteID.Test, "Test"));
-		entities.add(new Entity(8, 4, SpriteID.Test, "Test"));
+		world.entities.add(new Entity(1, 1, SpriteID.Test, "Test"));
+		world.entities.add(new Entity(3, 6, SpriteID.Test, "Test"));
+		world.entities.add(new Entity(2, 3, SpriteID.Test, "Test"));
+		world.entities.add(new Entity(8, 4, SpriteID.Test, "Test"));
 		
-		entities.add(new Enemy(3, 3, ""));
+		world.entities.add(new Enemy(3, 3, ""));
 
-		entities.add(new Aesthetics(4, 4, SpriteID.Wall, true, ""));
-		entities.add(new Aesthetics(4, 5, SpriteID.Path, false, ""));
+		world.entities.add(new Aesthetics(4, 4, SpriteID.Wall, true, ""));
+		world.entities.add(new Aesthetics(4, 5, SpriteID.Path, false, ""));
 
-		player.addItem(new Item(new Stats(), 0, 0, SpriteID.Sword, "Sword of Justice"));
-		player.addItem(new Item(new Stats(), 0, 0, SpriteID.Shield, "Shield of Stuff"));
+		world.player.addItem(new Item(new Stats(), 0, 0, SpriteID.Sword, "Sword of Justice"));
+		world.player.addItem(new Item(new Stats(), 0, 0, SpriteID.Shield, "Shield of Stuff"));
 	}
 
     @Override
