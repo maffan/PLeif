@@ -2,5 +2,5 @@ package Models;
 
 public enum SpriteID
 {
-	Path, Wall, Enemy, Player, Test, Sword, Shield, None,
+	Path, Wall, Enemy, Player, Test, Sword, Shield, None, Tree
 }

@@ -10,6 +10,7 @@ import Models.SpriteID;
 import Models.Stats;
 import Models.WorldData;
 import Utils.FilesRW;
+import Utils.Images;
 import Utils.MapFileReader;
 
 import java.awt.*;
@@ -29,6 +30,7 @@ public class BoardPanel extends JPanel implements Observer
 	private int height = 500;
 	
 	public static WorldData world;
+	private Images images;
 
 	public BoardPanel()
 	{
@@ -38,6 +40,7 @@ public class BoardPanel extends JPanel implements Observer
         setPreferredSize(new Dimension(500,500));
         setBackground(Color.white);
         
+        images = new Images();
         SetupWorld();
         SetupWorldObservers();
         
@@ -98,10 +101,9 @@ public class BoardPanel extends JPanel implements Observer
 			}
 
 			//Player
-			int pX = world.player.getX()*gridSize+gridSize/2-eW/2;;
-			int pY = world.player.getY()*gridSize+gridSize/2-eW/2;;
-			g.setColor(Color.red);
-			g.fillRect(pX, pY, eW, eH);
+			int pX = world.player.getX()*gridSize;
+			int pY = world.player.getY()*gridSize;
+			g.drawImage(images.player, pX, pY, null);
 			
 			for(Entity e : world.entities)
 			{
@@ -117,13 +119,17 @@ public class BoardPanel extends JPanel implements Observer
 			
 			for(Entity e : world.entities)
 			{
-				cX = e.getX()*gridSize+gridSize/2-eW/2;
-				cY = e.getY()*gridSize+gridSize/2-eH/2;
+				cX = e.getX()*gridSize;
+				cY = e.getY()*gridSize;
 				
 				if(e instanceof Entity && e.getSpriteID() == SpriteID.Test)
 				{
 					g.setColor(Color.green);
 					g.drawRect(cX, cY, eW, eH);
+				}
+				if(e instanceof Entity && e.getSpriteID() == SpriteID.Tree)
+				{
+					g.drawImage(images.tree, cX, cY, null);
 				}
 			}
 		}
@@ -156,9 +162,9 @@ public class BoardPanel extends JPanel implements Observer
 
     private void AddTestEntitys()
 	{
-		world.entities.add(new Entity(1, 1, SpriteID.Test, "Test"));
-		world.entities.add(new Entity(3, 6, SpriteID.Test, "Test"));
-		world.entities.add(new Entity(2, 3, SpriteID.Test, "Test"));
+		world.entities.add(new Entity(1, 1, SpriteID.Tree, "Test"));
+		world.entities.add(new Entity(3, 6, SpriteID.Tree, "Test"));
+		world.entities.add(new Entity(2, 3, SpriteID.Tree, "Test"));
 		world.entities.add(new Entity(8, 4, SpriteID.Test, "Test"));
 		
 		world.entities.add(new Enemy(3, 3, ""));
