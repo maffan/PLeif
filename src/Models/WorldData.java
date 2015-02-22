@@ -4,13 +4,14 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import Utils.FilesRW;
 import Utils.MapFileReader;
 
 public class WorldData implements Serializable
 {
 	public Player player;
 	public List<Entity> entities;
-	public MapFileReader mapFile;
+//	public MapFileReader mapFile;
 	
 	public WorldData()
 	{

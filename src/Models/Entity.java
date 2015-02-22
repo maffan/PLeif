@@ -1,9 +1,10 @@
 package Models;
 
 import java.awt.*;
+import java.io.Serializable;
 import java.util.Observable;
 
-public class Entity extends Observable
+public class Entity extends Observable implements Serializable
 {
 	private Point p;
 	private SpriteID id;

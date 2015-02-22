@@ -3,6 +3,7 @@ package Controllers;
 import Models.Aesthetics;
 import Models.Entity;
 import Models.Player;
+import Models.WorldData;
 import Utils.InputParser;
 import Views.BoardPanel;
 import Views.InputPanel;
@@ -10,6 +11,7 @@ import Views.StatusPanel;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 
 /**
  * Created by Marcus on 2/4/2015.
@@ -67,7 +69,6 @@ public class InputController implements ActionListener {
 		{
 			BoardPanel.world.player.move(command[1], height / gridSize);
 		}
-
 		else if(command[0].equals("look")){
 			
 			if (command[1].equals("north") || command[1].equals("n")) {
@@ -86,6 +87,14 @@ public class InputController implements ActionListener {
 				System.out.println("Invalid command");
 			} 
 
+		}
+		else if(command[0].equals("save"))
+		{
+			boardPanel.save();
+		}
+		else if(command[0].equals("load"))
+		{
+			boardPanel.load();
 		}
 	}
 	

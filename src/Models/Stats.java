@@ -1,12 +1,15 @@
 package Models;
 
+import java.io.Serializable;
+
 /**
  * Created by Marcus on 2/3/2015.
  */
  
  //Testar kommentarer
     //En kommentar till
-public class Stats {
+public class Stats implements Serializable
+{
     private int health;
     private int endurance;
     private int damage;

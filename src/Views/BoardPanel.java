@@ -9,6 +9,7 @@ import Models.Player;
 import Models.SpriteID;
 import Models.Stats;
 import Models.WorldData;
+import Utils.FilesRW;
 import Utils.MapFileReader;
 
 import java.awt.*;
@@ -35,19 +36,22 @@ public class BoardPanel extends JPanel implements Observer
         setBorder(BorderFactory.createLineBorder(Color.BLACK));
         add(new JLabel("Board",SwingConstants.CENTER),BorderLayout.CENTER);
         setPreferredSize(new Dimension(500,500));
+        setBackground(Color.white);
         
         SetupWorld();
-        
-        world.player.addObserver(this);
-        world.player.addObserver(InfoPanel.getInventoryPanelInstance());
-        world.player.addObserver(InfoPanel.getNamePanelInstance());
-
-		setBackground(Color.white);
-		
-        addKeyListener(new KeyPressedController(world.player, this));
+        SetupWorldObservers();
         
 		//TESTING
 		AddTestEntitys();
+	}
+	
+	void SetupWorldObservers()
+	{
+		world.player.addObserver(this);
+        world.player.addObserver(InfoPanel.getInventoryPanelInstance());
+        world.player.addObserver(InfoPanel.getNamePanelInstance());
+        addKeyListener(new KeyPressedController(world.player, this));
+        update(null, null);
 	}
 
 	@Override
@@ -137,7 +141,7 @@ public class BoardPanel extends JPanel implements Observer
 		{
 			world = new WorldData();
 			world.player = new Player("Glenn");
-			world.mapFile = new MapFileReader(new File("PLeif/Data/testMap.xml"));
+//			world.mapFile = new MapFileReader(new File("PLeif/Data/testMap.xml"));
 		}
 	}
 	
@@ -164,6 +168,17 @@ public class BoardPanel extends JPanel implements Observer
 
 		world.player.addItem(new Item(new Stats(), 0, 0, SpriteID.Sword, "Sword of Justice"));
 		world.player.addItem(new Item(new Stats(), 0, 0, SpriteID.Shield, "Shield of Stuff"));
+	}
+    
+	public void save()
+	{
+		FilesRW.saveTo(world, "PLeif\\world");
+	}
+	
+	public void load()
+	{
+		world = FilesRW.loadFrom("PLeif\\world");
+		SetupWorldObservers();
 	}
 
     @Override
