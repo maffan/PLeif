@@ -20,6 +20,8 @@ public class InputController implements ActionListener {
 	private InputPanel inputPanel;
 	private BoardPanel boardPanel;
 	private Player player;
+    
+    private MoveController moveController;
 
 	private static final int gridSize = 50;
 	private static final int width = 500;
@@ -29,16 +31,11 @@ public class InputController implements ActionListener {
 
 	}
 
-	public InputController(InputPanel inputPanel, Player player, BoardPanel boardPanel) {
-		this.inputPanel = inputPanel;
-		this.player = player;
-		this.boardPanel = boardPanel;
-	}
-
 	public InputController(StatusPanel statusPanel, BoardPanel boardPanel) {
 		this.inputPanel = statusPanel.getInputPanel();
 		this.boardPanel = boardPanel;
 		this.player = boardPanel.getPlayer();
+        this.moveController = new MoveController(boardPanel);
 	}
 
 	public void setInputPanel(InputPanel inputPanel) {
@@ -56,8 +53,6 @@ public class InputController implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String command = inputPanel.getCommand().toLowerCase().trim();
-		//This way of checking command does not look nice
-
 		commandAction(command);
 	}
 
@@ -67,7 +62,7 @@ public class InputController implements ActionListener {
 		
 		if(command[0].equals("move"))
 		{
-			BoardPanel.world.player.move(command[1], height / gridSize);
+			moveController.movePlayer(command[1], height / gridSize);
 		}
 		else if(command[0].equals("look")){
 			
@@ -99,18 +94,18 @@ public class InputController implements ActionListener {
 	}
 	
 	private void lookEast(){
-		//beskrivning om vad som finns där
+		//beskrivning om vad som finns dï¿½r
 	}
 
 	private void lookNorth(){
-		//beskrivning om vad som finns där
+		//beskrivning om vad som finns dï¿½r
 	}
 
 	private void lookSouth(){
-		//beskrivning om vad som finns där
+		//beskrivning om vad som finns dï¿½r
 	}
 
 	private void lookWest(){
-		//beskrivning om vad som finns där
+		//beskrivning om vad som finns dï¿½r
 	}
 }
