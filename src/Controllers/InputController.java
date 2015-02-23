@@ -65,24 +65,8 @@ public class InputController implements ActionListener {
 		{
 			moveController.movePlayer(command[1], height / gridSize);
 		}
-		else if(command[0].equals("look")){
+		else if(command[0].equals("look") || command[0].equals("l")){
 			lookController.look(command[1],player);
-			if (command[1].equals("north") || command[1].equals("n")) {
-				lookNorth();
-
-			} else if (command[1].equals("east") || command[1].equals("e")) {
-				lookEast();
-
-			} else if (command[1].equals("south") || command[1].equals("s")) {
-				lookSouth();
-
-			} else if (command[1].equals("west") || command[1].equals("w")) {
-				lookWest();
-
-			} else {
-				System.out.println("Invalid command");
-			} 
-
 		}
 		else if(command[0].equals("save"))
 		{

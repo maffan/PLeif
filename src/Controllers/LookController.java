@@ -27,16 +27,16 @@ public class LookController {
     }
 
     public void look(String command, Player player) {
-        if(command.equals("north")){
+        if(command.equals("north") || command.equals("n")){
             look(new Point(player.getX(),player.getY()-1));
         }
-        else if(command.equals("east")){
+        else if(command.equals("east") || command.equals("e")){
             look(new Point(player.getX()+1,player.getY()));
         }
-        else if(command.equals("south")){
+        else if(command.equals("south") || command.equals("s")){
             look(new Point(player.getX(),player.getY()+1));
         }
-        else if(command.equals("west")){
+        else if(command.equals("west") || command.equals("w")){
             look(new Point(player.getX()-1,player.getY()));
         }
     }
