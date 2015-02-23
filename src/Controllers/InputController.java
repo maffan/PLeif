@@ -60,7 +60,7 @@ public class InputController implements ActionListener {
 	{
 		String[] command = action.split(" ");
 		
-		if(command[0].equals("move"))
+		if(command[0].equals("move") || command[0].equals("m"))
 		{
 			moveController.movePlayer(command[1], height / gridSize);
 		}
