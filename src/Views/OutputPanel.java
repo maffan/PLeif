@@ -8,16 +8,22 @@ import Models.Player;
 import java.awt.*;
 
 public class OutputPanel extends JPanel {
+    private JTextArea textArea;
     public OutputPanel(){
-        add(new JLabel("Output"));
+        setLayout(new FlowLayout(FlowLayout.LEFT));
+        textArea = new JTextArea();
+        textArea.setEditable(false);
+        add(textArea);
         setBorder(BorderFactory.createLineBorder(Color.BLACK));
     }
 
+    public void setText(String text){
+        textArea.setText(text);
+    }
+    
     @Override
     public void paintComponent(Graphics g)
     {
-    	super.paintComponent(g);	
-
-    	g.drawString("I can write stuff here!", 20, 40);
+    	super.paintComponent(g);
     }
 }

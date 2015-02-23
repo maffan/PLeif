@@ -1,16 +1,15 @@
 package Controllers;
 
-import Models.Aesthetics;
-import Models.Entity;
-import Models.Player;
-import Models.WorldData;
+import Models.*;
 import Utils.InputParser;
 import Views.BoardPanel;
 import Views.InputPanel;
 import Views.StatusPanel;
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
 
 
 /**
@@ -22,6 +21,7 @@ public class InputController implements ActionListener {
 	private Player player;
     
     private MoveController moveController;
+    private LookController lookController;
 
 	private static final int gridSize = 50;
 	private static final int width = 500;
@@ -31,14 +31,15 @@ public class InputController implements ActionListener {
 
 	}
 
-	public InputController(StatusPanel statusPanel, BoardPanel boardPanel) {
+	public InputController(StatusPanel statusPanel, BoardPanel boardPanel,HashMap<Point, GameCell> cellMap) {
 		this.inputPanel = statusPanel.getInputPanel();
 		this.boardPanel = boardPanel;
 		this.player = boardPanel.getPlayer();
         this.moveController = new MoveController(boardPanel);
+        this.lookController = new LookController(cellMap,new OutputController(statusPanel.getOutputPanel()));
 	}
 
-	public void setInputPanel(InputPanel inputPanel) {
+    public void setInputPanel(InputPanel inputPanel) {
 		this.inputPanel = inputPanel;
 	}
 
@@ -65,7 +66,7 @@ public class InputController implements ActionListener {
 			moveController.movePlayer(command[1], height / gridSize);
 		}
 		else if(command[0].equals("look")){
-			
+			lookController.look(command[1],player);
 			if (command[1].equals("north") || command[1].equals("n")) {
 				lookNorth();
 

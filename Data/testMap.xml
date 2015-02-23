@@ -4,113 +4,113 @@
     
     description: Den text som visas när man använder kommandot 'look' mot den cellen-->
 <map>
-    <cell><x>0</x><y>0</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>1</x><y>0</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>2</x><y>0</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>3</x><y>0</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>4</x><y>0</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>5</x><y>0</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>6</x><y>0</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>7</x><y>0</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>8</x><y>0</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>9</x><y>0</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>0</x><y>0</y><description>You see nothing interesting</description></cell>
+    <cell><x>1</x><y>0</y><description>You see nothing interesting</description></cell>
+    <cell><x>2</x><y>0</y><description>You see nothing interesting</description></cell>
+    <cell><x>3</x><y>0</y><description>You see nothing interesting</description></cell>
+    <cell><x>4</x><y>0</y><description>You see nothing interesting</description></cell>
+    <cell><x>5</x><y>0</y><description>You see nothing interesting</description></cell>
+    <cell><x>6</x><y>0</y><description>You see nothing interesting</description></cell>
+    <cell><x>7</x><y>0</y><description>You see nothing interesting</description></cell>
+    <cell><x>8</x><y>0</y><description>You see nothing interesting</description></cell>
+    <cell><x>9</x><y>0</y><description>You see nothing interesting</description></cell>
 
-    <cell><x>0</x><y>1</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>1</x><y>1</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>2</x><y>1</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>3</x><y>1</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>4</x><y>1</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>5</x><y>1</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>6</x><y>1</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>7</x><y>1</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>8</x><y>1</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>9</x><y>1</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>0</x><y>1</y><description>You see nothing interesting</description></cell>
+    <cell><x>1</x><y>1</y><description>A tree, a tree. My kingdom for a tree!</description></cell>
+    <cell><x>2</x><y>1</y><description>You see nothing interesting</description></cell>
+    <cell><x>3</x><y>1</y><description>You see nothing interesting</description></cell>
+    <cell><x>4</x><y>1</y><description>You see nothing interesting</description></cell>
+    <cell><x>5</x><y>1</y><description>You see nothing interesting</description></cell>
+    <cell><x>6</x><y>1</y><description>You see nothing interesting</description></cell>
+    <cell><x>7</x><y>1</y><description>You see nothing interesting</description></cell>
+    <cell><x>8</x><y>1</y><description>You see nothing interesting</description></cell>
+    <cell><x>9</x><y>1</y><description>You see nothing interesting</description></cell>
 
-    <cell><x>0</x><y>2</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>1</x><y>2</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>2</x><y>2</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>3</x><y>2</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>4</x><y>2</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>5</x><y>2</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>6</x><y>2</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>7</x><y>2</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>8</x><y>2</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>9</x><y>2</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>0</x><y>2</y><description>You see nothing interesting</description></cell>
+    <cell><x>1</x><y>2</y><description>You see nothing interesting</description></cell>
+    <cell><x>2</x><y>2</y><description>You see nothing interesting</description></cell>
+    <cell><x>3</x><y>2</y><description>You see nothing interesting</description></cell>
+    <cell><x>4</x><y>2</y><description>You see nothing interesting</description></cell>
+    <cell><x>5</x><y>2</y><description>You see nothing interesting</description></cell>
+    <cell><x>6</x><y>2</y><description>You see nothing interesting</description></cell>
+    <cell><x>7</x><y>2</y><description>You see nothing interesting</description></cell>
+    <cell><x>8</x><y>2</y><description>You see nothing interesting</description></cell>
+    <cell><x>9</x><y>2</y><description>You see nothing interesting</description></cell>
+                                       You see nothing interesting
+    <cell><x>0</x><y>3</y><description>You see nothing interesting</description></cell>
+    <cell><x>1</x><y>3</y><description>You see nothing interesting</description></cell>
+    <cell><x>2</x><y>3</y><description>You see a lonely tree. All alone in the middle of this empty void</description></cell>
+    <cell><x>3</x><y>3</y><description>I am rubber you are glue, I see something small and blue</description></cell>
+    <cell><x>4</x><y>3</y><description>You see nothing interesting</description></cell>
+    <cell><x>5</x><y>3</y><description>You see nothing interesting</description></cell>
+    <cell><x>6</x><y>3</y><description>You see nothing interesting</description></cell>
+    <cell><x>7</x><y>3</y><description>You see nothing interesting</description></cell>
+    <cell><x>8</x><y>3</y><description>You see nothing interesting</description></cell>
+    <cell><x>9</x><y>3</y><description>You see nothing interesting</description></cell>
 
-    <cell><x>0</x><y>3</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>1</x><y>3</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>2</x><y>3</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>3</x><y>3</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>4</x><y>3</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>5</x><y>3</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>6</x><y>3</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>7</x><y>3</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>8</x><y>3</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>9</x><y>3</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>0</x><y>4</y><description>You see nothing interesting</description></cell>
+    <cell><x>1</x><y>4</y><description>You see nothing interesting</description></cell>
+    <cell><x>2</x><y>4</y><description>You see nothing interesting</description></cell>
+    <cell><x>3</x><y>4</y><description>You see nothing interesting</description></cell>
+    <cell><x>4</x><y>4</y><description>You see a solid dark gray object</description></cell>
+    <cell><x>5</x><y>4</y><description>You see nothing interesting</description></cell>
+    <cell><x>6</x><y>4</y><description>You see nothing interesting</description></cell>
+    <cell><x>7</x><y>4</y><description>You see nothing interesting</description></cell>
+    <cell><x>8</x><y>4</y><description>You see something you can't understand. It's green, and weird</description></cell>
+    <cell><x>9</x><y>4</y><description>You see nothing interesting</description></cell>
 
-    <cell><x>0</x><y>4</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>1</x><y>4</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>2</x><y>4</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>3</x><y>4</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>4</x><y>4</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>5</x><y>4</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>6</x><y>4</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>7</x><y>4</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>8</x><y>4</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>9</x><y>4</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>0</x><y>5</y><description>You see nothing interesting</description></cell>
+    <cell><x>1</x><y>5</y><description>You see nothing interesting</description></cell>
+    <cell><x>2</x><y>5</y><description>You see nothing interesting</description></cell>
+    <cell><x>3</x><y>5</y><description>You see nothing interesting</description></cell>
+    <cell><x>4</x><y>5</y><description>You see something gray with four corners</description></cell>
+    <cell><x>5</x><y>5</y><description>You see nothing interesting</description></cell>
+    <cell><x>6</x><y>5</y><description>You see nothing interesting</description></cell>
+    <cell><x>7</x><y>5</y><description>You see nothing interesting</description></cell>
+    <cell><x>8</x><y>5</y><description>You see nothing interesting</description></cell>
+    <cell><x>9</x><y>5</y><description>You see nothing interesting</description></cell>
 
-    <cell><x>0</x><y>5</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>1</x><y>5</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>2</x><y>5</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>3</x><y>5</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>4</x><y>5</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>5</x><y>5</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>6</x><y>5</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>7</x><y>5</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>8</x><y>5</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>9</x><y>5</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>0</x><y>6</y><description>You see nothing interesting</description></cell>
+    <cell><x>1</x><y>6</y><description>You see nothing interesting</description></cell>
+    <cell><x>2</x><y>6</y><description>You see nothing interesting</description></cell>
+    <cell><x>3</x><y>6</y><description>You see a beautiful tree</description></cell>
+    <cell><x>4</x><y>6</y><description>You see nothing interesting</description></cell>
+    <cell><x>5</x><y>6</y><description>You see nothing interesting</description></cell>
+    <cell><x>6</x><y>6</y><description>You see nothing interesting</description></cell>
+    <cell><x>7</x><y>6</y><description>You see nothing interesting</description></cell>
+    <cell><x>8</x><y>6</y><description>You see nothing interesting</description></cell>
+    <cell><x>9</x><y>6</y><description>You see nothing interesting</description></cell>
 
-    <cell><x>0</x><y>6</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>1</x><y>6</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>2</x><y>6</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>3</x><y>6</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>4</x><y>6</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>5</x><y>6</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>6</x><y>6</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>7</x><y>6</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>8</x><y>6</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>9</x><y>6</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>0</x><y>7</y><description>You see nothing interesting</description></cell>
+    <cell><x>1</x><y>7</y><description>You see nothing interesting</description></cell>
+    <cell><x>2</x><y>7</y><description>You see nothing interesting</description></cell>
+    <cell><x>3</x><y>7</y><description>You see nothing interesting</description></cell>
+    <cell><x>4</x><y>7</y><description>You see nothing interesting</description></cell>
+    <cell><x>5</x><y>7</y><description>You see nothing interesting</description></cell>
+    <cell><x>6</x><y>7</y><description>You see nothing interesting</description></cell>
+    <cell><x>7</x><y>7</y><description>You see nothing interesting</description></cell>
+    <cell><x>8</x><y>7</y><description>You see nothing interesting</description></cell>
+    <cell><x>9</x><y>7</y><description>You see nothing interesting</description></cell>
 
-    <cell><x>0</x><y>7</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>1</x><y>7</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>2</x><y>7</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>3</x><y>7</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>4</x><y>7</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>5</x><y>7</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>6</x><y>7</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>7</x><y>7</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>8</x><y>7</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>9</x><y>7</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>0</x><y>8</y><description>You see nothing interesting</description></cell>
+    <cell><x>1</x><y>8</y><description>You see nothing interesting</description></cell>
+    <cell><x>2</x><y>8</y><description>You see nothing interesting</description></cell>
+    <cell><x>3</x><y>8</y><description>You see nothing interesting</description></cell>
+    <cell><x>4</x><y>8</y><description>You see nothing interesting</description></cell>
+    <cell><x>5</x><y>8</y><description>You see nothing interesting</description></cell>
+    <cell><x>6</x><y>8</y><description>You see nothing interesting</description></cell>
+    <cell><x>7</x><y>8</y><description>You see nothing interesting</description></cell>
+    <cell><x>8</x><y>8</y><description>You see nothing interesting</description></cell>
+    <cell><x>9</x><y>8</y><description>You see nothing interesting</description></cell>
 
-    <cell><x>0</x><y>8</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>1</x><y>8</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>2</x><y>8</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>3</x><y>8</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>4</x><y>8</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>5</x><y>8</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>6</x><y>8</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>7</x><y>8</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>8</x><y>8</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>9</x><y>8</y><description>Elvis is eating an apple</description></cell>
-
-    <cell><x>0</x><y>9</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>1</x><y>9</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>2</x><y>9</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>3</x><y>9</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>4</x><y>9</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>5</x><y>9</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>6</x><y>9</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>7</x><y>9</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>8</x><y>9</y><description>Elvis is eating an apple</description></cell>
-    <cell><x>9</x><y>9</y><description>Elvis is eating an apple</description></cell>
+    <cell><x>0</x><y>9</y><description>You see nothing interesting</description></cell>
+    <cell><x>1</x><y>9</y><description>You see nothing interesting</description></cell>
+    <cell><x>2</x><y>9</y><description>You see nothing interesting</description></cell>
+    <cell><x>3</x><y>9</y><description>You see nothing interesting</description></cell>
+    <cell><x>4</x><y>9</y><description>You see nothing interesting</description></cell>
+    <cell><x>5</x><y>9</y><description>You see nothing interesting</description></cell>
+    <cell><x>6</x><y>9</y><description>You see nothing interesting</description></cell>
+    <cell><x>7</x><y>9</y><description>You see nothing interesting</description></cell>
+    <cell><x>8</x><y>9</y><description>You see nothing interesting</description></cell>
+    <cell><x>9</x><y>9</y><description>You see nothing interesting</description></cell>
 </map>

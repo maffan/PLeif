@@ -29,6 +29,10 @@ public class StatusPanel extends JPanel{
     public InputPanel getInputPanel() {
         return inputPanel;
     }
+    
+    public OutputPanel getOutputPanel() { 
+        return outputPanel; 
+    }
 
     public void addInputListener(ActionListener listener) {
         inputPanel.addSubmitController(listener);

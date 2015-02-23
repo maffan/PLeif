@@ -1,6 +1,7 @@
 package Views;
 
 import Controllers.InputController;
+import Utils.MapFileReader;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.File;
 
 public class GameFrame extends JFrame {
     public static final String TITLE = "Leif: Epic Adventures";
@@ -50,7 +52,7 @@ public class GameFrame extends JFrame {
         infoPanel = new InfoPanel();
         boardPanel = new BoardPanel();
         statusPanel = new StatusPanel();
-        statusPanel.addInputListener(new InputController(statusPanel,boardPanel));
+        statusPanel.addInputListener(new InputController(statusPanel,boardPanel,new MapFileReader(new File("./Data/testMap.xml")).getCellMap()));
         add(boardPanel, BorderLayout.CENTER);
         add(infoPanel,BorderLayout.EAST);
         add(statusPanel, BorderLayout.SOUTH);
