@@ -14,7 +14,7 @@ public class ImageLoader
 	{
 		BufferedImage image = null;
 		
-		File path = new File("PLeif\\resources\\pictures\\" + id.toString().toLowerCase() + ".png");
+		File path = new File(".\\resources\\pictures\\" + id.toString().toLowerCase() + ".png");
 
 		try {
 			image = ImageIO.read(path);

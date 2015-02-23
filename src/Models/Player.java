@@ -1,6 +1,5 @@
 package Models;
 
-import Models.Item;
 import Views.BoardPanel;
 
 import java.util.ArrayList;
