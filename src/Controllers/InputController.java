@@ -67,8 +67,9 @@ public class InputController implements ActionListener {
 			moveController.movePlayer(command[1], height / gridSize);
 		}
 		//riktning direkt
-		else if(command[0].equals("north") || command[0].equals("west") || command[0].equals("east") || command[0].equals("south")){
-			moveController.movePlayer(command[0], height / gridSize);
+		else if(command[0].equals("north") || command[0].equals("west") || command[0].equals("east") || command[0].equals("south")
+                || command[0].equals("n") || command[0].equals("e") || command[0].equals("s") || command[0].equals("w")){
+            moveController.movePlayer(command[0], height / gridSize);
 		}
 		else if(command[0].equals("look") || command[0].equals("l")){
 			if(command.length == 1)
@@ -87,6 +88,9 @@ public class InputController implements ActionListener {
 		{
 			boardPanel.load();
 		}
+        else if(command[0].equals("exit") || command[0].equals("quit")){
+            System.exit(0);
+        }
 	}
 	
 	private void lookEast(){
