@@ -8,6 +8,7 @@ public class Images
 {
 	public BufferedImage tree;
 	public BufferedImage player;
+	public BufferedImage bg;
 	
 	/**
 	 * Loads all images to be used.
@@ -16,5 +17,7 @@ public class Images
 	{
 		tree = ImageLoader.LoadImage(SpriteID.Tree);
 		player = ImageLoader.LoadImage(SpriteID.Player);
+		bg = ImageLoader.LoadImage(SpriteID.Bg);
+		
 	}
 }

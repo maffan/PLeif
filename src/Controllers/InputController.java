@@ -61,12 +61,23 @@ public class InputController implements ActionListener {
 	{
 		String[] command = action.split(" ");
 		
+		//move
 		if(command[0].equals("move") || command[0].equals("m"))
 		{
 			moveController.movePlayer(command[1], height / gridSize);
 		}
+		//riktning direkt
+		else if(command[0].equals("north") || command[0].equals("west") || command[0].equals("east") || command[0].equals("south")){
+			moveController.movePlayer(command[0], height / gridSize);
+		}
 		else if(command[0].equals("look") || command[0].equals("l")){
-			lookController.look(command[1],player);
+			if(command.length == 1)
+			{
+				lookController.look(command[0], player);
+			}
+			else{
+				lookController.look(command[1],player);
+			}
 		}
 		else if(command[0].equals("save"))
 		{

@@ -39,5 +39,11 @@ public class LookController {
         else if(command.equals("west") || command.equals("w")){
             look(new Point(player.getX()-1,player.getY()));
         }
+        else if(command.equals("self") || command.equals("s")){
+        	look(new Point(player.getX(),player.getY()));
+       }
+        else if(command.equals("look") || command.equals("s")){
+        	look(new Point(player.getX(),player.getY()));
+       }
     }
 }

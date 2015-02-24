@@ -37,6 +37,7 @@ public class BoardPanel extends JPanel implements Observer
         setPreferredSize(new Dimension(500,500));
         setBackground(Color.white);
         
+        
         images = new Images();
         SetupWorld();
         SetupWorldObservers();
@@ -61,6 +62,10 @@ public class BoardPanel extends JPanel implements Observer
 		
 		width = getSize().width;
 		height = getSize().height;
+		
+		//Draw Backgorund
+		g.drawImage(images.bg, 0, 0, null);
+		
 		
 		// Draw gridlines.
 		g.setColor(Color.black);
