@@ -1,0 +1,92 @@
+Leif kommer levla till level 4 innan man når sista bossen
+Det krävs två monster för varje level
+Vid combat görs en kontroll på din level och tar monsterstats där ifrån
+
+//////////////////////////////Player stats///////////////////
+Level 1
+HP: 50
+Endurance: 10
+Damage: 10
+Luck: 0.2
+Space: 10
+
+Level 2
+HP: 75
+Endurance: 15
+Damage: 15
+Luck: 0.25
+Space: 15
+
+Level 3
+HP: 100
+Endurance: 20
+Damage: 20
+Luck: 0.3
+Space: 20
+
+Level 4
+HP: 125
+Endurance: 25
+Damage: 25
+Luck: 0.4
+Space: 25
+
+
+/////////////////////////////Monster stats///////////////
+Level 1
+HP: 30
+Endurance: 10
+Damage: 5
+Luck: 0.1
+XP: 20
+
+Level 2
+HP: 50
+Endurance: 10
+Damage: 10
+Luck: 0.1
+XP: 20
+
+
+Level 3
+HP: 70
+Endurance: 15
+Damage: 15
+Luck: 0.2
+XP: 20
+
+
+Level 4
+HP: 100
+Endurance: 20
+Damage: 20
+Luck: 0.2
+XP: 20
+
+
+
+
+///////////////Boss stats////////////
+Level BOSS
+HP: 125
+Endurance: 25
+Damage: 30
+Luck: 0.5
+
+
+////////Item stats////////////
+Level 1 items:
+Sword: +2-5dmg,+0-0.1 luck, 5 space
+Armour: +5-10 endurance, +5-12 hp, 5 space
+
+Level 2 items:
+Sword: +6-12dmg,+0,5-0,15 luck, 5 space
+Armour: +8-15 endurance, +13-18 hp, 5 space
+
+Level 3 items:
+Sword: +14-18dmg,+0,1-0,2 luck, 5 space
+Armour: +17-22 endurance, +20-25 hp, 5 space
+
+Level 4 items:
+Sword: +19-25dmg,+0,15-0,25 luck, 5 space
+Armour: +23-30 endurance, +26-32 hp, 5 space

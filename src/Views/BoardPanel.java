@@ -33,7 +33,7 @@ public class BoardPanel extends JPanel implements Observer
 	{
         setLayout(new BorderLayout());
         setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        add(new JLabel("Board",SwingConstants.CENTER),BorderLayout.CENTER);
+        add(new JLabel("",SwingConstants.CENTER),BorderLayout.CENTER);
         setPreferredSize(new Dimension(500,500));
         setBackground(Color.white);
         
