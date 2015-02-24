@@ -88,6 +88,9 @@ public class InputController implements ActionListener {
 		{
 			boardPanel.load();
 		}
+        else if(command[0].equals("exit") || command[0].equals("quit")){
+            System.exit(0);
+        }
 	}
 	
 	private void lookEast(){
