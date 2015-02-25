@@ -31,12 +31,12 @@ public class InputController implements ActionListener {
 
 	}
 
-	public InputController(StatusPanel statusPanel, BoardPanel boardPanel,HashMap<Point, GameCell> cellMap) {
+	public InputController(StatusPanel statusPanel, BoardPanel boardPanel) {
 		this.inputPanel = statusPanel.getInputPanel();
 		this.boardPanel = boardPanel;
 		this.player = boardPanel.getPlayer();
         this.moveController = new MoveController(boardPanel);
-        this.lookController = new LookController(cellMap,new OutputController(statusPanel.getOutputPanel()));
+        this.lookController = new LookController(new OutputController(statusPanel.getOutputPanel()));
 	}
 
     public void setInputPanel(InputPanel inputPanel) {

@@ -52,7 +52,7 @@ public class GameFrame extends JFrame {
         infoPanel = new InfoPanel();
         boardPanel = new BoardPanel();
         statusPanel = new StatusPanel();
-        statusPanel.addInputListener(new InputController(statusPanel,boardPanel,new MapFileReader(new File("./Data/testMap.xml")).getCellMap()));
+        statusPanel.addInputListener(new InputController(statusPanel,boardPanel));
         add(boardPanel, BorderLayout.CENTER);
         add(infoPanel,BorderLayout.EAST);
         add(statusPanel, BorderLayout.SOUTH);
