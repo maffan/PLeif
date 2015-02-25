@@ -2,7 +2,7 @@ package Utils;
 
 public class GamePaths
 {
-	public static String TestMap = "PLeif/Data/testMap.xml";
-	public static String WorldSave = "PLeif/world";
-	public static String Pictures = "PLeif/resources/pictures/";
+	public static String TestMap = "./Data/testMap.xml";
+	public static String WorldSave = "./world";
+	public static String Pictures = "./resources/pictures/";
 }
