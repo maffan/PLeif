@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import Utils.GamePaths;
 import Utils.MapFileReader;
 
 public class WorldData implements Serializable
@@ -20,7 +21,7 @@ public class WorldData implements Serializable
 		entities = new ArrayList<Entity>();
 		mapDescriptions = new HashMap<Point, String>();
 		
-        MapFileReader fileReader = new MapFileReader(new File("PLeif/Data/testMap.xml"));
+        MapFileReader fileReader = new MapFileReader(new File(GamePaths.TestMap));
         fileReader.getCells().forEach((cell) -> {
         	mapDescriptions.put(cell.getPoint(), cell.getDescription());
         });

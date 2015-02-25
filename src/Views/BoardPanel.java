@@ -10,6 +10,7 @@ import Models.SpriteID;
 import Models.Stats;
 import Models.WorldData;
 import Utils.FilesRW;
+import Utils.GamePaths;
 import Utils.Images;
 
 import java.awt.*;
@@ -149,7 +150,6 @@ public class BoardPanel extends JPanel implements Observer
 		{
 			world = new WorldData();
 			world.player = new Player("Glenn");
-//			world.mapFile = new MapFileReader(new File("PLeif/Data/testMap.xml"));
 		}
 	}
 	
@@ -180,12 +180,12 @@ public class BoardPanel extends JPanel implements Observer
     
 	public void save()
 	{
-		FilesRW.saveTo(world, "PLeif\\world");
+		FilesRW.saveTo(world, GamePaths.WorldSave);
 	}
 	
 	public void load()
 	{
-		world = FilesRW.loadFrom("PLeif\\world");
+		world = FilesRW.loadFrom(GamePaths.WorldSave);
 		SetupWorldObservers();
 	}
 
