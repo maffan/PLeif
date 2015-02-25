@@ -13,7 +13,7 @@ import java.util.HashMap;
 
 
 /**
- * Created by Marcus on 2/4/2015.
+ * Controller for handling input from the user
  */
 public class InputController implements ActionListener {
 	private InputPanel inputPanel;
@@ -31,6 +31,11 @@ public class InputController implements ActionListener {
 
 	}
 
+    /**
+     * Sets up an InputController so that input can be read from the user 
+     * @param statusPanel The panel containing the InputPanel
+     * @param boardPanel The panel containing the central gaming area
+     */
 	public InputController(StatusPanel statusPanel, BoardPanel boardPanel) {
 		this.inputPanel = statusPanel.getInputPanel();
 		this.boardPanel = boardPanel;
@@ -39,14 +44,26 @@ public class InputController implements ActionListener {
         this.lookController = new LookController(new OutputController(statusPanel.getOutputPanel()));
 	}
 
+    /**
+     * Sets the InputPanel this controller is to read from
+     * @param inputPanel
+     */
     public void setInputPanel(InputPanel inputPanel) {
 		this.inputPanel = inputPanel;
 	}
 
+    /**
+     * Sets the player being controller by input from this controller
+     * @param player
+     */
 	public void setPlayer(Player player) {
 		this.player = player;
 	}
 
+    /**
+     * Sets the BoardPanel associated with this controller
+     * @param boardPanel
+     */
 	public void setBoardPanel(BoardPanel boardPanel) {
 		this.boardPanel = boardPanel;
 	}
@@ -91,21 +108,5 @@ public class InputController implements ActionListener {
         else if(command[0].equals("exit") || command[0].equals("quit")){
             System.exit(0);
         }
-	}
-	
-	private void lookEast(){
-		//beskrivning om vad som finns d�r
-	}
-
-	private void lookNorth(){
-		//beskrivning om vad som finns d�r
-	}
-
-	private void lookSouth(){
-		//beskrivning om vad som finns d�r
-	}
-
-	private void lookWest(){
-		//beskrivning om vad som finns d�r
 	}
 }
