@@ -33,8 +33,7 @@ public class MapFileReader {
             DocumentBuilder builder = factory.newDocumentBuilder();
             Document document = builder.parse(mapFile);
             document.getDocumentElement().normalize();
-
-            System.out.println("Root element: "+document.getDocumentElement().getNodeName());
+            
 
             NodeList cellList = document.getElementsByTagName("cell");
             
