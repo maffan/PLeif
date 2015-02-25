@@ -15,7 +15,7 @@ public class Entity extends Observable implements Serializable
 		
 	}
 	
-	public Entity(int x, int y, SpriteID id, String name)
+	public Entity(int x, int y, String name, SpriteID id)
 	{
 		this.p = new Point(x,y);
 		this.id = id;

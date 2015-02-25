@@ -2,122 +2,128 @@
 <!--
 	Ny version av våra maps, innehåller x, y,type ,enemy ,item , description
 	x,y - INT
-	type - tree,stone,water,
-	enemy/player - "0-3" 0 = false 1 = enemy 2 = boss 3 = player //ändrar så att stats för fiende sker i combat
+	type - tree,stone,water, 0/1 om kollision ( <type>stone,1</type> ger en sten som man inte kan gå på)
+	enemy - 1-4 (Lvl), 5 - boss
+	player - 1-4 (Lvl)
 	item - "typ,namn,level" ///generera ett item inom en range.
 	description - "beskrivning av område, quest?"
 	
+	Bara om något finns på en position behövs det läggas med i xml'n.
+	T ex <enemy>0</enemy> och <item>,,0</item> är överflödigt.
+	Så på en position där det endast finns en beskrivning räcker det med:
+	
+	<cell><x>0</x><y>0</y><description>Du ser ingenting alls</description></cell>
 
 -->
 <map>
-    <cell><x>0</x><y>0</y><type></type><enemy>0</enemy><item>,,0</item><description>Du ser ingenting alls</description></cell>
-    <cell><x>1</x><y>0</y><type></type><enemy>0</enemy><item>,,0</item><description>En bra väg</description></cell>
-    <cell><x>2</x><y>0</y><type></type><enemy>1</enemy><item>,,0</item><description>Här kan man va</description></cell>
-    <cell><x>3</x><y>0</y><type></type><enemy>0</enemy><item>,,0</item><description>Framåt framåt!</description></cell>
-    <cell><x>4</x><y>0</y><type></type><enemy>0</enemy><item>,,0</item><description>En fin gång</description></cell>
-    <cell><x>5</x><y>0</y><type></type><enemy>0</enemy><item>,,0</item><description>Grönt är de här</description></cell>
-    <cell><x>6</x><y>0</y><type></type><enemy>0</enemy><item>,,0</item><description>Schweingt nais</description></cell>
-    <cell><x>7</x><y>0</y><type></type><enemy>1</enemy><item>,,0</item><description>DANGER DANGER?</description></cell>
-    <cell><x>8</x><y>0</y><type></type><enemy>0</enemy><item>,,0</item><description>Svänger vänge snart tro?</description></cell>
-    <cell><x>9</x><y>0</y><type></type><enemy>0</enemy><item>,,0</item><description>SVÄNG!</description></cell>
+    <cell><x>0</x><y>0</y><description>Du ser ingenting alls</description></cell>
+    <cell><x>1</x><y>0</y><description>En bra väg</description></cell>
+    <cell><x>2</x><y>0</y><enemy>1</enemy><description>Här kan man va</description></cell>
+    <cell><x>3</x><y>0</y><description>Framåt framåt!</description></cell>
+    <cell><x>4</x><y>0</y><description>En fin gång</description></cell>
+    <cell><x>5</x><y>0</y><description>Grönt är de här</description></cell>
+    <cell><x>6</x><y>0</y><description>Schweingt nais</description></cell>
+    <cell><x>7</x><y>0</y><enemy>1</enemy><description>DANGER DANGER?</description></cell>
+    <cell><x>8</x><y>0</y><description>Svänger vänge snart tro?</description></cell>
+    <cell><x>9</x><y>0</y><description>SVÄNG!</description></cell>
 	
-	<cell><x>0</x><y>1</y><type></type><enemy>0</enemy><item>,,0</item><description>Du ser ingenting alls</description></cell>
-    <cell><x>1</x><y>1</y><type>tree</type><enemy>0</enemy><item>,,0</item><description>En bra väg</description></cell>
-    <cell><x>2</x><y>1</y><type>tree</type><enemy>0</enemy><item>,,0</item><description>Här kan man va</description></cell>
-    <cell><x>3</x><y>1</y><type>tree</type><enemy>0</enemy><item>,,0</item><description>Framåt framåt!</description></cell>
-    <cell><x>4</x><y>1</y><type></type><enemy>0</enemy><item>armour,Frodos kappa LVL4,4</item><description>En fin gång</description></cell>
-    <cell><x>5</x><y>1</y><type>tree</type><enemy>0</enemy><item>,,0</item><description>Grönt är de här</description></cell>
-    <cell><x>6</x><y>1</y><type>tree</type><enemy>0</enemy><item>,,0</item><description>Schweingt nais</description></cell>
-    <cell><x>7</x><y>1</y><type>tree</type><enemy>0</enemy><item>,,0</item><description>DANGER DANGER?</description></cell>
-    <cell><x>8</x><y>1</y><type>tree</type><enemy>0</enemy><item>,,0</item><description>Svänger vänge snart tro?</description></cell>
-    <cell><x>9</x><y>1</y><type>tree</type><enemy>0</enemy><item>,,0</item><description>SVÄNG!</description></cell>
+	<cell><x>0</x><y>1</y><description>Du ser ingenting alls</description></cell>
+    <cell><x>1</x><y>1</y><type>tree,0</type><description>En bra väg</description></cell>
+    <cell><x>2</x><y>1</y><type>tree,0</type><description>Här kan man va</description></cell>
+    <cell><x>3</x><y>1</y><type>tree,0</type><description>Framåt framåt!</description></cell>
+    <cell><x>4</x><y>1</y><item>armour,Frodos kappa LVL4,4</item><description>En fin gång</description></cell>
+    <cell><x>5</x><y>1</y><type>tree,0</type><description>Grönt är de här</description></cell>
+    <cell><x>6</x><y>1</y><type>tree,0</type><description>Schweingt nais</description></cell>
+    <cell><x>7</x><y>1</y><type>tree,0</type><description>DANGER DANGER?</description></cell>
+    <cell><x>8</x><y>1</y><type>tree,0</type><description>Svänger vänge snart tro?</description></cell>
+    <cell><x>9</x><y>1</y><type>tree,0</type><description>SVÄNG!</description></cell>
 	
-	<cell><x>0</x><y>2</y><type></type><enemy>0</enemy><item>sword,Guldklimpen LVL4,4</item><description>Du ser ingenting alls</description></cell>
-    <cell><x>1</x><y>2</y><type>tree</type><enemy>0</enemy><item>,,0</item><description>En bra väg</description></cell>
-    <cell><x>2</x><y>2</y><type>tree</type><enemy>0</enemy><item>,,0</item><description>Här kan man va</description></cell>
-    <cell><x>3</x><y>2</y><type>tree</type><enemy>0</enemy><item>,,0</item><description>Framåt framåt!</description></cell>
-    <cell><x>4</x><y>2</y><type>tree</type><enemy>0</enemy><item>,,0</item><description>En fin gång</description></cell>
-    <cell><x>5</x><y>2</y><type>tree</type><enemy>0</enemy><item>,,0</item><description>Grönt är de här</description></cell>
-    <cell><x>6</x><y>2</y><type>tree</type><enemy>0</enemy><item>,,0</item><description>Schweingt nais</description></cell>
-    <cell><x>7</x><y>2</y><type></type><enemy>0</enemy><item>,,0</item><description>DANGER DANGER?</description></cell>
-    <cell><x>8</x><y>2</y><type></type><enemy>0</enemy><item>,,0</item><description>Svänger vänge snart tro?</description></cell>
-    <cell><x>9</x><y>2</y><type></type><enemy>0</enemy><item>,,0</item><description>SVÄNG!</description></cell>
+	<cell><x>0</x><y>2</y><item>sword,Guldklimpen LVL4,4</item><description>Du ser ingenting alls</description></cell>
+    <cell><x>1</x><y>2</y><type>tree,0</type><description>En bra väg</description></cell>
+    <cell><x>2</x><y>2</y><type>tree,0</type><description>Här kan man va</description></cell>
+    <cell><x>3</x><y>2</y><type>tree,0</type><description>Framåt framåt!</description></cell>
+    <cell><x>4</x><y>2</y><type>tree,0</type><description>En fin gång</description></cell>
+    <cell><x>5</x><y>2</y><type>tree,0</type><description>Grönt är de här</description></cell>
+    <cell><x>6</x><y>2</y><type>tree,0</type><description>Schweingt nais</description></cell>
+    <cell><x>7</x><y>2</y><description>DANGER DANGER?</description></cell>
+    <cell><x>8</x><y>2</y><description>Svänger vänge snart tro?</description></cell>
+    <cell><x>9</x><y>2</y><description>SVÄNG!</description></cell>
 	
-	<cell><x>0</x><y>3</y><type></type><enemy>0</enemy><item>,,0</item><description>Du ser ingenting alls</description></cell>
-    <cell><x>1</x><y>3</y><type></type><enemy>0</enemy><item>sword,Silversvärder LVL3,3</item><description>En bra väg</description></cell>
-    <cell><x>2</x><y>3</y><type>tree</type><enemy>0</enemy><item>,,0</item><description>Här kan man va</description></cell>
-    <cell><x>3</x><y>3</y><type>water</type><enemy>0</enemy><item>,,0</item><description>Framåt framåt!</description></cell>
-    <cell><x>4</x><y>3</y><type>water</type><enemy>0</enemy><item>,,0</item><description>En fin gång</description></cell>
-    <cell><x>5</x><y>3</y><type>water</type><enemy>0</enemy><item>,,0</item><description>Grönt är de här</description></cell>
-    <cell><x>6</x><y>3</y><type>stone</type><enemy>0</enemy><item>,,0</item><description>Schweingt nais</description></cell>
-    <cell><x>7</x><y>3</y><type></type><enemy>1</enemy><item>,,0</item><description>DANGER DANGER?</description></cell>
-    <cell><x>8</x><y>3</y><type>water</type><enemy>0</enemy><item>,,0</item><description>Svänger vänge snart tro?</description></cell>
-    <cell><x>9</x><y>3</y><type>water</type><enemy>0</enemy><item>,,0</item><description>SVÄNG!</description></cell>
+	<cell><x>0</x><y>3</y><description>Du ser ingenting alls</description></cell>
+    <cell><x>1</x><y>3</y><item>sword,Silversvärder LVL3,3</item><description>En bra väg</description></cell>
+    <cell><x>2</x><y>3</y><type>tree,0</type><description>Här kan man va</description></cell>
+    <cell><x>3</x><y>3</y><type>water,0</type><description>Framåt framåt!</description></cell>
+    <cell><x>4</x><y>3</y><type>water,0</type><description>En fin gång</description></cell>
+    <cell><x>5</x><y>3</y><type>water,0</type><description>Grönt är de här</description></cell>
+    <cell><x>6</x><y>3</y><type>stone,0</type><description>Schweingt nais</description></cell>
+    <cell><x>7</x><y>3</y><enemy>1</enemy><description>DANGER DANGER?</description></cell>
+    <cell><x>8</x><y>3</y><type>water,0</type><description>Svänger vänge snart tro?</description></cell>
+    <cell><x>9</x><y>3</y><type>water,0</type><description>SVÄNG!</description></cell>
 	
-	<cell><x>0</x><y>4</y><type></type><enemy>1</enemy><item>,,0</item><description>Du ser ingenting alls</description></cell>
-    <cell><x>1</x><y>4</y><type></type><enemy>0</enemy><item>,,0</item><description>En bra väg</description></cell>
-    <cell><x>2</x><y>4</y><type></type><enemy>0</enemy><item>,,0</item><description>Här kan man va</description></cell>
-    <cell><x>3</x><y>4</y><type></type><enemy>0</enemy><item>,,0</item><description>Framåt framåt!</description></cell>
-    <cell><x>4</x><y>4</y><type></type><enemy>0</enemy><item>,,0</item><description>En fin gång</description></cell>
-    <cell><x>5</x><y>4</y><type></type><enemy>0</enemy><item>,,0</item><description>Grönt är de här</description></cell>
-    <cell><x>6</x><y>4</y><type>stone</type><enemy>0</enemy><item>,,0</item><description>Schweingt nais</description></cell>
-    <cell><x>7</x><y>4</y><type></type><enemy>0</enemy><item>,,0</item><description>DANGER DANGER?</description></cell>
-    <cell><x>8</x><y>4</y><type></type><enemy>0</enemy><item>,,0</item><description>Svänger vänge snart tro?</description></cell>
-    <cell><x>9</x><y>4</y><type></type><enemy>0</enemy><item>,,0</item><description>SVÄNG!</description></cell>
+	<cell><x>0</x><y>4</y><enemy>1</enemy><description>Du ser ingenting alls</description></cell>
+    <cell><x>1</x><y>4</y><description>En bra väg</description></cell>
+    <cell><x>2</x><y>4</y><description>Här kan man va</description></cell>
+    <cell><x>3</x><y>4</y><description>Framåt framåt!</description></cell>
+    <cell><x>4</x><y>4</y><description>En fin gång</description></cell>
+    <cell><x>5</x><y>4</y><description>Grönt är de här</description></cell>
+    <cell><x>6</x><y>4</y><type>stone,0</type><description>Schweingt nais</description></cell>
+    <cell><x>7</x><y>4</y><description>DANGER DANGER?</description></cell>
+    <cell><x>8</x><y>4</y><description>Svänger vänge snart tro?</description></cell>
+    <cell><x>9</x><y>4</y><description>SVÄNG!</description></cell>
 	
-	<cell><x>0</x><y>5</y><type>water</type><enemy>0</enemy><item>,,0</item><description>Du ser ingenting alls</description></cell>
-    <cell><x>1</x><y>5</y><type>water</type><enemy>0</enemy><item>,,0</item><description>En bra väg</description></cell>
-    <cell><x>2</x><y>5</y><type>water</type><enemy>0</enemy><item>,,0</item><description>Här kan man va</description></cell>
-    <cell><x>3</x><y>5</y><type>water</type><enemy>0</enemy><item>,,0</item><description>Framåt framåt!</description></cell>
-    <cell><x>4</x><y>5</y><type>water</type><enemy>0</enemy><item>,,0</item><description>En fin gång</description></cell>
-    <cell><x>5</x><y>5</y><type></type><enemy>0</enemy><item>,,0</item><description>Grönt är de här</description></cell>
-    <cell><x>6</x><y>5</y><type>stone</type><enemy>0</enemy><item>,,0</item><description>Schweingt nais</description></cell>
-    <cell><x>7</x><y>5</y><type>stone</type><enemy>0</enemy><item>,,0</item><description>DANGER DANGER?</description></cell>
-    <cell><x>8</x><y>5</y><type>stone</type><enemy>0</enemy><item>,,0</item><description>Svänger vänge snart tro?</description></cell>
-    <cell><x>9</x><y>5</y><type></type><enemy>0</enemy><item>,,0</item><description>SVÄNG!</description></cell>
+	<cell><x>0</x><y>5</y><type>water,0</type><description>Du ser ingenting alls</description></cell>
+    <cell><x>1</x><y>5</y><type>water,0</type><description>En bra väg</description></cell>
+    <cell><x>2</x><y>5</y><type>water,0</type><description>Här kan man va</description></cell>
+    <cell><x>3</x><y>5</y><type>water,0</type><description>Framåt framåt!</description></cell>
+    <cell><x>4</x><y>5</y><type>water,0</type><description>En fin gång</description></cell>
+    <cell><x>5</x><y>5</y><player>1</player><description>Grönt är de här</description></cell>
+    <cell><x>6</x><y>5</y><type>stone,0</type><description>Schweingt nais</description></cell>
+    <cell><x>7</x><y>5</y><type>stone,0</type><description>DANGER DANGER?</description></cell>
+    <cell><x>8</x><y>5</y><type>stone,0</type><description>Svänger vänge snart tro?</description></cell>
+    <cell><x>9</x><y>5</y><description>SVÄNG!</description></cell>
 	
-	<cell><x>0</x><y>6</y><type></type><enemy>0</enemy><item>,,0</item><description>Du ser ingenting alls</description></cell>
-    <cell><x>1</x><y>6</y><type></type><enemy>0</enemy><item>,,0</item><description>En bra väg</description></cell>
-    <cell><x>2</x><y>6</y><type></type><enemy>1</enemy><item>,,0</item><description>Här kan man va</description></cell>
-    <cell><x>3</x><y>6</y><type></type><enemy>0</enemy><item>,,0</item><description>Framåt framåt!</description></cell>
-    <cell><x>4</x><y>6</y><type>water</type><enemy>0</enemy><item>,,0</item><description>En fin gång</description></cell>
-    <cell><x>5</x><y>6</y><type></type><enemy>0</enemy><item>,,0</item><description>Grönt är de här</description></cell>
-    <cell><x>6</x><y>6</y><type>tree</type><enemy>0</enemy><item>,,0</item><description>Schweingt nais</description></cell>
-    <cell><x>7</x><y>6</y><type></type><enemy>0</enemy><item>,,0</item><description>DANGER DANGER?</description></cell>
-    <cell><x>8</x><y>6</y><type></type><enemy>0</enemy><item>,,0</item><description>Svänger vänge snart tro?</description></cell>
-    <cell><x>9</x><y>6</y><type></type><enemy>0</enemy><item>,,0</item><description>SVÄNG!</description></cell>
+	<cell><x>0</x><y>6</y><description>Du ser ingenting alls</description></cell>
+    <cell><x>1</x><y>6</y><description>En bra väg</description></cell>
+    <cell><x>2</x><y>6</y><enemy>1</enemy><description>Här kan man va</description></cell>
+    <cell><x>3</x><y>6</y><description>Framåt framåt!</description></cell>
+    <cell><x>4</x><y>6</y><type>water,0</type><description>En fin gång</description></cell>
+    <cell><x>5</x><y>6</y><description>Grönt är de här</description></cell>
+    <cell><x>6</x><y>6</y><type>tree,0</type><description>Schweingt nais</description></cell>
+    <cell><x>7</x><y>6</y><description>DANGER DANGER?</description></cell>
+    <cell><x>8</x><y>6</y><description>Svänger vänge snart tro?</description></cell>
+    <cell><x>9</x><y>6</y><description>SVÄNG!</description></cell>
 	
-	<cell><x>0</x><y>7</y><type></type><enemy>0</enemy><item>sword,Kanelsvärdet LVL1,1</item><description>Du ser ingenting alls</description></cell>
-    <cell><x>1</x><y>7</y><type>stone</type><enemy>0</enemy><item>,,0</item><description>En bra väg</description></cell>
-    <cell><x>2</x><y>7</y><type>stone</type><enemy>0</enemy><item>,,0</item><description>Här kan man va</description></cell>
-    <cell><x>3</x><y>7</y><type></type><enemy>0</enemy><item>,,0</item><description>Framåt framåt!</description></cell>
-    <cell><x>4</x><y>7</y><type>water</type><enemy>0</enemy><item>,,0</item><description>En fin gång</description></cell>
-    <cell><x>5</x><y>7</y><type></type><enemy>0</enemy><item>,,0</item><description>Grönt är de här</description></cell>
-    <cell><x>6</x><y>7</y><type>tree</type><enemy>0</enemy><item>,,0</item><description>Schweingt nais</description></cell>
-    <cell><x>7</x><y>7</y><type></type><enemy>0</enemy><item>,,0</item><description>DANGER DANGER?</description></cell>
-    <cell><x>8</x><y>7</y><type>water</type><enemy>0</enemy><item>,,0</item><description>Svänger vänge snart tro?</description></cell>
-    <cell><x>9</x><y>7</y><type>water</type><enemy>0</enemy><item>,,0</item><description>SVÄNG!</description></cell>
+	<cell><x>0</x><y>7</y><item>sword,Kanelsvärdet LVL1,1</item><description>Du ser ingenting alls</description></cell>
+    <cell><x>1</x><y>7</y><type>stone,0</type><description>En bra väg</description></cell>
+    <cell><x>2</x><y>7</y><type>stone,0</type><description>Här kan man va</description></cell>
+    <cell><x>3</x><y>7</y><description>Framåt framåt!</description></cell>
+    <cell><x>4</x><y>7</y><type>water,0</type><description>En fin gång</description></cell>
+    <cell><x>5</x><y>7</y><description>Grönt är de här</description></cell>
+    <cell><x>6</x><y>7</y><type>tree,0</type><description>Schweingt nais</description></cell>
+    <cell><x>7</x><y>7</y><description>DANGER DANGER?</description></cell>
+    <cell><x>8</x><y>7</y><type>water,0</type><description>Svänger vänge snart tro?</description></cell>
+    <cell><x>9</x><y>7</y><type>water,0</type><description>SVÄNG!</description></cell>
 	
-	<cell><x>0</x><y>8</y><type></type><enemy>0</enemy><item>armour,Låtsasarmour LVL1,1</item><description>Du ser ingenting alls</description></cell>
-    <cell><x>1</x><y>8</y><type>tree</type><enemy>0</enemy><item>,,0</item><description>En bra väg</description></cell>
-    <cell><x>2</x><y>8</y><type>tree</type><enemy>0</enemy><item>,,0</item><description>Här kan man va</description></cell>
-    <cell><x>3</x><y>8</y><type></type><enemy>1</enemy><item>,,0</item><description>Framåt framåt!</description></cell>
-    <cell><x>4</x><y>8</y><type>water</type><enemy>0</enemy><item>,,0</item><description>En fin gång</description></cell>
-    <cell><x>5</x><y>8</y><type></type><enemy>0</enemy><item>,,0</item><description>Grönt är de här</description></cell>
-    <cell><x>6</x><y>8</y><type>stone</type><enemy>0</enemy><item>,,0</item><description>Schweingt nais</description></cell>
-    <cell><x>7</x><y>8</y><type></type><enemy>1</enemy><item>,,0</item><description>DANGER DANGER?</description></cell>
-    <cell><x>8</x><y>8</y><type></type><enemy>1</enemy><item>,,0</item><description>Svänger vänge snart tro?</description></cell>
-    <cell><x>9</x><y>8</y><type></type><enemy>0</enemy><item>,,0</item><description>SVÄNG!</description></cell>
+	<cell><x>0</x><y>8</y><item>armour,Låtsasarmour LVL1,1</item><description>Du ser ingenting alls</description></cell>
+    <cell><x>1</x><y>8</y><type>tree,0</type><description>En bra väg</description></cell>
+    <cell><x>2</x><y>8</y><type>tree,0</type><description>Här kan man va</description></cell>
+    <cell><x>3</x><y>8</y><enemy>1</enemy><description>Framåt framåt!</description></cell>
+    <cell><x>4</x><y>8</y><type>water,0</type><description>En fin gång</description></cell>
+    <cell><x>5</x><y>8</y><description>Grönt är de här</description></cell>
+    <cell><x>6</x><y>8</y><type>stone,0</type><description>Schweingt nais</description></cell>
+    <cell><x>7</x><y>8</y><enemy>1</enemy><description>DANGER DANGER?</description></cell>
+    <cell><x>8</x><y>8</y><enemy>1</enemy><description>Svänger vänge snart tro?</description></cell>
+    <cell><x>9</x><y>8</y><description>SVÄNG!</description></cell>
 	
-	<cell><x>0</x><y>9</y><type></type><enemy>3</enemy><item>,,0</item><description>Du ser ingenting alls</description></cell>
-    <cell><x>1</x><y>9</y><type>tree</type><enemy>0</enemy><item>,,0</item><description>En bra väg</description></cell>
-    <cell><x>2</x><y>9</y><type>tree</type><enemy>0</enemy><item>,,0</item><description>Här kan man va</description></cell>
-    <cell><x>3</x><y>9</y><type></type><enemy>0</enemy><item>,,0</item><description>Framåt framåt!</description></cell>
-    <cell><x>4</x><y>9</y><type></type><enemy>0</enemy><item>sword,Snabbasvärdet,2</item><description>En fin gång</description></cell>
-    <cell><x>5</x><y>9</y><type></type><enemy>0</enemy><item>,,0</item><description>Grönt är de här</description></cell>
-    <cell><x>6</x><y>9</y><type>stone</type><enemy>0</enemy><item>,,0</item><description>Schweingt nais</description></cell>
-    <cell><x>7</x><y>9</y><type>stone</type><enemy>0</enemy><item>,,0</item><description>DANGER DANGER?</description></cell>
-    <cell><x>8</x><y>9</y><type>tree</type><enemy>0</enemy><item>,,0</item><description>Svänger vänge snart tro?</description></cell>
-    <cell><x>9</x><y>9</y><type></type><enemy>2</enemy><item>,,0</item><description>BOSS!</description></cell>
+	<cell><x>0</x><y>9</y><enemy>3</enemy><description>Du ser ingenting alls</description></cell>
+    <cell><x>1</x><y>9</y><type>tree,0</type><description>En bra väg</description></cell>
+    <cell><x>2</x><y>9</y><type>tree,0</type><description>Här kan man va</description></cell>
+    <cell><x>3</x><y>9</y><description>Framåt framåt!</description></cell>
+    <cell><x>4</x><y>9</y><item>sword,Snabbasvärdet,2</item><description>En fin gång</description></cell>
+    <cell><x>5</x><y>9</y><description>Grönt är de här</description></cell>
+    <cell><x>6</x><y>9</y><type>stone,0</type><description>Schweingt nais</description></cell>
+    <cell><x>7</x><y>9</y><type>stone,0</type><description>DANGER DANGER?</description></cell>
+    <cell><x>8</x><y>9</y><type>tree,0</type><description>Svänger vänge snart tro?</description></cell>
+    <cell><x>9</x><y>9</y><enemy>2</enemy><description>BOSS!</description></cell>
 
 </map>

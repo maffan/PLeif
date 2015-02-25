@@ -2,8 +2,11 @@ package Models;
 
 public class Enemy extends Entity
 {
-	public Enemy(int x, int y, String name) {
-		super(x, y, SpriteID.Enemy, name);
+	private Stats stats;
+	
+	public Enemy(int x, int y, String name, Stats stats) {
+		super(x, y, name, SpriteID.Enemy);
+		this.stats = stats;
 	}
 	
 	//doTurn() random move and stuff?

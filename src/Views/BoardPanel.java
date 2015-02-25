@@ -5,6 +5,7 @@ import Models.Aesthetics;
 import Models.Enemy;
 import Models.Entity; // Should these imports be avoided somehow? MJ
 import Models.Item;
+import Models.MobStats;
 import Models.Player;
 import Models.SpriteID;
 import Models.Stats;
@@ -40,10 +41,8 @@ public class BoardPanel extends JPanel implements Observer
 	{
         setLayout(new BorderLayout());
         setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        add(new JLabel("",SwingConstants.CENTER),BorderLayout.CENTER);
         setPreferredSize(new Dimension(500,500));
         setBackground(Color.white);
-        
         
         images = new Images();
         SetupWorld();
@@ -73,14 +72,15 @@ public class BoardPanel extends JPanel implements Observer
 		//Draw Backgorund
 		g.drawImage(images.bg, 0, 0, null);
 		
+		//Draw Player
+		int pX = world.player.getX()*gridSize;
+		int pY = world.player.getY()*gridSize;
+		g.drawImage(images.player, pX, pY, null);
 		
-		// Draw gridlines.
-		g.setColor(Color.black);
-		for (int i = 0; i < gridSize*height; i++)
-			g.drawLine(0, i * gridSize, width, i * gridSize);
-
-		for (int i = 0; i < gridSize*width; i++)
-			g.drawLine(i * gridSize, 0, i * gridSize, height);
+		/*
+		 * Code below needs to be rewritten to look for stuff to draw in
+		 * world.enemies, world.items and world.aes instead.
+		 */
 
 		if(!world.entities.isEmpty())
 		{
@@ -108,11 +108,6 @@ public class BoardPanel extends JPanel implements Observer
 					}
 				}
 			}
-
-			//Player
-			int pX = world.player.getX()*gridSize;
-			int pY = world.player.getY()*gridSize;
-			g.drawImage(images.player, pX, pY, null);
 			
 			for(Entity e : world.entities)
 			{
@@ -142,11 +137,20 @@ public class BoardPanel extends JPanel implements Observer
 				}
 			}
 		}
+		
+		// Draw gridlines.
+		g.setColor(Color.black);
+		for (int i = 0; i < gridSize*height; i++)
+			g.drawLine(0, i * gridSize, width, i * gridSize);
+
+		for (int i = 0; i < gridSize*width; i++)
+			g.drawLine(i * gridSize, 0, i * gridSize, height);
 	}
 
 	private void SetupWorld()
 	{
 		boolean loadSavedMap = false;
+		String worldToLoad = GamePaths.Map1;
 		
 		if(loadSavedMap)
 		{
@@ -154,8 +158,8 @@ public class BoardPanel extends JPanel implements Observer
 		}
 		else
 		{
-			world = new WorldData();
-			world.player = new Player("Glenn");
+			world = new WorldData(worldToLoad);
+//			world.player = new Player("Glenn");
 		}
 	}
 	
@@ -164,24 +168,20 @@ public class BoardPanel extends JPanel implements Observer
 		return world.player;
 	}
 
-    public List<Entity> getEntities() {
-        return world.entities;
-    }
-
     private void AddTestEntitys()
 	{
-		world.entities.add(new Entity(1, 1, SpriteID.Tree, "Test"));
-		world.entities.add(new Entity(3, 6, SpriteID.Tree, "Test"));
-		world.entities.add(new Entity(2, 3, SpriteID.Tree, "Test"));
-		world.entities.add(new Entity(8, 4, SpriteID.Test, "Test"));
+		world.entities.add(new Entity(1, 1, "Test", SpriteID.Tree));
+		world.entities.add(new Entity(3, 6, "Test", SpriteID.Tree));
+		world.entities.add(new Entity(2, 3, "Test", SpriteID.Tree));
+		world.entities.add(new Entity(8, 4, "Test", SpriteID.Test));
 		
-		world.entities.add(new Enemy(3, 3, ""));
+		world.entities.add(new Enemy(3, 3, "", MobStats.EnemyLVL1));
 
 		world.entities.add(new Aesthetics(4, 4, SpriteID.Wall, true, ""));
 		world.entities.add(new Aesthetics(4, 5, SpriteID.Path, false, ""));
 
-		world.player.addItem(new Item(new Stats(), 0, 0, SpriteID.Sword, "Sword of Justice"));
-		world.player.addItem(new Item(new Stats(), 0, 0, SpriteID.Shield, "Shield of Stuff"));
+		world.player.addItem(new Item(0, 0, "Sword of Justice", new Stats(), SpriteID.Sword));
+		world.player.addItem(new Item(0, 0, "Shield of Stuff", new Stats(), SpriteID.Shield));
 	}
     
 	public void save()

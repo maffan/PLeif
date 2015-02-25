@@ -13,17 +13,10 @@ public class Player extends Entity {
 	private Equippable medallion;
 	private List<Item> items;
 
-	public Player(String name, Stats stats, int x, int y) {
-		super(x, y, SpriteID.Player, name);
+	public Player(int x, int y, String name, Stats stats) {
+		super(x, y, name, SpriteID.Player);
 		this.stats = stats;
 		items = new LinkedList<Item>();
-	}
-
-	public Player(String playerName) {
-		super(5, 5, SpriteID.Player, playerName); // Need to be changed to
-													// variable starting point?
-													// MJ
-		items = new ArrayList<Item>();
 	}
 
 	public void addItem(Item e) {

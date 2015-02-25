@@ -15,16 +15,24 @@ public class WorldData implements Serializable
 	public Player player;
 	public List<Entity> entities;
 	private HashMap<Point, String> mapDescriptions;
+	public List<Enemy> enemies;
+	public List<Item> items;
+	public List<Aesthetics> aes;
 	
-	public WorldData()
+	public WorldData(String mapPath)
 	{
 		entities = new ArrayList<Entity>();
 		mapDescriptions = new HashMap<Point, String>();
 		
-        MapFileReader fileReader = new MapFileReader(new File(GamePaths.TestMap));
+        MapFileReader fileReader = new MapFileReader(new File(mapPath));
         fileReader.getCells().forEach((cell) -> {
         	mapDescriptions.put(cell.getPoint(), cell.getDescription());
         });
+        
+        player = fileReader.getPlayer();
+        enemies = fileReader.getListOfEnemies();
+        items = fileReader.getListOfItems();
+        aes = fileReader.getListOfAestethics();
 	}
 	
 	public String getDescription(Point p)
@@ -34,7 +42,7 @@ public class WorldData implements Serializable
 	
 	public boolean hasCollision(int x, int y)
 	{
-		for(Entity e : entities)
+		for(Entity e : aes)
 		{
 			if(e instanceof Aesthetics && ((Aesthetics) e).hasCollision())
 			{
