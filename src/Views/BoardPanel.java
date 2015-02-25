@@ -20,6 +20,9 @@ import java.util.Observer;
 
 import javax.swing.*;
 
+/**
+ * Panel containing the central game area
+ */
 public class BoardPanel extends JPanel implements Observer
 {
 	private final int gridSize = 50;
@@ -30,6 +33,9 @@ public class BoardPanel extends JPanel implements Observer
 	public static WorldData world;
 	private Images images;
 
+    /**
+     * Creates and sets up a new world, attaches observers and listeners and adds entities
+     */
 	public BoardPanel()
 	{
         setLayout(new BorderLayout());
@@ -47,7 +53,7 @@ public class BoardPanel extends JPanel implements Observer
 		AddTestEntitys();
 	}
 	
-	void SetupWorldObservers()
+	private void SetupWorldObservers()
 	{
 		world.player.addObserver(this);
         world.player.addObserver(InfoPanel.getInventoryPanelInstance());
