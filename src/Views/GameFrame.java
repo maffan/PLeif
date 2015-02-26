@@ -4,6 +4,7 @@ import Controllers.InputController;
 import Utils.MapFileReader;
 
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
@@ -16,6 +17,10 @@ public class GameFrame extends JFrame {
     private BoardPanel boardPanel;
     private static InfoPanel infoPanel;
     private static StatusPanel statusPanel;
+    
+    public static void main(String[] args) {
+        new GameFrame();
+    }
 
     public GameFrame(){
         super(TITLE);
