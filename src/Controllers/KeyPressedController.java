@@ -17,9 +17,7 @@ public class KeyPressedController extends KeyAdapter {
     private Player player;
     private BoardPanel boardPanel;
 
-    private static final int gridSize = 50;
-    private static final int width = 500; //GameDimensions.getWorldDimensions().width;
-    private static final int height = 500; //GameDimensions.getWorldDimensions().height;
+    private static final int mapWidth = 10;
     
     public KeyPressedController(){
         
@@ -42,16 +40,16 @@ public class KeyPressedController extends KeyAdapter {
     public void keyPressed(KeyEvent e)
     {
     	if(e.getKeyCode() == KeyEvent.VK_UP){
-    		BoardPanel.world.player.move("north", height / gridSize);
+    		BoardPanel.world.player.move("north", mapWidth);
     	}
     	if(e.getKeyCode() == KeyEvent.VK_RIGHT){
-    		BoardPanel.world.player.move("east", height / gridSize);
+    		BoardPanel.world.player.move("east", mapWidth);
     	}
     	if(e.getKeyCode() == KeyEvent.VK_DOWN){
-    		BoardPanel.world.player.move("south", height / gridSize);
+    		BoardPanel.world.player.move("south", mapWidth);
     	}
     	if(e.getKeyCode() == KeyEvent.VK_LEFT){
-    		BoardPanel.world.player.move("west", height / gridSize);
+    		BoardPanel.world.player.move("west", mapWidth);
     	}
     }
 }

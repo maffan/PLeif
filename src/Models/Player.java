@@ -32,6 +32,7 @@ public class Player extends Entity {
 
 	public void move(String direction, int max)
 	{
+		max--;
 		if (direction.equals("north") || direction.equals("n"))
 		{
 			if(!BoardPanel.world.hasCollision(getX(), getY()-1))
