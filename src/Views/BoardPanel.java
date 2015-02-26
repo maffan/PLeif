@@ -48,6 +48,7 @@ public class BoardPanel extends JPanel implements Observer
 		world.player.addObserver(this);
         world.player.addObserver(InfoPanel.getInventoryPanelInstance());
         world.player.addObserver(InfoPanel.getNamePanelInstance());
+        world.player.addObserver(InfoPanel.getStatsInfoPanelInstance());
         addKeyListener(new KeyPressedController(world.player, this));
         update(null, null);
 	}

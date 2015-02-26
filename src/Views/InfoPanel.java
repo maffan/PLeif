@@ -10,7 +10,7 @@ import java.util.Observer;
 public class InfoPanel extends JPanel{
     private static NamePanel namePanel;
     private PortraitPanel portraitPanel;
-    private StatsInfoPanel statsInfoPanel;
+    private static StatsInfoPanel statsInfoPanel;
     private EquippedPanel equippedPanel;
     private static InventoryPanel inventoryPanel;
 
@@ -43,5 +43,9 @@ public class InfoPanel extends JPanel{
 	public static NamePanel getNamePanelInstance()
 	{
 		return namePanel;
+	}
+
+	public static StatsInfoPanel getStatsInfoPanelInstance() {
+		return statsInfoPanel;
 	}
 }

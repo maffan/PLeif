@@ -24,6 +24,11 @@ public class Player extends Entity {
 		setChanged();
 		notifyObservers();
 	}
+	
+	public Stats getStats()
+	{
+		return stats;
+	}
 
 	public void move(String direction, int max)
 	{
