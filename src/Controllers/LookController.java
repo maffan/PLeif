@@ -1,11 +1,9 @@
 package Controllers;
 
-import Models.GameCell;
 import Models.Player;
 import Views.BoardPanel;
 
 import java.awt.*;
-import java.util.HashMap;
 
 /**
  * Created by Marcus on 2/23/2015.

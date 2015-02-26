@@ -2,8 +2,6 @@ package Views;
 
 import javax.swing.*;
 
-import Models.Item;
-import Models.Player;
 import Models.Stats;
 
 import java.awt.*;

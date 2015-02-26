@@ -51,6 +51,6 @@ public class FilesRW
 			e.printStackTrace();
 		}
 
-	    return (T)object;
+	    return object;
 	}
 }

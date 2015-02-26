@@ -2,9 +2,6 @@ package Views;
 
 import javax.swing.*;
 
-import Models.Entity;
-import Models.Player;
-
 import java.awt.*;
 
 public class OutputPanel extends JPanel {

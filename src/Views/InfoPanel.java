@@ -2,7 +2,6 @@ package Views;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Observer;
 
 /**
  * Created by Marcus on 2/4/2015.

@@ -1,15 +1,12 @@
 package Controllers;
 
 import Models.*;
-import Utils.InputParser;
 import Views.BoardPanel;
 import Views.InputPanel;
 import Views.StatusPanel;
 
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.HashMap;
 
 
 /**
@@ -37,7 +34,7 @@ public class InputController implements ActionListener {
 	public InputController(StatusPanel statusPanel, BoardPanel boardPanel) {
 		this.inputPanel = statusPanel.getInputPanel();
 		this.boardPanel = boardPanel;
-		this.player = boardPanel.getPlayer();
+		this.player = BoardPanel.getPlayer();
         this.moveController = new MoveController(boardPanel);
         this.lookController = new LookController(new OutputController(statusPanel.getOutputPanel()));
 	}

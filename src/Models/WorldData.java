@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import Utils.GamePaths;
 import Utils.MapFileReader;
 
 public class WorldData implements Serializable

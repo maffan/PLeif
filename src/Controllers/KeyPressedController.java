@@ -1,7 +1,5 @@
 package Controllers;
 
-import Models.Aesthetics;
-import Models.Entity;
 import Models.Player;
 import Views.BoardPanel;
 
