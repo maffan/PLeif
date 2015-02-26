@@ -2,7 +2,6 @@ package Utils;
 
 import Models.Aesthetics;
 import Models.Enemy;
-import Models.GameCell;
 import Models.Item;
 import Models.MobStats;
 import Models.Player;
@@ -28,12 +27,11 @@ import java.util.List;
  * Created by Marcus on 2/16/2015.
  * Parses an XML file describing a map*
  */
-public class MapFileReader {
-    private LinkedList<GameCell> cells;
-    private HashMap<Point,GameCell> cellMap;
-    
+public class MapFileReader
+{
 	private List<Enemy> enemies;
 	private List<Item> items;
+	private HashMap<Point, String> desc;
 	private List<Aesthetics> aes;
 	private Player player;
 	
@@ -46,10 +44,9 @@ public class MapFileReader {
     	enemies = new ArrayList<Enemy>();
     	items = new ArrayList<Item>();
     	aes = new ArrayList<Aesthetics>();
+    	desc = new HashMap<Point, String>();
     	
         try {
-            cells = new LinkedList<>();
-            cellMap = new HashMap<>();
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
             Document document = builder.parse(mapFile);
@@ -63,7 +60,7 @@ public class MapFileReader {
                 int x = Integer.parseInt(element.getElementsByTagName("x").item(0).getTextContent());
                 int y = Integer.parseInt(element.getElementsByTagName("y").item(0).getTextContent());
                 String description = element.getElementsByTagName("description").item(0).getTextContent();
-                Point point = new Point(x,y);
+                desc.put(new Point(x, y), description);
                 	
                 if(element.getElementsByTagName("enemy").getLength() != 0)
                 {
@@ -149,13 +146,7 @@ public class MapFileReader {
                 	}
                 	player = new Player(x, y, "Glenn", stats);
                 }
-
-                cells.add(new GameCell(point,description));
             }
-            
-            cells.forEach((cell) -> {
-                cellMap.put(cell.getPoint(),cell);
-            });
         }
         catch (Exception e){
             e.printStackTrace();
@@ -182,19 +173,8 @@ public class MapFileReader {
 		return aes;
     }
 
-    /**Get method for retrieving a linked list of all the cells
-     * 
-     * @return A linked list of cells
-     */
-    public LinkedList<GameCell> getCells(){
-        return cells;
-    }
-
-    /**Get method for retrieving an hash map mapping a cells position to the cell object
-     * 
-     * @return an Hash map mapping a position to its corresponding cell
-     */
-    public HashMap<Point,GameCell> getCellMap(){
-        return cellMap;
-    }
+	public HashMap<Point, String> getDescriptions()
+	{
+		return desc;
+	}
 }

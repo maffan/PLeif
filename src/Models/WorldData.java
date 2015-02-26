@@ -33,10 +33,8 @@ public class WorldData implements Serializable
 		mapDescriptions = new HashMap<Point, String>();
 		
         MapFileReader fileReader = new MapFileReader(new File(mapPath));
-        fileReader.getCells().forEach((cell) -> {
-        	mapDescriptions.put(cell.getPoint(), cell.getDescription());
-        });
-        
+
+        mapDescriptions = fileReader.getDescriptions();
         player = fileReader.getPlayer();
         enemies = fileReader.getListOfEnemies();
         items = fileReader.getListOfItems();
