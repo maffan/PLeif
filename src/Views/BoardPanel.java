@@ -1,6 +1,5 @@
 package Views;
 
-import Controllers.KeyPressedController;
 import Models.Entity;
 import Models.Player;
 import Models.SpriteID;
@@ -49,7 +48,6 @@ public class BoardPanel extends JPanel implements Observer
         world.player.addObserver(InfoPanel.getInventoryPanelInstance());
         world.player.addObserver(InfoPanel.getNamePanelInstance());
         world.player.addObserver(InfoPanel.getStatsInfoPanelInstance());
-        addKeyListener(new KeyPressedController(world.player, this));
         update(null, null);
 	}
 
