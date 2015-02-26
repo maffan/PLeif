@@ -15,7 +15,7 @@ public class Item extends Entity {
     }
 
     public Item(int x, int y, String name, Stats stats, SpriteID id){
-        super(x, y, name, SpriteID.None);
+        super(x, y, name, id);
         this.stats = stats;
     }
 
