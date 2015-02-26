@@ -23,9 +23,7 @@ public class InputController implements ActionListener {
     private MoveController moveController;
     private LookController lookController;
 
-	private static final int gridSize = 50;
-	private static final int width = 500;
-	private static final int height = 500;
+	private static final int mapWidth = 10;
 
 	public InputController() {
 
@@ -81,12 +79,12 @@ public class InputController implements ActionListener {
 		//move
 		if(command[0].equals("move") || command[0].equals("m"))
 		{
-			moveController.movePlayer(command[1], height / gridSize);
+			moveController.movePlayer(command[1], mapWidth);
 		}
 		//riktning direkt
 		else if(command[0].equals("north") || command[0].equals("west") || command[0].equals("east") || command[0].equals("south")
                 || command[0].equals("n") || command[0].equals("e") || command[0].equals("s") || command[0].equals("w")){
-            moveController.movePlayer(command[0], height / gridSize);
+            moveController.movePlayer(command[0], mapWidth);
 		}
 		else if(command[0].equals("look") || command[0].equals("l")){
 			if(command.length == 1)
