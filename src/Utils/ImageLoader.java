@@ -8,8 +8,18 @@ import javax.imageio.ImageIO;
 
 import Models.SpriteID;
 
+/**
+ * Loads images
+ * @author joh
+ * @version 2015-02-25
+ */
 public class ImageLoader
 {
+	/**
+	 * Loads image from file
+	 * @param id Filename of image to load
+	 * @return A BufferedImage
+	 */
 	public static BufferedImage LoadImage(SpriteID id)
 	{
 		BufferedImage image = null;

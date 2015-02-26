@@ -4,6 +4,11 @@ import java.awt.image.BufferedImage;
 
 import Models.SpriteID;
 
+/**
+ * Loads and stores all images we used in the game.
+ * @author joh
+ * @version 2015-02-25
+ */
 public class Images
 {
 	//Aes
@@ -19,7 +24,6 @@ public class Images
 	public BufferedImage player;
 	public BufferedImage enemy;
 	public BufferedImage bg;
-
 	
 	/**
 	 * Loads all images to be used.
@@ -39,6 +43,5 @@ public class Images
 		player = ImageLoader.LoadImage(SpriteID.Player);
 		enemy = ImageLoader.LoadImage(SpriteID.Enemy);
 		bg = ImageLoader.LoadImage(SpriteID.Bg);
-		
 	}
 }

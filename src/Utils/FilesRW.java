@@ -7,6 +7,11 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+/**
+ * Handles reading and saving objects to disc.
+ * @author joh
+ * @version 2015-02-26
+ */
 public class FilesRW
 {
 	/**
