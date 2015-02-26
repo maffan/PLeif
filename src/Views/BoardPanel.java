@@ -1,21 +1,15 @@
 package Views;
 
 import Controllers.KeyPressedController;
-import Models.Aesthetics;
-import Models.Enemy;
-import Models.Entity; // Should these imports be avoided somehow? MJ
-import Models.Item;
-import Models.MobStats;
+import Models.Entity;
 import Models.Player;
 import Models.SpriteID;
-import Models.Stats;
 import Models.WorldData;
 import Utils.FilesRW;
 import Utils.GamePaths;
 import Utils.Images;
 
 import java.awt.*;
-import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -47,9 +41,6 @@ public class BoardPanel extends JPanel implements Observer
         images = new Images();
         SetupWorld();
         SetupWorldObservers();
-        
-		//TESTING
-//		AddTestEntitys();
 	}
 	
 	private void SetupWorldObservers()
@@ -77,138 +68,62 @@ public class BoardPanel extends JPanel implements Observer
 		int pY = world.player.getY()*gridSize;
 		g.drawImage(images.player, pX, pY, null);
 		
-		/*
-		 * Code below needs to be rewritten to look for stuff to draw in
-		 * world.enemies, world.items and world.aes instead.
-		 */
-		
 		//Rita aestetics
 		if(!world.aes.isEmpty())
 		{
-			
-			int cX;
-			int cY;
-			
-			for(Entity e : world.aes){
+			for(Entity e : world.aes)
+			{
+				pX = e.getX()*gridSize;
+				pY = e.getY()*gridSize;
 				
-				cX = e.getX()*gridSize;
-				cY = e.getY()*gridSize;
-				
-				if(e instanceof Entity && e.getSpriteID() == SpriteID.Tree)
-					{
-						g.drawImage(images.tree, cX, cY, null);
-					}
-				else if(e instanceof Entity && e.getSpriteID() == SpriteID.Stone)
-					{
-						g.drawImage(images.stone, cX, cY, null);
-					}
-				else if(e instanceof Entity && e.getSpriteID() == SpriteID.Water)
-					{
-						g.drawImage(images.water, cX, cY, null);
-					}
+				if(e.getSpriteID() == SpriteID.Tree)
+				{
+					g.drawImage(images.tree, pX, pY, null);
+				}
+				else if(e.getSpriteID() == SpriteID.Stone)
+				{
+					g.drawImage(images.stone, pX, pY, null);
+				}
+				else if(e.getSpriteID() == SpriteID.Water)
+				{
+					g.drawImage(images.water, pX, pY, null);
+				}
 			}
 		}
 		
 		//Rita items
 		if(!world.items.isEmpty())
 		{
-			
-			int cX;
-			int cY;
-			
-			for(Entity e : world.items){
+			for(Entity e : world.items)
+			{
+				pX = e.getX()*gridSize;
+				pY = e.getY()*gridSize;
 				
-				cX = e.getX()*gridSize;
-				cY = e.getY()*gridSize;
-				
-				if(e instanceof Entity && e.getSpriteID() == SpriteID.Armour)
-					{
-						g.drawImage(images.armour, cX, cY, null);
-					}
-				else if(e instanceof Entity && e.getSpriteID() == SpriteID.Sword)
-					{
-						g.drawImage(images.sword, cX, cY, null);
-					}
+				if(e.getSpriteID() == SpriteID.Armour)
+				{
+					g.drawImage(images.armour, pX, pY, null);
+				}
+				else if(e.getSpriteID() == SpriteID.Sword)
+				{
+					g.drawImage(images.sword, pX, pY, null);
+				}
 			}
 		}
-		
 		
 		//Rita fiender, behöver säkert göras något mer här
 		if(!world.enemies.isEmpty())
 		{
-			
-			int cX;
-			int cY;
-			
-			for(Entity e : world.enemies){
+			for(Entity e : world.enemies)
+			{
+				pX = e.getX()*gridSize;
+				pY = e.getY()*gridSize;
 				
-				cX = e.getX()*gridSize;
-				cY = e.getY()*gridSize;
-				
-				if(e instanceof Entity && e.getSpriteID() == SpriteID.Enemy)
-					{
-						g.drawImage(images.enemy, cX, cY, null);
-
-					}
+				if(e.getSpriteID() == SpriteID.Enemy)
+				{
+					g.drawImage(images.enemy, pX, pY, null);
+				}
 			}
 		}
-		
-
-//		if(!world.entities.isEmpty())
-//		{
-//			int eW = 20;
-//			int eH = 30;
-//			int cX;
-//			int cY;
-//			
-//			for(Entity e : world.entities)
-//			{
-//				cX = e.getX()*gridSize+gridSize/2-eW/2;
-//				cY = e.getY()*gridSize+gridSize/2-eH/2;
-//				
-//				if(e instanceof Aesthetics)
-//				{
-//					if(e.getSpriteID() == SpriteID.Wall)
-//					{
-//						g.setColor(Color.darkGray);
-//						g.fillRect(cX, cY, eW+5, eH+5);
-//					}
-//					else if(e.getSpriteID() == SpriteID.Path)
-//					{
-//						g.setColor(Color.gray);
-//						g.fillRect(cX, cY, eW+5, eH+5);
-//					}
-//				}
-//			}
-//			
-//			for(Entity e : world.entities)
-//			{
-//				cX = e.getX()*gridSize+gridSize/2-eW/2;
-//				cY = e.getY()*gridSize+gridSize/2-eH/2;
-//
-//				if(e instanceof Enemy)
-//				{
-//					g.setColor(Color.blue);
-//					g.fillRect(cX, cY, eW, eH);
-//				}
-//			}
-//			
-//			for(Entity e : world.entities)
-//			{
-//				cX = e.getX()*gridSize;
-//				cY = e.getY()*gridSize;
-//				
-//				if(e instanceof Entity && e.getSpriteID() == SpriteID.Test)
-//				{
-//					g.setColor(Color.green);
-//					g.drawRect(cX, cY, eW, eH);
-//				}
-//				if(e instanceof Entity && e.getSpriteID() == SpriteID.Tree)
-//				{
-//					g.drawImage(images.tree, cX, cY, null);
-//				}
-//			}
-//		}
 		
 //		// Draw gridlines.
 //		g.setColor(Color.black);
@@ -231,7 +146,6 @@ public class BoardPanel extends JPanel implements Observer
 		else
 		{
 			world = new WorldData(worldToLoad);
-//			world.player = new Player("Glenn");
 		}
 	}
 	
@@ -239,22 +153,6 @@ public class BoardPanel extends JPanel implements Observer
 	{
 		return world.player;
 	}
-
-//    private void AddTestEntitys()
-//	{
-//		world.entities.add(new Entity(1, 1, "Test", SpriteID.Tree));
-//		world.entities.add(new Entity(3, 6, "Test", SpriteID.Tree));
-//		world.entities.add(new Entity(2, 3, "Test", SpriteID.Tree));
-//		world.entities.add(new Entity(8, 4, "Test", SpriteID.Test));
-//		
-//		world.entities.add(new Enemy(3, 3, "", MobStats.EnemyLVL1));
-//
-//		world.entities.add(new Aesthetics(4, 4, SpriteID.Wall, true, ""));
-//		world.entities.add(new Aesthetics(4, 5, SpriteID.Path, false, ""));
-//
-//		world.player.addItem(new Item(0, 0, "Sword of Justice", new Stats(), SpriteID.Sword));
-//		world.player.addItem(new Item(0, 0, "Shield of Stuff", new Stats(), SpriteID.Shield));
-//	}
     
 	public void save()
 	{
