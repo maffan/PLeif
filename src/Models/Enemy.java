@@ -1,11 +1,11 @@
 package Models;
 
-public class Enemy extends Entity
+public class Enemy extends Aesthetics
 {
 	private Stats stats;
 	
 	public Enemy(int x, int y, String name, Stats stats) {
-		super(x, y, name, SpriteID.Enemy);
+		super(x, y,SpriteID.Enemy,true, name);
 		this.stats = stats;
 	}
 	

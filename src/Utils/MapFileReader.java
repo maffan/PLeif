@@ -78,7 +78,9 @@ public class MapFileReader
                 		case "5":
                 			stats = MobStats.Boss;
                 	}
-                	enemies.add(new Enemy(x, y, "", stats));
+                    Enemy enemy = new Enemy(x, y, "", stats);
+                	enemies.add(enemy);
+                    aes.add(enemy);
                 }
                 
                 if(element.getElementsByTagName("item").getLength() != 0)
