@@ -19,4 +19,8 @@ public class OutputController {
     public void print(String text) {
         outputPanel.setText(text);
     }
+
+    public void addLine(String text) {
+        outputPanel.addLine(text);
+    }
 }

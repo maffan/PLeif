@@ -1,6 +1,8 @@
 package Views;
 
 import Controllers.InputController;
+import Utils.BoardPanelProvider;
+
 import javax.swing.*;
 
 import java.awt.*;
@@ -53,6 +55,7 @@ public class GameFrame extends JFrame {
     private void makePanels() {
         infoPanel = new InfoPanel();
         boardPanel = new BoardPanel();
+        BoardPanelProvider.setBoardPanel(boardPanel);
         statusPanel = new StatusPanel();
         statusPanel.addInputListener(new InputController(statusPanel,boardPanel));
         add(boardPanel, BorderLayout.CENTER);

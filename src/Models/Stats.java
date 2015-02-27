@@ -1,6 +1,7 @@
 package Models;
 
 import java.io.Serializable;
+import java.util.Observable;
 
 /**
  * Created by Marcus on 2/3/2015.
@@ -8,7 +9,7 @@ import java.io.Serializable;
  
  //Testar kommentarer
     //En kommentar till
-public class Stats implements Serializable
+public class Stats extends Observable implements Serializable
 {
     private int health;
     private int endurance;
@@ -35,6 +36,8 @@ public class Stats implements Serializable
 
     public void setHealth(int health) {
         this.health = health;
+        setChanged();
+        notifyObservers();
     }
 
     public int getEndurance() {
@@ -43,6 +46,8 @@ public class Stats implements Serializable
 
     public void setEndurance(int endurance) {
         this.endurance = endurance;
+        setChanged();
+        notifyObservers();
     }
 
     public int getDamage() {
@@ -51,6 +56,8 @@ public class Stats implements Serializable
 
     public void setDamage(int damage) {
         this.damage = damage;
+        setChanged();
+        notifyObservers();
     }
 
     public double getLuck() {
@@ -59,6 +66,8 @@ public class Stats implements Serializable
 
     public void setLuck(double luck) {
         this.luck = luck;
+        setChanged();
+        notifyObservers();
     }
 
     public int getWeight() {
@@ -67,5 +76,7 @@ public class Stats implements Serializable
 
     public void setWeight(int weight) {
         this.space = weight;
+        setChanged();
+        notifyObservers();
     }
 }

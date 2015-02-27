@@ -47,7 +47,7 @@ public class BoardPanel extends JPanel implements Observer
 		world.player.addObserver(this);
         world.player.addObserver(InfoPanel.getInventoryPanelInstance());
         world.player.addObserver(InfoPanel.getNamePanelInstance());
-        world.player.addObserver(InfoPanel.getStatsInfoPanelInstance());
+        world.player.getStats().addObserver(InfoPanel.getStatsInfoPanelInstance());
         update(null, null);
 	}
 
@@ -109,7 +109,7 @@ public class BoardPanel extends JPanel implements Observer
 			}
 		}
 		
-		//Rita fiender, behöver säkert göras något mer här
+		//Rita fiender, behï¿½ver sï¿½kert gï¿½ras nï¿½got mer hï¿½r
 		if(!world.enemies.isEmpty())
 		{
 			for(Entity e : world.enemies)

@@ -8,6 +8,10 @@ public class Enemy extends Aesthetics
 		super(x, y,SpriteID.Enemy,true, name);
 		this.stats = stats;
 	}
-	
-	//doTurn() random move and stuff?
+
+    public Stats getStats() {
+        return stats;
+    }
+
+    //doTurn() random move and stuff?
 }

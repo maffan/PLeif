@@ -19,6 +19,7 @@ public class InputController implements ActionListener {
     
     private MoveController moveController;
     private LookController lookController;
+    private AttackController attackController;
 
 	private static final int mapWidth = 10;
 
@@ -37,6 +38,7 @@ public class InputController implements ActionListener {
 		this.player = BoardPanel.getPlayer();
         this.moveController = new MoveController(boardPanel);
         this.lookController = new LookController(new OutputController(statusPanel.getOutputPanel()));
+        this.attackController = new AttackController(new OutputController(statusPanel.getOutputPanel()),boardPanel.world);
 	}
 
     /**
@@ -92,6 +94,9 @@ public class InputController implements ActionListener {
 				lookController.look(command[1],player);
 			}
 		}
+        else if(command[0].equals("attack") || command[0].equals("a")){
+            attackController.attack(command[1]);
+        }
 		else if(command[0].equals("save"))
 		{
 			boardPanel.save();

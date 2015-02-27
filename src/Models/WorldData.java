@@ -71,4 +71,34 @@ public class WorldData implements Serializable
 		}
 		return false;
 	}
+    
+    public boolean hasEnemy(Point point){
+        for(Enemy enemy : enemies){
+            if(enemy.getX() == point.getX() && enemy.getY() == point.getY()){
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public Enemy getEnemy(Point point){
+        for(Enemy enemy : enemies){
+            if(enemy.getX() == point.getX() && enemy.getY() == point.getY()){
+                return enemy;
+            }
+        }
+        return null;
+    }
+    
+    public void removeEnemy(Enemy enemy){
+        enemies.remove(enemy);
+    }
+
+    public void removeAes(Point point) {
+        for(Aesthetics aesthetics : aes){
+            if(aesthetics.getX() == point.getX() && aesthetics.getY() == point.getY()){
+                aes.remove(aesthetics);
+            }
+        }
+    }
 }
