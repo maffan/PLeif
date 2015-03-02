@@ -1,6 +1,7 @@
 package Controllers;
 
 import Models.*;
+import Utils.SoundPlayer;
 import Views.BoardPanel;
 import Views.InputPanel;
 import Views.StatusPanel;
@@ -108,5 +109,13 @@ public class InputController implements ActionListener {
         else if(command[0].equals("exit") || command[0].equals("quit")){
             System.exit(0);
         }
-	}
+		
+		//Kommandon för test skall implementeras i GUI senare
+        else if(command[0].equals("playmusic") || command[0].equals("startmusic")) {
+        	SoundPlayer.playMusic();
+        }
+        else if(command[0].equals("stopmusic")) {
+        	SoundPlayer.stopMusic();
+        }
+		}
 }

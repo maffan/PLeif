@@ -2,6 +2,7 @@ package Views;
 
 import Controllers.InputController;
 import Utils.BoardPanelProvider;
+import Utils.SoundPlayer;
 
 import javax.swing.*;
 
@@ -42,6 +43,8 @@ public class GameFrame extends JFrame {
 
     private void makeMenu() {
         JMenuBar menuBar = new JMenuBar();
+        
+        //FileMenu
         JMenu fileMenu = new JMenu("File");
         menuBar.add(fileMenu);
         JMenuItem quitItem = new JMenuItem("Quit");
@@ -49,6 +52,17 @@ public class GameFrame extends JFrame {
         quitItem.setMnemonic(KeyEvent.VK_Q);
         quitItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, ActionEvent.CTRL_MASK));
         fileMenu.add(quitItem);
+        
+        //MusicMenu
+        JMenu musicMenu = new JMenu("Music");
+        menuBar.add(musicMenu);
+        JMenuItem startMusic = new JMenuItem("Start Music");
+        JMenuItem stopMusic = new JMenuItem("Stop Music");
+        startMusic.addActionListener(e -> {SoundPlayer.playMusic();});
+        stopMusic.addActionListener(e -> {SoundPlayer.stopMusic();});
+        musicMenu.add(startMusic);
+        musicMenu.add(stopMusic);
+        
         setJMenuBar(menuBar);
     }
 
