@@ -20,6 +20,8 @@ public class BattleWorker extends SwingWorker<Boolean,Void> {
     private Enemy enemy;
     private OutputController outputController;
     private WorldData worldData;
+    private int playerXPos;
+    private int playerYPos;
 
     public BattleWorker() {
     }
@@ -36,6 +38,8 @@ public class BattleWorker extends SwingWorker<Boolean,Void> {
         this.enemy = enemy;
         this.outputController = outputController;
         this.worldData = worldData;
+        this.playerXPos = player.getX();
+        this.playerYPos = player.getY();
     }
     
     public Boolean doBattle(){
@@ -44,7 +48,25 @@ public class BattleWorker extends SwingWorker<Boolean,Void> {
         
         outputController.print("Striden startar!");
         while(playerStats.getHealth() > 0){
+            if(playerEscaped()){
+                outputController.print("Du lyckades fly!");
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                return false;
+            }
             outputController.addLine("Leif attackerar sin motståndare och gör " + Attack.doAttack(player, enemy) + " enheter skada");
+            if(playerEscaped()){
+                outputController.print("Du lyckades fly!");
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                return false;
+            }
             if(enemyStats.getHealth() <= 0){
                 try {
                     Thread.sleep(2000);
@@ -64,6 +86,15 @@ public class BattleWorker extends SwingWorker<Boolean,Void> {
                 e.printStackTrace();
             }
             outputController.addLine("Fienden ger igen och gör " + Attack.doAttack(enemy, player) + " enheter skada");
+            if(playerEscaped()){
+                outputController.print("Du lyckades fly!");
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                return false;
+            }
             try {
                 Thread.sleep(2000);
             } catch (InterruptedException e) {
@@ -71,5 +102,9 @@ public class BattleWorker extends SwingWorker<Boolean,Void> {
             }
         }
         return false;
+    }
+
+    private boolean playerEscaped() {
+        return !(playerYPos == player.getY() && playerXPos == player.getX());
     }
 }
