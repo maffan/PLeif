@@ -52,7 +52,7 @@
 	<cell><x>0</x><y>3</y><description>Du ser ingenting alls</description></cell>
     <cell><x>1</x><y>3</y><item>sword,Silversvärder LVL3,3</item><description>En bra väg</description></cell>
     <cell><x>2</x><y>3</y><type>tree,1</type><description>Här kan man va</description></cell>
-    <cell><x>3</x><y>3</y><type>water,1</type><description>Framåt framåt!</description></cell>
+    <cell><x>3</x><y>3</y><type>waterUpDown,1</type><description>Framåt framåt!</description></cell>
     <cell><x>4</x><y>3</y><type>water,1</type><description>En fin gång</description></cell>
     <cell><x>5</x><y>3</y><type>water,1</type><description>Grönt är de här</description></cell>
     <cell><x>6</x><y>3</y><type>stone,1</type><description>Schweingt nais</description></cell>
