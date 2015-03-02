@@ -68,15 +68,15 @@ public class MapFileReader
                 	switch (element.getElementsByTagName("enemy").item(0).getTextContent())
                 	{
                 		case "1":
-                			stats = MobStats.EnemyLVL1; break;
+                			stats = MobStats.getEnemyLVL1(); break;
                 		case "2":
-                			stats = MobStats.EnemyLVL2; break;
+                			stats = MobStats.getEnemyLVL2(); break;
                 		case "3":
-                			stats = MobStats.EnemyLVL3; break;
+                			stats = MobStats.getEnemyLVL3(); break;
                 		case "4":
-                			stats = MobStats.EnemyLVL4; break;
+                			stats = MobStats.getEnemyLVL4(); break;
                 		case "5":
-                			stats = MobStats.Boss;
+                			stats = MobStats.getBoss();
                 	}
                     Enemy enemy = new Enemy(x, y, "", stats);
                 	enemies.add(enemy);

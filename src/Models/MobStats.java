@@ -88,4 +88,28 @@ public class MobStats
 		armour.setHealth(armour.getHealth() + rng.nextInt(6));
 		return armour;
 	}
+
+    
+    
+    public static Stats getBoss() {
+        return new Stats(125, 25, 30, 0.5,  0);
+    }
+
+    public static Stats getEnemyLVL1() {
+        return new Stats(30,  10, 5,  0.1,  20);
+    }
+
+    public static Stats getEnemyLVL2() {
+        return new Stats(50,  10, 10, 0.1,  20);
+    }
+
+
+    public static Stats getEnemyLVL3() {
+        return new Stats(70,  15, 15, 0.2,  20);
+    }
+
+
+    public static Stats getEnemyLVL4() {
+        return new Stats(100, 20, 20, 0.2,  20);
+    }
 }
