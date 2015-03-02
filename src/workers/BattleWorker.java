@@ -46,6 +46,11 @@ public class BattleWorker extends SwingWorker<Boolean,Void> {
         while(playerStats.getHealth() > 0){
             outputController.addLine("Leif attackerar sin motståndare och gör " + Attack.doAttack(player, enemy) + " enheter skada");
             if(enemyStats.getHealth() <= 0){
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 outputController.addLine("Monstret dör en hemsk och smärtsam död");
                 worldData.removeEnemy(enemy);
                 BoardPanelProvider.getBoardPanel().revalidate();
