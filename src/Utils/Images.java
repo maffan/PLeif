@@ -15,6 +15,12 @@ public class Images
 	public BufferedImage tree;
 	public BufferedImage stone;
 	public BufferedImage water;
+	public BufferedImage waterRightLeft;
+	public BufferedImage waterUpDown;
+	public BufferedImage waterTurnLeft;
+	public BufferedImage waterEndRight;
+	public BufferedImage waterEndLeft;
+	
 	
 	//Item
 	public BufferedImage armour;
