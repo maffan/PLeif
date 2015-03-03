@@ -2,6 +2,7 @@ package Controllers;
 
 import Chat.*;
 import Models.*;
+import Utils.OutputPanelProvider;
 import Utils.SoundPlayer;
 import Views.BoardPanel;
 import Views.InputPanel;
@@ -122,12 +123,15 @@ public class InputController implements ActionListener {
 			} catch (IOException e) {}
 		}
 		
-		//Kommandon för test skall implementeras i GUI senare
+		//Kommandon fï¿½r test skall implementeras i GUI senare
         else if(command[0].equals("playmusic") || command[0].equals("startmusic")) {
         	SoundPlayer.playMusic();
         }
         else if(command[0].equals("stopmusic")) {
         	SoundPlayer.stopMusic();
+        }
+        else{
+            new OutputController(OutputPanelProvider.getOutputPanel()).print("Felaktigt kommando");
         }
 		}
 }

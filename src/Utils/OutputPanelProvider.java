@@ -8,8 +8,8 @@ import Views.OutputPanel;
 public class OutputPanelProvider {
     private static OutputPanel outputPanel;
     
-    public static void setOutPutPanel(OutputPanel outputPanel){
-        outputPanel = outputPanel;
+    public static void setOutPutPanel(OutputPanel panel){
+        outputPanel = panel;
     }
     
     public static OutputPanel getOutputPanel(){

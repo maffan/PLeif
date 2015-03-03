@@ -21,9 +21,9 @@ public class StatusPanel extends JPanel{
     }
 
     private void makePanels() {
-        inputPanel = new InputPanel();
         outputPanel = new OutputPanel();
         OutputPanelProvider.setOutPutPanel(outputPanel);
+        inputPanel = new InputPanel();
         add(outputPanel, BorderLayout.CENTER);
         add(inputPanel,BorderLayout.SOUTH);
     }
