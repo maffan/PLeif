@@ -181,6 +181,11 @@ public class BoardPanel extends JPanel implements Observer
 	{
 		return world.player;
 	}
+	
+	public void reset(){
+		world = FilesRW.loadFrom(GamePaths.StartState);
+		SetupWorldObservers();
+	}
 
 	public void save()
 	{

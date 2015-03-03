@@ -2,7 +2,10 @@ package Views;
 
 import Controllers.InputController;
 import Utils.BoardPanelProvider;
+import Utils.FilesRW;
+import Utils.GamePaths;
 import Utils.SoundPlayer;
+import Models.WorldData;
 
 import javax.swing.*;
 
@@ -39,6 +42,7 @@ public class GameFrame extends JFrame {
         pack();
         setLocationRelativeTo(null);
         setVisible(true);
+        FilesRW.saveTo(BoardPanel.world, GamePaths.StartState);
     }
 
     private void makeMenu() {
@@ -47,11 +51,32 @@ public class GameFrame extends JFrame {
         //FileMenu
         JMenu fileMenu = new JMenu("File");
         menuBar.add(fileMenu);
+        
+        JMenuItem newItem = new JMenuItem("New game");
+        newItem.addActionListener(e -> {boardPanel.reset();});
+        newItem.setMnemonic(KeyEvent.VK_N);
+        newItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, ActionEvent.CTRL_MASK));
+        fileMenu.add(newItem);
+        
+        
+        JMenuItem saveItem = new JMenuItem("Save");
+        saveItem.addActionListener(e -> {boardPanel.save();});
+        saveItem.setMnemonic(KeyEvent.VK_S);
+        saveItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, ActionEvent.CTRL_MASK));
+        fileMenu.add(saveItem);
+        
+        JMenuItem loadItem = new JMenuItem("Load");
+        loadItem.addActionListener(e -> {boardPanel.load();});
+        loadItem.setMnemonic(KeyEvent.VK_O);
+        loadItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, ActionEvent.CTRL_MASK));
+        fileMenu.add(loadItem);
+        
         JMenuItem quitItem = new JMenuItem("Quit");
         quitItem.addActionListener(e -> {System.exit(0);});
         quitItem.setMnemonic(KeyEvent.VK_Q);
         quitItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, ActionEvent.CTRL_MASK));
         fileMenu.add(quitItem);
+        
         
         //MusicMenu
         JMenu musicMenu = new JMenu("Music");
