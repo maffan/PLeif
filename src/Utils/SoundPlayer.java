@@ -21,7 +21,7 @@ public class SoundPlayer {
 		    	System.out.println(e);
 		    }
 		
-		//Ny thread för bakrund och starta låten
+		//Ny thread fï¿½r bakrund och starta lï¿½ten
 		new Thread() {
 			public void run(){
 				try { player.play(); }

@@ -7,9 +7,9 @@ import java.util.List;
 
 public class Player extends Entity {
 	private Stats stats;
-	private Equippable armor;
-	private Equippable weapon;
-	private Equippable medallion;
+	private Armour armor;
+	private Weapon weapon;
+	private Item medallion;
 	private List<Item> items;
 
 	public Player(int x, int y, String name, Stats stats) {
@@ -79,11 +79,11 @@ public class Player extends Entity {
 		items.remove(item);
 	}
 
-	public void equip(Equippable item) {
+	public void equip(Item item) {
 
 	}
 
-	public void unEquip(Equippable item) {
+	public void unEquip(Item item) {
 
 	}
 
