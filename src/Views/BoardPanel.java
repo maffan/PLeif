@@ -107,6 +107,10 @@ public class BoardPanel extends JPanel implements Observer
 				{
 					g.drawImage(images.waterEndLeft, pX, pY, null);
 				}
+				else if(e.getSpriteID() == SpriteID.WaterEndDown)
+				{
+					g.drawImage(images.waterEndDown, pX, pY, null);
+				} 
 			}
 
 		}

@@ -20,6 +20,7 @@ public class Images
 	public BufferedImage waterTurnLeft;
 	public BufferedImage waterEndRight;
 	public BufferedImage waterEndLeft;
+	public BufferedImage waterEndDown;
 	
 	
 	//Item
@@ -42,9 +43,10 @@ public class Images
 		water = ImageLoader.LoadImage(SpriteID.Water);
 		waterRightLeft = ImageLoader.LoadImage(SpriteID.WaterRightLeft);
 		waterUpDown = ImageLoader.LoadImage(SpriteID.WaterUpDown);
-		waterTurnLeft = ImageLoader.LoadImage(SpriteID.WaterUpDown);
+		waterTurnLeft = ImageLoader.LoadImage(SpriteID.WaterTurnLeft);
 		waterEndRight = ImageLoader.LoadImage(SpriteID.WaterEndRight);
 		waterEndLeft = ImageLoader.LoadImage(SpriteID.WaterEndLeft);
+		waterEndDown = ImageLoader.LoadImage(SpriteID.WaterEndDown);
 		
 		
 		
