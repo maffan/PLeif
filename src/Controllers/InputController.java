@@ -1,6 +1,6 @@
 package Controllers;
 
-import Chat.Chat;
+import Chat.*;
 import Models.*;
 import Utils.SoundPlayer;
 import Views.BoardPanel;

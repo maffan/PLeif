@@ -69,7 +69,7 @@ public class Chat extends JFrame implements ActionListener{
 			try{so.leaveGroup(iadr);} catch (IOException ie) {}
 			so.close();
 			dispose();
-			System.exit(0);
+			//System.exit(0);
 		}
 	}
 }
