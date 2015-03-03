@@ -1,7 +1,9 @@
 package Views;
 
 import javax.swing.*;
+
 import java.awt.*;
+import java.util.Observer;
 
 /**
  * Created by Marcus on 2/4/2015.
@@ -10,7 +12,7 @@ public class InfoPanel extends JPanel{
     private static NamePanel namePanel;
     private PortraitPanel portraitPanel;
     private static StatsInfoPanel statsInfoPanel;
-    private EquippedPanel equippedPanel;
+    private static EquippedPanel equippedPanel;
     private static InventoryPanel inventoryPanel;
 
     public InfoPanel(){
@@ -46,5 +48,9 @@ public class InfoPanel extends JPanel{
 
 	public static StatsInfoPanel getStatsInfoPanelInstance() {
 		return statsInfoPanel;
+	}
+
+	public static Observer getEquippedPanelInstance() {
+		return equippedPanel;
 	}
 }

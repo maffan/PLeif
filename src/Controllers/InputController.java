@@ -145,6 +145,11 @@ public class InputController implements ActionListener {
 				output.addLine("Inge på backen ju!");
 			}
 		}
+		else if(command[0].equals("equip"))
+		{
+			if(command.length == 2)
+				output.addLine(player.equip(command[1]));
+		}
 		else{
 			output.addLine("Felaktigt kommando");
 		}
