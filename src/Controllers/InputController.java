@@ -2,6 +2,7 @@ package Controllers;
 
 import Chat.*;
 import Models.*;
+import Utils.Help;
 import Utils.OutputPanelProvider;
 import Utils.SoundPlayer;
 import Views.BoardPanel;
@@ -102,9 +103,12 @@ public class InputController implements ActionListener {
 				lookController.look(command[1],player);
 			}
 		}
-		else if(command[0].equals("attack") || command[0].equals("a")){
-			attackController.attack(command[1]);
-		}
+        else if(command[0].equals("attack") || command[0].equals("a")){
+            attackController.attack(command[1]);
+        }
+        else if(command[0].equals("reset") || command[0].equals("new")){
+        	boardPanel.reset();
+        }
 		else if(command[0].equals("save"))
 		{
 			boardPanel.save();
@@ -125,8 +129,15 @@ public class InputController implements ActionListener {
 					new Chat();	//with a default name if no name was specified
 				}
 			} catch (IOException e) {}
-		}
-
+		}		
+        else if(command[0].equals("help")||command[0].equals("?")){
+        	if(command.length>1){
+        		Help.help(command[1]);
+        	} else {
+        		Help.help();
+        	}
+        }
+		
 		//Kommandon f�r test skall implementeras i GUI senare
 		else if(command[0].equals("playmusic") || command[0].equals("startmusic")) {
 			SoundPlayer.playMusic();
