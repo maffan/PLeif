@@ -124,6 +124,6 @@
     <cell><x>6</x><y>9</y><type>stone,1</type><description>Schweingt nais</description></cell>
     <cell><x>7</x><y>9</y><type>stone,1</type><description>DANGER DANGER?</description></cell>
     <cell><x>8</x><y>9</y><type>tree,1</type><description>Svänger vänge snart tro?</description></cell>
-    <cell><x>9</x><y>9</y><enemy>2</enemy><description>BOSS!</description></cell>
+    <cell><x>9</x><y>9</y><enemy>5</enemy><description>BOSS!</description></cell>
 
 </map>
