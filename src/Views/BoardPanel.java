@@ -146,6 +146,10 @@ public class BoardPanel extends JPanel implements Observer
 				{
 					g.drawImage(images.enemy, pX, pY, null);
 				}
+				else if(e.getSpriteID() == SpriteID.Boss)
+				{
+					g.drawImage(images.boss, pX, pY, null);
+				}
 			}
 		}
 

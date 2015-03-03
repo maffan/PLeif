@@ -65,6 +65,7 @@ public class MapFileReader
                 if(element.getElementsByTagName("enemy").getLength() != 0)
                 {
                 	Stats stats = null;
+                	SpriteID id = SpriteID.Enemy;
                 	switch (element.getElementsByTagName("enemy").item(0).getTextContent())
                 	{
                 		case "1":
@@ -77,8 +78,9 @@ public class MapFileReader
                 			stats = MobStats.getEnemyLVL4(); break;
                 		case "5":
                 			stats = MobStats.getBoss();
+                			id = SpriteID.Boss;
                 	}
-                    Enemy enemy = new Enemy(x, y, "", stats);
+                    Enemy enemy = new Enemy(x, y, id, "", stats);
                 	enemies.add(enemy);
                     aes.add(enemy);
                 }

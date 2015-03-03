@@ -31,6 +31,7 @@ public class Images
 	public BufferedImage player;
 	public BufferedImage enemy;
 	public BufferedImage bg;
+	public BufferedImage boss;
 	
 	/**
 	 * Loads all images to be used.
@@ -47,7 +48,7 @@ public class Images
 		waterEndRight = ImageLoader.LoadImage(SpriteID.WaterEndRight);
 		waterEndLeft = ImageLoader.LoadImage(SpriteID.WaterEndLeft);
 		waterEndDown = ImageLoader.LoadImage(SpriteID.WaterEndDown);
-		
+		boss = ImageLoader.LoadImage(SpriteID.Boss);
 		
 		
 		//Items
