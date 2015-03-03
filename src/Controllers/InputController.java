@@ -1,5 +1,6 @@
 package Controllers;
 
+import Chat.Chat;
 import Models.*;
 import Utils.SoundPlayer;
 import Views.BoardPanel;
@@ -8,6 +9,7 @@ import Views.StatusPanel;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 
 /**
@@ -109,6 +111,16 @@ public class InputController implements ActionListener {
         else if(command[0].equals("exit") || command[0].equals("quit")){
             System.exit(0);
         }
+		
+        else if (command[0].equals("chat")) {	//creates a chat window and connects
+			try {
+				if (command.length>1) { 
+					new Chat(command[1], "234.235.236.237", 9999);	//with a desired name 
+				} else {
+					new Chat();	//with a default name if no name was specified
+				}
+			} catch (IOException e) {}
+		}
 		
 		//Kommandon för test skall implementeras i GUI senare
         else if(command[0].equals("playmusic") || command[0].equals("startmusic")) {
