@@ -131,7 +131,7 @@ public class InputController implements ActionListener {
         	SoundPlayer.stopMusic();
         }
         else{
-            new OutputController(OutputPanelProvider.getOutputPanel()).print("Felaktigt kommando");
+            new OutputController(OutputPanelProvider.getOutputPanel()).addLine("Felaktigt kommando");
         }
 		}
 }

@@ -27,12 +27,17 @@ public class OutputPanel extends JPanel {
     }
 
     public void addLine(String text) {
-        if(rows < 3) {
+        if(textArea.getText().equals("")){
+            setText(text);
+            return;
+        }
+        if(rows < 2) {
             textArea.append("\n" + text);
             rows++;
         }
         else{
             setText(text);
+            rows = 0;
         }
     }
 }
