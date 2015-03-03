@@ -71,8 +71,17 @@ public class Player extends Entity {
 		return items;
 	}
 
-	public void pickUpItem(Item item) {
-		items.add(item);
+	public boolean pickUpItem() {
+		boolean itemExists = false;
+		for(int i = 0; i < BoardPanel.world.items.size(); i++)
+		{
+			if(BoardPanel.world.items.get(i).getX() == getX() &&BoardPanel.world.items.get(i).getY() == getY())
+			{
+				itemExists = true;
+				addItem(BoardPanel.world.items.remove(i));
+			}
+		}
+		return itemExists;
 	}
 
 	public void dropItem(Item item) {
