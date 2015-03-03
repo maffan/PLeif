@@ -1,5 +1,7 @@
 package Controllers;
 
+import Utils.BoardPanelProvider;
+import Utils.OutputPanelProvider;
 import Views.OutputPanel;
 
 /**
@@ -9,7 +11,7 @@ public class OutputController {
     public OutputPanel outputPanel;
     
     public OutputController(){
-        
+        this.outputPanel = OutputPanelProvider.getOutputPanel();
     }
 
     public OutputController(OutputPanel outputPanel) {

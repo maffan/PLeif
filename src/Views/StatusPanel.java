@@ -1,5 +1,7 @@
 package Views;
 
+import Utils.OutputPanelProvider;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -21,6 +23,7 @@ public class StatusPanel extends JPanel{
     private void makePanels() {
         inputPanel = new InputPanel();
         outputPanel = new OutputPanel();
+        OutputPanelProvider.setOutPutPanel(outputPanel);
         add(outputPanel, BorderLayout.CENTER);
         add(inputPanel,BorderLayout.SOUTH);
     }
