@@ -23,12 +23,11 @@ public class InventoryPanel extends JPanel implements Observer
 
 		Player player = BoardPanel.getPlayer();
 		
-		int offset = 40;
-		g.drawString("You got:", 20, 40);
-		for(Item e: player.getItems())
+		int offset = 20;
+		for(int i = 0; i < player.getItems().size(); i++)
 		{
 			offset += 15;
-			g.drawString(e.getName(), 20, offset);
+			g.drawString((i+1) + ": " + player.getItems().get(i).getName(), 20, offset);
 		}
 	}
 

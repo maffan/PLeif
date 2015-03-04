@@ -4,6 +4,7 @@ import Controllers.InputController;
 import Utils.BoardPanelProvider;
 import Utils.FilesRW;
 import Utils.GamePaths;
+import Utils.Help;
 import Utils.SoundPlayer;
 import Models.WorldData;
 
@@ -77,7 +78,6 @@ public class GameFrame extends JFrame {
         quitItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, ActionEvent.CTRL_MASK));
         fileMenu.add(quitItem);
         
-        
         //MusicMenu
         JMenu musicMenu = new JMenu("Music");
         menuBar.add(musicMenu);
@@ -87,6 +87,13 @@ public class GameFrame extends JFrame {
         stopMusic.addActionListener(e -> {SoundPlayer.stopMusic();});
         musicMenu.add(startMusic);
         musicMenu.add(stopMusic);
+        
+        //HelpMenu
+        JMenu helpMenu = new JMenu("Help");
+        menuBar.add(helpMenu);
+        JMenuItem helpItem = new JMenuItem("Help");
+        helpItem.addActionListener(e -> {Help.help();});
+        helpMenu.add(helpItem);
         
         setJMenuBar(menuBar);
     }
