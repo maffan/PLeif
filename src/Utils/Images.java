@@ -32,6 +32,9 @@ public class Images
 	public BufferedImage enemy;
 	public BufferedImage bg;
 	public BufferedImage boss;
+	public BufferedImage playerArmour;
+	public BufferedImage playerSword;
+	public BufferedImage playerArmourSword;
 	
 	/**
 	 * Loads all images to be used.
@@ -48,7 +51,7 @@ public class Images
 		waterEndRight = ImageLoader.LoadImage(SpriteID.WaterEndRight);
 		waterEndLeft = ImageLoader.LoadImage(SpriteID.WaterEndLeft);
 		waterEndDown = ImageLoader.LoadImage(SpriteID.WaterEndDown);
-		boss = ImageLoader.LoadImage(SpriteID.Boss);
+		
 		
 		
 		//Items
@@ -57,7 +60,11 @@ public class Images
 		
 		//Div
 		player = ImageLoader.LoadImage(SpriteID.Player);
+		playerArmour = ImageLoader.LoadImage(SpriteID.PlayerArmour);
+		playerSword = ImageLoader.LoadImage(SpriteID.PlayerSword);
+		playerArmourSword = ImageLoader.LoadImage(SpriteID.PlayerArmourSword);
 		enemy = ImageLoader.LoadImage(SpriteID.Enemy);
+		boss = ImageLoader.LoadImage(SpriteID.Boss);
 		bg = ImageLoader.LoadImage(SpriteID.Bg);
 	}
 }

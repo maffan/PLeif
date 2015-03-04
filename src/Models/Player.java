@@ -80,7 +80,7 @@ public class Player extends Entity {
 	}
 
 	public void equip(Item item) {
-
+		
 	}
 
 	public void unEquip(Item item) {

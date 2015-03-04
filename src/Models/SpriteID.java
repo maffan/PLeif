@@ -7,7 +7,9 @@ package Models;
  */
 public enum SpriteID
 {
-	Path, Wall, Enemy, Boss, Player, Test, Sword, Shield, None, Tree, Bg, Armour, Water, WaterRightLeft, WaterUpDown,	 WaterTurnLeft, WaterEndRight, WaterEndLeft, WaterEndDown, Stone;
+	Enemy, Boss, Player, PlayerArmour, PlayerSword, PlayerArmourSword, Sword, Shield, None,
+	Tree, Bg, Armour, 
+	Water, WaterRightLeft, WaterUpDown, WaterTurnLeft, WaterEndRight, WaterEndLeft,WaterEndDown, Stone;
 	
 	/**
 	 * Compares a string to enums and return
