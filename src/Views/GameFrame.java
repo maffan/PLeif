@@ -44,6 +44,11 @@ public class GameFrame extends JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
         FilesRW.saveTo(BoardPanel.world, GamePaths.StartState);
+        
+        //Reset audio and start bgmusic
+        VolumeControl.changeVolume(0.8f);
+        SoundPlayer.playBg();
+        
     }
 
     private void makeMenu() {
@@ -81,16 +86,36 @@ public class GameFrame extends JFrame {
         //MusicMenu
         JMenu musicMenu = new JMenu("Music");
         menuBar.add(musicMenu);
+        
         JMenuItem startMusic = new JMenuItem("Start Music");
-        JMenuItem stopMusic = new JMenuItem("Stop Music");
         startMusic.addActionListener(e -> {SoundPlayer.playBg();});
-        stopMusic.addActionListener(e -> {SoundPlayer.stopMusic();});
         musicMenu.add(startMusic);
+                
+        JMenuItem stopMusic = new JMenuItem("Stop Music");        
+        stopMusic.addActionListener(e -> {SoundPlayer.stopMusic();});        
         musicMenu.add(stopMusic);
+        
+        JMenuItem volume = new JMenuItem("Volume");
+        volume.addActionListener(e -> { 
+        	VolumeControl.changeVolume(
+        			Float.parseFloat(
+        			JOptionPane.showInputDialog(
+        					this,
+        					"Current Volume: " +String.valueOf(VolumeControl.getVolume()) +"\n"
+        					+"Enter a value between 0 to 1 (i.e 0.34)",        					
+        					"Enter Value"
+        					)
+        				)
+        			); 
+        });
+        volume.setMnemonic(KeyEvent.VK_V);
+        volume.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V, ActionEvent.ALT_MASK));
+        musicMenu.add(volume);
         
         //HelpMenu
         JMenu helpMenu = new JMenu("Help");
         menuBar.add(helpMenu);
+        
         JMenuItem helpItem = new JMenuItem("Help");
         helpItem.addActionListener(e -> {Help.help();});
         helpMenu.add(helpItem);

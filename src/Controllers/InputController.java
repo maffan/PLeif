@@ -150,8 +150,17 @@ public class InputController implements ActionListener {
 			if(command.length == 2)
 				output.addLine(player.equip(command[1]));
 		}
+		else if(command[0].equals("volume"))
+		{
+			if(command.length == 1){
+			}
+			else{
+			VolumeControl.changeVolume(Float.parseFloat(command[1]));
+			}
+			output.addLine("Volume: " +String.valueOf(VolumeControl.getVolume()));
+		}
 		else{
 			output.addLine("Felaktigt kommando");
-		}
+		}	
 	}
 }

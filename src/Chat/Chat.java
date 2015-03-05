@@ -50,7 +50,7 @@ public class Chat extends JFrame implements ActionListener{
 		input.addActionListener(this);
 		setSize(500, 300);
 		setVisible(true);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 	}
 	
 	private void sendMsg(String s){

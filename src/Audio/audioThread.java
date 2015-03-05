@@ -5,13 +5,13 @@ import javazoom.jl.player.Player;
 import java.io.FileInputStream;
 import java.io.BufferedInputStream;
 
-public class audioThread extends Thread {
+public class AudioThread extends Thread {
 
     private String file;
     private boolean loop;
     Player player;
 
-    public audioThread(String file, boolean loop) {
+    public AudioThread(String file, boolean loop) {
         this.file = file;
         this.loop = loop;
     }
