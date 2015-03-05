@@ -5,8 +5,8 @@ import Utils.BoardPanelProvider;
 import Utils.FilesRW;
 import Utils.GamePaths;
 import Utils.Help;
-import Utils.SoundPlayer;
 import Models.WorldData;
+import Audio.*;
 
 import javax.swing.*;
 
@@ -83,7 +83,7 @@ public class GameFrame extends JFrame {
         menuBar.add(musicMenu);
         JMenuItem startMusic = new JMenuItem("Start Music");
         JMenuItem stopMusic = new JMenuItem("Stop Music");
-        startMusic.addActionListener(e -> {SoundPlayer.playMusic();});
+        startMusic.addActionListener(e -> {SoundPlayer.playBg();});
         stopMusic.addActionListener(e -> {SoundPlayer.stopMusic();});
         musicMenu.add(startMusic);
         musicMenu.add(stopMusic);

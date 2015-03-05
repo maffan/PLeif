@@ -13,4 +13,6 @@ public class GamePaths
 	public static String Pictures = "./resources/pictures/";
 	public static String Map1 = "./Data/map1/map1.xml";
 	public static String BackgroundMusic = "./resources/audio/music/bgmusic.mp3";
+	public static String CombatMusic = "./resources/audio/music/combatmusic.mp3";
+	public static String EndMusic = "./resources/audio/music/endmusic.mp3";
 }
