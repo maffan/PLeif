@@ -64,10 +64,25 @@ public class BoardPanel extends JPanel implements Observer
 		g.drawImage(images.bg, 0, 0, null);
 
 		//Draw Player
-		int pX = world.player.getX()*gridSize;
-		int pY = world.player.getY()*gridSize;
-		g.drawImage(images.player, pX, pY, null);
-
+		int pX = getPlayer().getX()*gridSize;
+		int pY = getPlayer().getY()*gridSize;
+		
+		if(getPlayer().getSpriteID() == SpriteID.Player)
+		{
+			g.drawImage(images.player, pX, pY, null);
+		}
+		else if(getPlayer().getSpriteID() == SpriteID.PlayerArmour)
+		{
+			g.drawImage(images.playerArmour, pX, pY, null);
+		}
+		else if(getPlayer().getSpriteID() == SpriteID.PlayerSword)
+		{
+			g.drawImage(images.playerSword, pX, pY, null);
+		}
+		else if(getPlayer().getSpriteID() == SpriteID.PlayerArmourSword)
+		{
+			g.drawImage(images.playerArmourSword, pX, pY, null);
+		}
 		//Rita aestetics
 		if(!world.aes.isEmpty())
 		{

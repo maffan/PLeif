@@ -17,6 +17,19 @@ public class Player extends Entity {
 		this.stats = stats;
 		items = new LinkedList<Item>();
 	}
+	
+	public SpriteID getSpriteID(){
+		if(this.armour != null && this.weapon != null){
+			return SpriteID.PlayerArmourSword;
+		}
+		else if(this.weapon != null){
+			return SpriteID.PlayerSword;
+		}
+		else if(this.armour != null){
+			return SpriteID.PlayerArmour;
+		}
+		return SpriteID.Player;	
+	}
 
 	public void addItem(Item e) {
 		items.add(e);
