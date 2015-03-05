@@ -7,8 +7,8 @@ import java.util.List;
 
 public class Player extends Entity {
 	private Stats stats;
-	private Armour armor;
-	private Weapon weapon;
+	public Item armour;
+	public Item weapon;
 	private Item medallion;
 	private List<Item> items;
 
@@ -20,6 +20,12 @@ public class Player extends Entity {
 
 	public void addItem(Item e) {
 		items.add(e);
+		setChanged();
+		notifyObservers();
+	}
+	
+	public void removeItem(Item e) {
+		items.remove(e);
 		setChanged();
 		notifyObservers();
 	}
@@ -62,9 +68,53 @@ public class Player extends Entity {
 			System.out.println("move(): Invalid command");
 		}
 	}
-
-	public void removeItem(Item e) {
-		items.remove(e);
+	
+	public boolean pickUpItem() {
+		boolean itemExists = false;
+		for(int i = 0; i < BoardPanel.world.items.size(); i++)
+		{
+			if(BoardPanel.world.items.get(i).getX() == getX() &&BoardPanel.world.items.get(i).getY() == getY())
+			{
+				itemExists = true;
+				addItem(BoardPanel.world.items.remove(i));
+			}
+		}
+		return itemExists;
+	}
+	
+	public String equip(String id) {
+		if(!id.matches("\\d+"))
+		{
+			return "En siffra tack.";
+		}
+		else
+		{
+			int index = Integer.valueOf(id) - 1;
+			if(index >= items.size())
+			{
+				return "En annan siffra tack.";
+			}
+			else
+			{
+				if(items.get(index).getSpriteID() == SpriteID.Sword)
+				{
+					if(weapon != null)
+						return "Har redan ett vapen i hand.";
+					weapon = items.remove(index);
+					setChanged();
+					notifyObservers();
+				}
+				else if(items.get(index).getSpriteID() == SpriteID.Armour)
+				{
+					if(armour != null)
+						return "Har redan skydd";
+					armour = items.remove(index);
+					setChanged();
+					notifyObservers();
+				}
+				return "Nu e jag stark!";
+			}
+		}
 	}
 
 	public List<Item> getItems() {

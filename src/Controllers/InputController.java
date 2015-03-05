@@ -24,6 +24,8 @@ public class InputController implements ActionListener {
     private MoveController moveController;
     private LookController lookController;
     private AttackController attackController;
+    
+    private OutputController output;
 
 	private static final int mapWidth = 10;
 
@@ -43,6 +45,8 @@ public class InputController implements ActionListener {
         this.moveController = new MoveController(boardPanel);
         this.lookController = new LookController(new OutputController(statusPanel.getOutputPanel()));
         this.attackController = new AttackController(new OutputController(statusPanel.getOutputPanel()),boardPanel.world);
+        
+        this.output = new OutputController(OutputPanelProvider.getOutputPanel());
 	}
 
     /**
@@ -123,15 +127,31 @@ public class InputController implements ActionListener {
 			} catch (IOException e) {}
 		}
 		
-		//Kommandon f�r test skall implementeras i GUI senare
+		//Kommandon fï¿½r test skall implementeras i GUI senare
         else if(command[0].equals("playmusic") || command[0].equals("startmusic")) {
         	SoundPlayer.playMusic();
         }
         else if(command[0].equals("stopmusic")) {
         	SoundPlayer.stopMusic();
         }
-        else{
-            new OutputController(OutputPanelProvider.getOutputPanel()).addLine("Felaktigt kommando");
-        }
+        else if(command[0].equals("pickup"))
+		{
+			if(player.pickUpItem())
+			{
+				output.addLine("I found somethin' fancy!");
+			}
+			else
+			{
+				output.addLine("Inge p� backen ju!");
+			}
 		}
+		else if(command[0].equals("equip"))
+		{
+			if(command.length == 2)
+				output.addLine(player.equip(command[1]));
+		}
+		else{
+			output.addLine("Felaktigt kommando");
+		}
+	}
 }
