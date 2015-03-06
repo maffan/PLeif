@@ -3,6 +3,7 @@ package Controllers;
 import Audio.*;
 import Chat.*;
 import Models.*;
+import Utils.Help;
 import Utils.OutputPanelProvider;
 import Views.BoardPanel;
 import Views.InputPanel;
@@ -126,6 +127,15 @@ public class InputController implements ActionListener {
 				}
 			} catch (IOException e) {}
 		}
+		
+        else if(command[0].equals("help")||command[0].equals("?")){
+        	if(command.length>1){
+        		Help.help(command[1]);
+        	}
+        	else{
+        		Help.help();
+        	}
+        }
 		
 		//Kommandon fï¿½r test skall implementeras i GUI senare
         else if(command[0].equals("playmusic") || command[0].equals("startmusic")) {
