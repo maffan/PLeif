@@ -155,10 +155,14 @@ public class InputController implements ActionListener {
 				output.addLine("Inge p� backen ju!");
 			}
 		}
-		else if(command[0].equals("equip"))
+        else if(command[0].equals("equip"))
 		{
 			if(command.length == 2)
 				output.addLine(player.equip(command[1]));
+		}else if(command[0].equals("unequip"))
+		{
+			if(command.length == 2)
+				output.addLine(player.unequip(command[1]));
 		}
 		else if(command[0].equals("volume"))
 		{

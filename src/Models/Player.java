@@ -129,32 +129,25 @@ public class Player extends Entity {
 			}
 		}
 	}
+	
+	public String unequip(String string) {
+		if(string.equals("armour"))
+		{
+			addItem(armour);
+			armour = null;
+			return "Brr, kallt.";
+		}
+		if(string.equals("weapon"))
+		{
+			addItem(weapon);
+			weapon = null;
+			return "Nu e jag klen..";
+		}
+		
+		return "Nu skrev du fel va?";
+	}
 
 	public List<Item> getItems() {
 		return items;
-	}
-
-	public void pickUpItem(Item item) {
-		items.add(item);
-	}
-
-	public void dropItem(Item item) {
-		items.remove(item);
-	}
-
-	public void equip(Item item) {
-		
-	}
-
-	public void unEquip(Item item) {
-
-	}
-
-	public String getType() {
-		return "Player";
-	}
-
-	public void doTurn() {
-
 	}
 }
