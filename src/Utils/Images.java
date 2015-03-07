@@ -1,6 +1,7 @@
 package Utils;
 
 import java.awt.image.BufferedImage;
+import java.util.HashMap;
 
 import Models.SpriteID;
 
@@ -11,60 +12,56 @@ import Models.SpriteID;
  */
 public class Images
 {
-	//Aes
-	public BufferedImage tree;
-	public BufferedImage stone;
-	public BufferedImage water;
-	public BufferedImage waterRightLeft;
-	public BufferedImage waterUpDown;
-	public BufferedImage waterTurnLeft;
-	public BufferedImage waterEndRight;
-	public BufferedImage waterEndLeft;
-	public BufferedImage waterEndDown;
-	
-	
-	//Item
-	public BufferedImage armour;
-	public BufferedImage sword;
-	
-	//Div
-	public BufferedImage player;
-	public BufferedImage enemy;
-	public BufferedImage bg;
-	public BufferedImage boss;
-	public BufferedImage playerArmour;
-	public BufferedImage playerSword;
-	public BufferedImage playerArmourSword;
+	private HashMap<SpriteID, BufferedImage> images;
 	
 	/**
-	 * Loads all images to be used.
+	 * Adds all images to a list
 	 */
 	public Images()
 	{
+		images = new HashMap<SpriteID, BufferedImage>();
+		
 		//Aes
-		tree = ImageLoader.LoadImage(SpriteID.Tree);
-		stone = ImageLoader.LoadImage(SpriteID.Stone);
-		water = ImageLoader.LoadImage(SpriteID.Water);
-		waterRightLeft = ImageLoader.LoadImage(SpriteID.WaterRightLeft);
-		waterUpDown = ImageLoader.LoadImage(SpriteID.WaterUpDown);
-		waterTurnLeft = ImageLoader.LoadImage(SpriteID.WaterTurnLeft);
-		waterEndRight = ImageLoader.LoadImage(SpriteID.WaterEndRight);
-		waterEndLeft = ImageLoader.LoadImage(SpriteID.WaterEndLeft);
-		waterEndDown = ImageLoader.LoadImage(SpriteID.WaterEndDown);
-		
-		
+		addToList(SpriteID.Tree);
+		addToList(SpriteID.Stone);
+		addToList(SpriteID.Water);
+		addToList(SpriteID.WaterRightLeft);
+		addToList(SpriteID.WaterUpDown);
+		addToList(SpriteID.WaterTurnLeft);
+		addToList(SpriteID.WaterEndRight);
+		addToList(SpriteID.WaterEndLeft);
+		addToList(SpriteID.WaterEndDown);
 		
 		//Items
-		armour = ImageLoader.LoadImage(SpriteID.Armour);
-		sword = ImageLoader.LoadImage(SpriteID.Sword);
+		addToList(SpriteID.Armour);
+		addToList(SpriteID.Sword);
 		
 		//Div
-		player = ImageLoader.LoadImage(SpriteID.Player);
-		playerArmour = ImageLoader.LoadImage(SpriteID.PlayerArmour);
-		playerSword = ImageLoader.LoadImage(SpriteID.PlayerSword);
-		playerArmourSword = ImageLoader.LoadImage(SpriteID.PlayerArmourSword);
-		enemy = ImageLoader.LoadImage(SpriteID.Enemy);
-		boss = ImageLoader.LoadImage(SpriteID.Boss);
-		bg = ImageLoader.LoadImage(SpriteID.Bg);
+		addToList(SpriteID.Player);
+		addToList(SpriteID.PlayerArmour);
+		addToList(SpriteID.PlayerSword);
+		addToList(SpriteID.PlayerArmourSword);
+		addToList(SpriteID.Enemy);
+		addToList(SpriteID.Boss);
+		addToList(SpriteID.Bg);
+	}
+	
+	/**
+	 * Adds and loads all images into hashmap
+	 * @param id SpriteID of the image.
+	 */
+	private void addToList(SpriteID id)
+	{
+		images.put(id, ImageLoader.LoadImage(id));
+	}
+	
+	/**
+	 * Returns image by SpriteID
+	 * @param The sprite id to get.
+	 * @return Image based on id.
+	 */
+	public BufferedImage getImage(SpriteID id)
+	{
+		return images.get(id);
 	}
 }

@@ -61,28 +61,14 @@ public class BoardPanel extends JPanel implements Observer
 		height = getSize().height;
 
 		//Draw Backgorund
-		g.drawImage(images.bg, 0, 0, null);
+		g.drawImage(images.getImage(SpriteID.Bg), 0, 0, null);
 
 		//Draw Player
 		int pX = getPlayer().getX()*gridSize;
 		int pY = getPlayer().getY()*gridSize;
 		
-		if(getPlayer().getSpriteID() == SpriteID.Player)
-		{
-			g.drawImage(images.player, pX, pY, null);
-		}
-		else if(getPlayer().getSpriteID() == SpriteID.PlayerArmour)
-		{
-			g.drawImage(images.playerArmour, pX, pY, null);
-		}
-		else if(getPlayer().getSpriteID() == SpriteID.PlayerSword)
-		{
-			g.drawImage(images.playerSword, pX, pY, null);
-		}
-		else if(getPlayer().getSpriteID() == SpriteID.PlayerArmourSword)
-		{
-			g.drawImage(images.playerArmourSword, pX, pY, null);
-		}
+		g.drawImage(images.getImage(getPlayer().getSpriteID()), pX, pY, null);
+
 		//Rita aestetics
 		if(!world.aes.isEmpty())
 		{
@@ -90,45 +76,9 @@ public class BoardPanel extends JPanel implements Observer
 			{
 				pX = e.getX()*gridSize;
 				pY = e.getY()*gridSize;
-
-				if(e.getSpriteID() == SpriteID.Tree)
-				{
-					g.drawImage(images.tree, pX, pY, null);
-				}
-				else if(e.getSpriteID() == SpriteID.Stone)
-				{
-					g.drawImage(images.stone, pX, pY, null);
-				}
-				else if(e.getSpriteID() == SpriteID.Water)
-				{
-					g.drawImage(images.water, pX, pY, null);
-				}
-				else if(e.getSpriteID() == SpriteID.WaterRightLeft)
-				{
-					g.drawImage(images.waterRightLeft, pX, pY, null);
-				}
-				else if(e.getSpriteID() == SpriteID.WaterUpDown)
-				{
-					g.drawImage(images.waterUpDown, pX, pY, null);
-				}
-				else if(e.getSpriteID() == SpriteID.WaterTurnLeft)
-				{
-					g.drawImage(images.waterTurnLeft, pX, pY, null);
-				}
-				else if(e.getSpriteID() == SpriteID.WaterEndRight)
-				{
-					g.drawImage(images.waterEndRight, pX, pY, null);
-				}
-				else if(e.getSpriteID() == SpriteID.WaterEndLeft)
-				{
-					g.drawImage(images.waterEndLeft, pX, pY, null);
-				}
-				else if(e.getSpriteID() == SpriteID.WaterEndDown)
-				{
-					g.drawImage(images.waterEndDown, pX, pY, null);
-				} 
+				
+				g.drawImage(images.getImage(e.getSpriteID()), pX, pY, null);
 			}
-
 		}
 
 		//Rita items
@@ -138,15 +88,8 @@ public class BoardPanel extends JPanel implements Observer
 			{
 				pX = e.getX()*gridSize;
 				pY = e.getY()*gridSize;
-
-				if(e.getSpriteID() == SpriteID.Armour)
-				{
-					g.drawImage(images.armour, pX, pY, null);
-				}
-				else if(e.getSpriteID() == SpriteID.Sword)
-				{
-					g.drawImage(images.sword, pX, pY, null);
-				}
+				
+				g.drawImage(images.getImage(e.getSpriteID()), pX, pY, null);
 			}
 		}
 
@@ -157,25 +100,10 @@ public class BoardPanel extends JPanel implements Observer
 			{
 				pX = e.getX()*gridSize;
 				pY = e.getY()*gridSize;
-
-				if(e.getSpriteID() == SpriteID.Enemy)
-				{
-					g.drawImage(images.enemy, pX, pY, null);
-				}
-				else if(e.getSpriteID() == SpriteID.Boss)
-				{
-					g.drawImage(images.boss, pX, pY, null);
-				}
+				
+				g.drawImage(images.getImage(e.getSpriteID()), pX, pY, null);
 			}
 		}
-
-		//		// Draw gridlines.
-		//		g.setColor(Color.black);
-		//		for (int i = 0; i < gridSize*height; i++)
-		//			g.drawLine(0, i * gridSize, width, i * gridSize);
-		//
-		//		for (int i = 0; i < gridSize*width; i++)
-		//			g.drawLine(i * gridSize, 0, i * gridSize, height);
 	}
 
 	private void SetupWorld()
