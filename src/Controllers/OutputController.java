@@ -1,6 +1,5 @@
 package Controllers;
 
-import Utils.BoardPanelProvider;
 import Utils.OutputPanelProvider;
 import Views.OutputPanel;
 

@@ -6,7 +6,6 @@ import Models.Player;
 import Models.Stats;
 import Models.WorldData;
 import Utils.BoardPanelProvider;
-import Views.BoardPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -41,7 +40,7 @@ public class BattleWorker extends SwingWorker<Boolean,Void> {
         this.playerYPos = player.getY();
     }
     
-    public Boolean doBattle(){
+    private Boolean doBattle(){
         Stats playerStats = player.getStats();
         Stats enemyStats = enemy.getStats();
         

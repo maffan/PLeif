@@ -3,7 +3,6 @@ package Models;
 import java.awt.Point;
 import java.io.File;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -17,7 +16,6 @@ import Utils.MapFileReader;
 public class WorldData implements Serializable
 {
 	public Player player;
-	public List<Entity> entities;
 	private HashMap<Point, String> mapDescriptions;
 	public List<Enemy> enemies;
 	public List<Item> items;
@@ -29,7 +27,6 @@ public class WorldData implements Serializable
 	 */
 	public WorldData(String mapPath)
 	{
-		entities = new ArrayList<Entity>();
 		mapDescriptions = new HashMap<Point, String>();
 		
         MapFileReader fileReader = new MapFileReader(new File(mapPath));

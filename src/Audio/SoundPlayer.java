@@ -6,7 +6,6 @@ import Utils.GamePaths;
 public class SoundPlayer {
 	private static AudioThread audio;
 	
-	
 	public static void playBg(){
 		if(audio != null && (! audio.player.isComplete()) ){
 			audio.close();

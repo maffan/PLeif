@@ -11,7 +11,6 @@ public class Player extends Entity {
 	private Stats stats;
 	public Item armour;
 	public Item weapon;
-	private Item medallion;
 	private List<Item> items;
 	
 	private int xp;
@@ -37,14 +36,8 @@ public class Player extends Entity {
 		return SpriteID.Player;	
 	}
 
-	public void addItem(Item e) {
+	private void addItem(Item e) {
 		items.add(e);
-		setChanged();
-		notifyObservers();
-	}
-	
-	public void removeItem(Item e) {
-		items.remove(e);
 		setChanged();
 		notifyObservers();
 	}

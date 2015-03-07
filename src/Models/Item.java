@@ -10,10 +10,6 @@ public class Item extends Entity {
 
     }
 
-    public Item(Stats stats){
-        this.stats = stats;
-    }
-
     public Item(int x, int y, String name, Stats stats, SpriteID id){
         super(x, y, name, id);
         this.stats = stats;

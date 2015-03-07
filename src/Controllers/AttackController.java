@@ -5,7 +5,6 @@ import Models.WorldData;
 import Workers.BattleWorker;
 
 import java.awt.*;
-import java.util.concurrent.ExecutionException;
 
 /**
  * Created by Marcus on 2/27/2015.

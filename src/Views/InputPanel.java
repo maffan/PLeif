@@ -13,10 +13,6 @@ public class InputPanel extends JPanel {
     public InputPanel(){
         init();
     }
-    public InputPanel(ActionListener listener){
-        init();
-        addSubmitController(listener);
-    }
 
     private void init() {
         initFields();

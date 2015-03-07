@@ -22,7 +22,6 @@ public class InputController implements ActionListener {
 	private BoardPanel boardPanel;
 	private Player player;
     
-    private MoveController moveController;
     private LookController lookController;
     private AttackController attackController;
     
@@ -43,9 +42,8 @@ public class InputController implements ActionListener {
 		this.inputPanel = statusPanel.getInputPanel();
 		this.boardPanel = boardPanel;
 		this.player = BoardPanel.getPlayer();
-        this.moveController = new MoveController(boardPanel);
         this.lookController = new LookController(new OutputController(statusPanel.getOutputPanel()));
-        this.attackController = new AttackController(new OutputController(statusPanel.getOutputPanel()),boardPanel.world);
+        this.attackController = new AttackController(new OutputController(statusPanel.getOutputPanel()),BoardPanel.world);
         
         this.output = new OutputController(OutputPanelProvider.getOutputPanel());
 	}
@@ -87,12 +85,12 @@ public class InputController implements ActionListener {
 		//move
 		if(command[0].equals("move") || command[0].equals("m"))
 		{
-			moveController.movePlayer(command[1], mapWidth);
+			BoardPanel.world.player.move(command[1], mapWidth);
 		}
 		//riktning direkt
 		else if(command[0].equals("north") || command[0].equals("west") || command[0].equals("east") || command[0].equals("south")
                 || command[0].equals("n") || command[0].equals("e") || command[0].equals("s") || command[0].equals("w")){
-            moveController.movePlayer(command[0], mapWidth);
+			BoardPanel.world.player.move(command[0], mapWidth);
             player.minorHeal();
 		}
 		else if(command[0].equals("look") || command[0].equals("l")){

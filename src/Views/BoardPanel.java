@@ -21,9 +21,6 @@ public class BoardPanel extends JPanel implements Observer
 {
 	private final int gridSize = 50;
 
-	private int width = 500;
-	private int height = 500;
-
 	public static WorldData world;
 	private Images images;
 
@@ -56,9 +53,6 @@ public class BoardPanel extends JPanel implements Observer
 	public void paintComponent(Graphics g)
 	{
 		super.paintComponent(g);
-
-		width = getSize().width;
-		height = getSize().height;
 
 		//Draw Backgorund
 		g.drawImage(images.getImage(SpriteID.Bg), 0, 0, null);

@@ -1,6 +1,5 @@
 package Views;
 
-import Models.Item;
 import Models.Player;
 
 import java.awt.*;
