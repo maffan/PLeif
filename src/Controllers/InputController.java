@@ -165,6 +165,11 @@ public class InputController implements ActionListener {
 			if(command.length == 2)
 				output.addLine(player.unequip(command[1]));
 		}
+		else if(command[0].equals("supersecretcheatcode"))
+		{
+			player.setX(9);
+			player.setY(8);
+		}
 		else if(command[0].equals("volume"))
 		{
 			if(command.length == 1){

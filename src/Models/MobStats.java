@@ -22,10 +22,10 @@ public class MobStats
 	private static Stats SwordLVL3 =  new Stats(0,    0, 14, 0.1,  5);
 	private static Stats SwordLVL4 =  new Stats(0,    0, 19, 0.15, 5);
 
-	private static Stats ArmourLVL1 = new Stats(0,    5,  0,   0,  5);
-	private static Stats ArmourLVL2 = new Stats(0,    8,  0,   0,  5);
-	private static Stats ArmourLVL3 = new Stats(0,   17,  0,   0,  5);
-	private static Stats ArmourLVL4 = new Stats(0,   23,  0,   0,  5);
+	private static Stats ArmourLVL1 = new Stats(5,    5,  0,   0,  5);
+	private static Stats ArmourLVL2 = new Stats(13,   8,  0,   0,  5);
+	private static Stats ArmourLVL3 = new Stats(20,  17,  0,   0,  5);
+	private static Stats ArmourLVL4 = new Stats(26,  23,  0,   0,  5);
 	
 	private static Random rng = new Random();
 

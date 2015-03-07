@@ -103,6 +103,7 @@ public class MapFileReader
                         		case "4":
                         			stats = MobStats.SwordLVL4();
                         	}
+                        	break;
                 		case "armour":
                         	switch (itemProperties[2])
                         	{
