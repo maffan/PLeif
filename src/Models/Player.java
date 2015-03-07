@@ -168,21 +168,18 @@ public class Player extends Entity {
 			int currHealth = stats.getHealth();
 			if(lvlMeter == 2)
 			{
-				System.out.println("LVL2");
 				stats = MobStats.getPlayerLVL2();
 				stats.setHealth(currHealth);
 				lvl = 2;
 			}
 			else if(lvlMeter == 3)
 			{
-				System.out.println("LVL3");
 				stats = MobStats.getPlayerLVL3();
 				stats.setHealth(currHealth);
 				lvl = 3;
 			}
 			else if(lvlMeter == 4)
 			{
-				System.out.println("LVL4");
 				stats = MobStats.getPlayerLVL4();
 				stats.setHealth(currHealth);
 				lvl = 4;
