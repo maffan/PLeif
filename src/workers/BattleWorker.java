@@ -75,6 +75,7 @@ public class BattleWorker extends SwingWorker<Boolean,Void> {
                 }
                 outputController.addLine("Monstret dör en hemsk och smärtsam död");
                 worldData.removeEnemy(enemy);
+                worldData.player.levelUp();
                 BoardPanelProvider.getBoardPanel().revalidate();
                 BoardPanelProvider.getBoardPanel().repaint();
                 worldData.removeAes(new Point(enemy.getX(),enemy.getY()));

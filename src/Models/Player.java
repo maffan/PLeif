@@ -1,9 +1,11 @@
 package Models;
 
 import Views.BoardPanel;
+import Views.InfoPanel;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
 public class Player extends Entity {
 	private Stats stats;
@@ -11,11 +13,15 @@ public class Player extends Entity {
 	public Item weapon;
 	private Item medallion;
 	private List<Item> items;
+	
+	private int xp;
+	private int lvl;
 
 	public Player(int x, int y, String name, Stats stats) {
 		super(x, y, name, SpriteID.Player);
 		this.stats = stats;
 		items = new LinkedList<Item>();
+		xp = 0; lvl = 1;
 	}
 	
 	public SpriteID getSpriteID(){
@@ -45,6 +51,7 @@ public class Player extends Entity {
 	
 	public Stats getStats()
 	{
+		addObserver(InfoPanel.getStatsInfoPanelInstance());
 		return stats;
 	}
 
@@ -149,5 +156,53 @@ public class Player extends Entity {
 
 	public List<Item> getItems() {
 		return items;
+	}
+	
+	public void levelUp()
+	{
+		xp++;
+		int lvlMeter =xp/2+1;
+		
+		if(lvl != lvlMeter)
+		{
+			int currHealth = stats.getHealth();
+			if(lvlMeter == 2)
+			{
+				System.out.println("LVL2");
+				stats = MobStats.getPlayerLVL2();
+				stats.setHealth(currHealth);
+				lvl = 2;
+			}
+			else if(lvlMeter == 3)
+			{
+				System.out.println("LVL3");
+				stats = MobStats.getPlayerLVL3();
+				stats.setHealth(currHealth);
+				lvl = 3;
+			}
+			else if(lvlMeter == 4)
+			{
+				System.out.println("LVL4");
+				stats = MobStats.getPlayerLVL4();
+				stats.setHealth(currHealth);
+				lvl = 4;
+			}
+		}
+		setChanged();
+		notifyObservers();
+	}
+	
+	public String getLevel()
+	{
+		return Integer.toString(lvl);
+	}
+
+	public void minorHeal() {
+		Random rng = new Random();
+		int health = stats.getHealth()+rng.nextInt(2);
+		if(health <= MobStats.getPlayerLVL1().getHealth())
+		{
+			stats.setHealth(health);
+		}
 	}
 }

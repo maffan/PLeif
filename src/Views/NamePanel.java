@@ -26,8 +26,8 @@ public class NamePanel extends JPanel implements Observer
 		Player player = BoardPanel.getPlayer();
 
 		g.setColor(Color.black);
-		g.drawString(player.getName() + "     LVL: Göteborgare", 20, 40);
-		g.drawString("At position X: " + player.getX() + " Y: " + player.getY(), 20, 55);
+		g.drawString(player.getName(), 20, 40);
+		g.drawString("@ lvl " + player.getLevel(), 20, 55);
 	}
 
 	@Override

@@ -140,13 +140,13 @@ public class MapFileReader
                 	switch (element.getElementsByTagName("player").item(0).getTextContent())
                 	{
                 		case "1":
-                			stats = MobStats.PlayerLVL1; break;	
+                			stats = MobStats.getPlayerLVL1(); break;	
                 		case "2":
-                			stats = MobStats.PlayerLVL2; break;
+                			stats = MobStats.getPlayerLVL2(); break;
                 		case "3":
-                			stats = MobStats.PlayerLVL3; break;
+                			stats = MobStats.getPlayerLVL3(); break;
                 		case "4":
-                			stats = MobStats.PlayerLVL4;
+                			stats = MobStats.getPlayerLVL4();
                 	}
                 	player = new Player(x, y, "Glenn", stats);
                 }

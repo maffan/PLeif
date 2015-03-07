@@ -4,17 +4,18 @@ import java.util.Random;
 
 public class MobStats
 {
-	public static Stats PlayerLVL1 =  new Stats(50,  10, 10, 0.2,  10);
-	public static Stats PlayerLVL2 =  new Stats(75,  15, 15, 0.25, 15);
-	public static Stats PlayerLVL3 =  new Stats(100, 20, 20, 0.3,  20);
-	public static Stats PlayerLVL4 =  new Stats(125, 25, 25, 0.4,  25);
-
-	public static Stats EnemyLVL1 =   new Stats(30,  10, 5,  0.1,  20);
-	public static Stats EnemyLVL2 =   new Stats(50,  10, 10, 0.1,  20);
-	public static Stats EnemyLVL3 =   new Stats(70,  15, 15, 0.2,  20);
-	public static Stats EnemyLVL4 =   new Stats(100, 20, 20, 0.2,  20);
-	
-	public static Stats Boss =        new Stats(125, 25, 30, 0.5,  0);
+    public static Stats getPlayerLVL1() {
+        return new Stats(50,  10, 10, 0.2,  10);
+    }
+    public static Stats getPlayerLVL2() {
+        return new Stats(75,  15, 15, 0.25, 15);
+    }
+    public static Stats getPlayerLVL3() {
+        return new Stats(100, 20, 20, 0.3,  20);
+    }
+    public static Stats getPlayerLVL4() {
+        return new Stats(125, 25, 25, 0.4,  25);
+    }
 
 	private static Stats SwordLVL1 =  new Stats(0,    0,  2, 0.0,  5);
 	private static Stats SwordLVL2 =  new Stats(0,    0,  6, 0.05, 5);
@@ -88,8 +89,6 @@ public class MobStats
 		armour.setHealth(armour.getHealth() + rng.nextInt(6));
 		return armour;
 	}
-
-    
     
     public static Stats getBoss() {
         return new Stats(125, 25, 30, 0.5,  0);
@@ -107,7 +106,6 @@ public class MobStats
     public static Stats getEnemyLVL3() {
         return new Stats(70,  15, 15, 0.2,  20);
     }
-
 
     public static Stats getEnemyLVL4() {
         return new Stats(100, 20, 20, 0.2,  20);

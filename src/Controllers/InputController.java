@@ -93,6 +93,7 @@ public class InputController implements ActionListener {
 		else if(command[0].equals("north") || command[0].equals("west") || command[0].equals("east") || command[0].equals("south")
                 || command[0].equals("n") || command[0].equals("e") || command[0].equals("s") || command[0].equals("w")){
             moveController.movePlayer(command[0], mapWidth);
+            player.minorHeal();
 		}
 		else if(command[0].equals("look") || command[0].equals("l")){
 			if(command.length == 1)
