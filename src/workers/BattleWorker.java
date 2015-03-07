@@ -5,7 +5,6 @@ import Models.Enemy;
 import Models.Player;
 import Models.Stats;
 import Models.WorldData;
-import Utils.Attack;
 import Utils.BoardPanelProvider;
 import Views.BoardPanel;
 
@@ -57,7 +56,7 @@ public class BattleWorker extends SwingWorker<Boolean,Void> {
                 }
                 return false;
             }
-            outputController.addLine("Leif attackerar sin motståndare och gör " + Attack.doAttack(player, enemy) + " enheter skada");
+            outputController.addLine("Leif attackerar sin motståndare och gör " + player.doAttack(enemy,true) + " enheter skada");
             if(playerEscaped()){
                 outputController.print("Du lyckades fly!");
                 try {
@@ -86,7 +85,7 @@ public class BattleWorker extends SwingWorker<Boolean,Void> {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            outputController.addLine("Fienden ger igen och gör " + Attack.doAttack(enemy, player) + " enheter skada");
+            outputController.addLine("Fienden ger igen och gör " + player.doAttack(enemy, false) + " enheter skada");
             if(playerEscaped()){
                 outputController.print("Du lyckades fly!");
                 try {

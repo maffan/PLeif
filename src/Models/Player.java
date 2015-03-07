@@ -202,4 +202,37 @@ public class Player extends Entity {
 			stats.setHealth(health);
 		}
 	}
+	
+	private int getDamage()
+	{
+		return getStats().getDamage() + (weapon == null ? 0 : weapon.getStats().getDamage());
+	}
+	
+	private double getLuck()
+	{
+		return getStats().getLuck() + (weapon == null ? 0 : weapon.getStats().getLuck());
+	}
+	
+	private int getEndurance()
+	{
+		return getStats().getEndurance() + (armour == null ? 0 : armour.getStats().getHealth());
+	}
+	
+	public int doAttack(Enemy e, boolean isAttacking)
+	{
+		int damage = isAttacking ? getDamage() : e.getStats().getDamage();
+		
+		if(isAttacking)
+			e.getStats().setHealth(e.getStats().getHealth()-getDamage());
+		else
+		{
+			double random = new Random().nextDouble();
+		    
+		    if(random < getLuck()){
+		    	damage -= getEndurance()*random;
+		    }
+		    getStats().setHealth(getStats().getHealth() - damage);
+		}
+		return damage;
+	}
 }
