@@ -204,10 +204,10 @@ public class Player extends Entity {
 
 	public void minorHeal() {
 		Random rng = new Random();
-		int health = stats.getHealth()+rng.nextInt(2);
-		if(health <= MobStats.getPlayerLVL1().getHealth())
+		int heal = getHealth() + rng.nextInt(2);
+		if(health <= getHealthMax())
 		{
-			stats.setHealth(health);
+			this.health = heal;
 		}
 	}
 	
@@ -223,7 +223,12 @@ public class Player extends Entity {
 	
 	private int getEndurance()
 	{
-		return getStats().getEndurance() + (armour == null ? 0 : armour.getStats().getHealth());
+		return getStats().getEndurance() + (armour == null ? 0 : armour.getStats().getEndurance());
+	}
+	
+	private int getHealthMax()
+	{
+		return getStats().getHealth() + (armour == null ? 0 : armour.getStats().getHealth());
 	}
 	
 	public int doAttack(Enemy e, boolean isAttacking)
