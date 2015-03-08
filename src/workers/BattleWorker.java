@@ -50,7 +50,7 @@ public class BattleWorker extends SwingWorker<Boolean,Void> {
                 outputController.print("Du lyckades fly!");
                 SoundPlayer.playBg();
                 try {
-                    Thread.sleep(2000);
+                    Thread.sleep(3500);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -61,7 +61,7 @@ public class BattleWorker extends SwingWorker<Boolean,Void> {
                 outputController.print("Du lyckades fly!");
                 SoundPlayer.playBg();
                 try {
-                    Thread.sleep(2000);
+                    Thread.sleep(3500);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -69,7 +69,7 @@ public class BattleWorker extends SwingWorker<Boolean,Void> {
             }
             if(enemyStats.getHealth() <= 0){
                 try {
-                    Thread.sleep(2000);
+                    Thread.sleep(3500);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -83,7 +83,7 @@ public class BattleWorker extends SwingWorker<Boolean,Void> {
                 return true;
             }
             try {
-                Thread.sleep(2000);
+                Thread.sleep(3500);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -99,14 +99,14 @@ public class BattleWorker extends SwingWorker<Boolean,Void> {
                 outputController.print("Du lyckades fly!");
                 SoundPlayer.playBg();
                 try {
-                    Thread.sleep(2000);
+                    Thread.sleep(3500);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
                 return false;
             }
             try {
-                Thread.sleep(2000);
+                Thread.sleep(3500);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
