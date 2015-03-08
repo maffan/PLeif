@@ -2,17 +2,36 @@ package Models;
 
 import java.util.Random;
 
+/**
+ * @author joh
+ * @version 2015-03-07
+ */
 public class MobStats
 {
+    /**
+     * @return player Stats for lvl 1
+     */
     public static Stats getPlayerLVL1() {
         return new Stats(50,  10, 10, 0.2,  10);
     }
+    
+    /**
+     * @return player Stats for lvl 2
+     */
     public static Stats getPlayerLVL2() {
         return new Stats(75,  15, 15, 0.25, 15);
     }
+    
+    /**
+     * @return player Stats for lvl 3
+     */
     public static Stats getPlayerLVL3() {
         return new Stats(100, 20, 20, 0.3,  20);
     }
+    
+    /**
+     * @return player Stats for lvl 4
+     */
     public static Stats getPlayerLVL4() {
         return new Stats(125, 25, 25, 0.4,  25);
     }
@@ -29,6 +48,9 @@ public class MobStats
 	
 	private static Random rng = new Random();
 
+	/**
+	 * @return sword Stats for Sword lvl 1
+	 */
 	public static Stats SwordLVL1()
 	{
 		Stats sword = SwordLVL1;
@@ -37,6 +59,9 @@ public class MobStats
 		return sword;
 	}
 	
+	/**
+	 * @return sword Stats for Sword lvl 2
+	 */
 	public static Stats SwordLVL2()
 	{
 		Stats sword = SwordLVL2;
@@ -45,6 +70,9 @@ public class MobStats
 		return sword;
 	}
 	
+	/**
+	 * @return sword Stats for Sword lvl 3
+	 */
 	public static Stats SwordLVL3()
 	{
 		Stats sword = SwordLVL3;
@@ -53,6 +81,9 @@ public class MobStats
 		return sword;
 	}
 
+	/**
+	 * @return sword Stats for Sword lvl 4
+	 */
 	public static Stats SwordLVL4()
 	{
 		Stats sword = SwordLVL4;
@@ -61,6 +92,9 @@ public class MobStats
 		return sword;
 	}
 
+	/**
+	 * @return armour Stats for Armour lvl 1
+	 */
 	public static Stats ArmourLVL1()
 	{
 		Stats armour = ArmourLVL1;
@@ -68,6 +102,9 @@ public class MobStats
 		armour.setHealth(armour.getHealth() + rng.nextInt(7));
 		return armour;
 	}
+	/**
+	 * @return armour Stats for Armour lvl 2
+	 */
 	public static Stats ArmourLVL2()
 	{
 		Stats armour = ArmourLVL2;
@@ -75,6 +112,10 @@ public class MobStats
 		armour.setHealth(armour.getHealth() + rng.nextInt(5));
 		return armour;
 	}
+	
+	/**
+	 * @return armour Stats for Armour lvl 3
+	 */
 	public static Stats ArmourLVL3()
 	{
 		Stats armour = ArmourLVL3;
@@ -82,6 +123,10 @@ public class MobStats
 		armour.setHealth(armour.getHealth() + rng.nextInt(5));
 		return armour;
 	}
+	
+	/**
+	 * @return armour Stats for Armour lvl 4
+	 */
 	public static Stats ArmourLVL4()
 	{
 		Stats armour = ArmourLVL4;
@@ -90,23 +135,38 @@ public class MobStats
 		return armour;
 	}
     
+    /**
+     * @return Stats for Boss
+     */
     public static Stats getBoss() {
         return new Stats(125, 25, 30, 0.5,  0);
     }
 
+    /**
+     * @return enemy Stats for lvl 1
+     */
     public static Stats getEnemyLVL1() {
         return new Stats(30,  10, 5,  0.1,  20);
     }
 
+    /**
+     * @return enemy Stats for lvl 2
+     */
     public static Stats getEnemyLVL2() {
         return new Stats(50,  10, 10, 0.1,  20);
     }
 
 
+    /**
+     * @return enemy Stats for lvl 3
+     */
     public static Stats getEnemyLVL3() {
         return new Stats(70,  15, 15, 0.2,  20);
     }
 
+    /**
+     * @return enemy Stats for lvl 4
+     */
     public static Stats getEnemyLVL4() {
         return new Stats(100, 20, 20, 0.2,  20);
     }
