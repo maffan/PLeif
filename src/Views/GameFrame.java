@@ -47,6 +47,9 @@ public class GameFrame extends JFrame {
         //Reset audio and start bgmusic
         VolumeControl.changeVolume(0.8f);
         SoundPlayer.playBg();
+
+        statusPanel.getOutputPanel().setText("Välkommen till Leifs fantastiska värld!");
+        statusPanel.getOutputPanel().addLine("Om du undrar något, skriva bara [help]");
         
     }
 
