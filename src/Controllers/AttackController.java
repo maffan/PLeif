@@ -2,6 +2,7 @@ package Controllers;
 
 import Models.Player;
 import Models.WorldData;
+import Views.BoardPanel;
 import Workers.BattleWorker;
 
 import java.awt.*;
@@ -24,6 +25,7 @@ public class AttackController {
     }
     
     public void attack(String command){
+    	worldData = BoardPanel.world;
         if(command.equals("north") || command.equals("n")){
             if(worldData.hasEnemy(new Point(player.getX(), player.getY()-1))){
                 BattleWorker worker = new BattleWorker(player, worldData.getEnemy(new Point(player.getX(),player.getY()-1)),outputController,worldData);
