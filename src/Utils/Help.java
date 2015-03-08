@@ -7,7 +7,7 @@ public class Help {
 	static OutputController OC = new OutputController();
 	
 	public static void help(){
-		OC.print("Available commands: move, look, attack, chat, reset, save, load, exit, help\n"
+		OC.print("Available commands: move, look, attack, pickup, equip, unequip, chat, reset, save, load, exit, volume, help\n"
 				+ "type \"help [command]\" for more information about the selcted command");
 	}
 	
@@ -31,6 +31,12 @@ public class Help {
 		case "save":	OC.print("\"save\" to save the current game");
 						break;
 		case "load":	OC.print("\"load\" to load the latest save");
+						break;
+		case "pickup":	OC.print("\"pickup\" pickup item on current spot");
+						break;
+		case "equip":	OC.print("\"equip [#]\" equip # item from you inventory");
+						break;
+		case "unequip":	OC.print("\"unequip weapon or armour\" unequip your weapon or armour");
 						break;
 		case "exit":	OC.print("\"exit\" closes the game\n"
 							+ "Alternatively \"exit\"");
