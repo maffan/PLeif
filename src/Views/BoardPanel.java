@@ -1,5 +1,6 @@
 package Views;
 
+import Audio.SoundPlayer;
 import Models.Enemy;
 import Models.Entity;
 import Models.Player;
@@ -109,6 +110,7 @@ public class BoardPanel extends JPanel implements Observer
 			g.fillRect(0, 0, 500, 500);
 			g.setColor(Color.WHITE);
 			g.drawString("Du vann!", 250, 250);
+			SoundPlayer.playEnd();
 		}
 	}
 
@@ -140,6 +142,7 @@ public class BoardPanel extends JPanel implements Observer
 	
 	public void reset(){
 		loadWorld(GamePaths.StartState);
+		SoundPlayer.playBg();
 	}
 
 	public void save()
@@ -161,6 +164,7 @@ public class BoardPanel extends JPanel implements Observer
 	}
 
 	public static void iDied() {
+		SoundPlayer.playEnd();
     	int option = JOptionPane.showConfirmDialog(null, "Skar ru' prova igen?", "YOU DIED!", JOptionPane.YES_NO_OPTION);
     	if(option == 0)
     		BoardPanelProvider.getBoardPanel().reset();
