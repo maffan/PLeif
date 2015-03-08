@@ -137,7 +137,6 @@ public class InputController implements ActionListener {
         	}
         }
 		
-		//Kommandon fï¿½r test skall implementeras i GUI senare
         else if(command[0].equals("playmusic") || command[0].equals("startmusic")) {
         	SoundPlayer.playBg();
         }
@@ -169,14 +168,14 @@ public class InputController implements ActionListener {
 			player.setX(9);
 			player.setY(8);
 		}
-		else if(command[0].equals("volume"))
+		else if(command[0].equals("supersecretcheatcode"))
 		{
-			if(command.length == 1){
-			}
-			else{
-			VolumeControl.changeVolume(Float.parseFloat(command[1]));
-			}
-			output.addLine("Volume: " +String.valueOf(VolumeControl.getVolume()));
+			player.setX(9);
+			player.setY(8);
+		}
+		else if(command[0].equals("reset"))
+		{
+			boardPanel.reset();
 		}
 		else{
 			output.addLine("Felaktigt kommando");
