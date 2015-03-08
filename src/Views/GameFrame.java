@@ -49,7 +49,7 @@ public class GameFrame extends JFrame {
         SoundPlayer.playBg();
 
         statusPanel.getOutputPanel().setText("Välkommen till Leifs fantastiska värld!");
-        statusPanel.getOutputPanel().addLine("Om du undrar något, skriva bara [help]");
+        statusPanel.getOutputPanel().addLine("Om du undrar något, skriv bara [help]");
         
     }
 
