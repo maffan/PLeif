@@ -1,5 +1,6 @@
 package Workers;
 
+import Audio.SoundPlayer;
 import Controllers.OutputController;
 import Models.Enemy;
 import Models.Player;
@@ -43,9 +44,11 @@ public class BattleWorker extends SwingWorker<Boolean,Void> {
         Stats enemyStats = enemy.getStats();
         
         outputController.print("Striden startar!");
+        SoundPlayer.playCombat();
         while(player.isAlive()){
             if(playerEscaped()){
                 outputController.print("Du lyckades fly!");
+                SoundPlayer.playBg();
                 try {
                     Thread.sleep(2000);
                 } catch (InterruptedException e) {
@@ -56,6 +59,7 @@ public class BattleWorker extends SwingWorker<Boolean,Void> {
             outputController.addLine("Leif attackerar sin motståndare och gör " + player.doAttack(enemy,true) + " enheter skada");
             if(playerEscaped()){
                 outputController.print("Du lyckades fly!");
+                SoundPlayer.playBg();
                 try {
                     Thread.sleep(2000);
                 } catch (InterruptedException e) {
@@ -70,6 +74,7 @@ public class BattleWorker extends SwingWorker<Boolean,Void> {
                     e.printStackTrace();
                 }
                 outputController.addLine("Monstret dör en hemsk och smärtsam död");
+                SoundPlayer.playBg();
                 worldData.removeEnemy(enemy);
                 worldData.player.levelUp();
                 BoardPanelProvider.getBoardPanel().revalidate();
@@ -92,6 +97,7 @@ public class BattleWorker extends SwingWorker<Boolean,Void> {
             	
             if(playerEscaped()){
                 outputController.print("Du lyckades fly!");
+                SoundPlayer.playBg();
                 try {
                     Thread.sleep(2000);
                 } catch (InterruptedException e) {
