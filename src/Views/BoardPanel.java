@@ -10,6 +10,7 @@ import Utils.BoardPanelProvider;
 import Utils.FilesRW;
 import Utils.GamePaths;
 import Utils.Images;
+import Controllers.*;
 
 import java.awt.*;
 import java.io.File;
@@ -142,6 +143,7 @@ public class BoardPanel extends JPanel implements Observer
 	
 	public void reset(){
 		loadWorld(GamePaths.StartState);
+		InputController.setAttackController();
 		SoundPlayer.playBg();
 	}
 

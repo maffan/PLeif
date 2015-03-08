@@ -23,7 +23,8 @@ public class InputController implements ActionListener {
 	private Player player;
     
     private LookController lookController;
-    private AttackController attackController;
+    private static AttackController attackController;
+    private static StatusPanel statusPanel;
     
     private OutputController output;
 
@@ -39,18 +40,19 @@ public class InputController implements ActionListener {
      * @param boardPanel The panel containing the central gaming area
      */
 	public InputController(StatusPanel statusPanel, BoardPanel boardPanel) {
+		this.statusPanel = statusPanel;
 		this.inputPanel = statusPanel.getInputPanel();
 		this.boardPanel = boardPanel;
 		this.player = BoardPanel.getPlayer();
         this.lookController = new LookController(new OutputController(statusPanel.getOutputPanel()));
         this.attackController = new AttackController(new OutputController(statusPanel.getOutputPanel()),BoardPanel.world);
-        setAttackController(statusPanel);
+        setAttackController();
         
         this.output = new OutputController(OutputPanelProvider.getOutputPanel());
 	}
 	
-	public void setAttackController(StatusPanel statusPanel){
-		this.attackController = new AttackController(new OutputController(statusPanel.getOutputPanel()),BoardPanel.world);
+	public static void setAttackController(){
+		attackController = new AttackController(new OutputController(statusPanel.getOutputPanel()),BoardPanel.world);
 	}
 	
 
