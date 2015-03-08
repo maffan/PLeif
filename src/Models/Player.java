@@ -7,12 +7,17 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * @author joh
+ * @version 2015-03-07
+ */
 public class Player extends Entity {
 	private Stats stats;
 	public Item armour;
 	public Item weapon;
 	private List<Item> items;
 	
+	private int health;
 	private int xp;
 	private int lvl;
 
@@ -20,6 +25,7 @@ public class Player extends Entity {
 		super(x, y, name, SpriteID.Player);
 		this.stats = stats;
 		items = new LinkedList<Item>();
+		health = stats.getHealth();
 		xp = 0; lvl = 1;
 	}
 	
@@ -122,6 +128,7 @@ public class Player extends Entity {
 					if(armour != null)
 						return "Har redan skydd";
 					armour = items.remove(index);
+					health += armour.getStats().getHealth();
 					setChanged();
 					notifyObservers();
 				}
@@ -134,6 +141,7 @@ public class Player extends Entity {
 		if(string.equals("armour"))
 		{
 			addItem(armour);
+			health -= armour.getStats().getHealth();
 			armour = null;
 			return "Brr, kallt.";
 		}
@@ -145,6 +153,11 @@ public class Player extends Entity {
 		}
 		
 		return "Nu skrev du fel va?";
+	}
+	
+	public String getHealth()
+	{
+		return Integer.toString(health);
 	}
 
 	public List<Item> getItems() {
@@ -224,7 +237,9 @@ public class Player extends Entity {
 		    if(random < getLuck()){
 		    	damage -= getEndurance()*random;
 		    }
-		    getStats().setHealth(getStats().getHealth() - damage);
+		    health -= damage;
+			setChanged();
+			notifyObservers();
 		}
 		return damage;
 	}

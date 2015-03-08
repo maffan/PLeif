@@ -38,7 +38,7 @@ public class StatsInfoPanel extends JPanel implements Observer
 		String luck = weaponLuck == 0 ? (int)(stats.getLuck()*100) +"" : (int)(stats.getLuck()*100) + "+" + (int)(weaponLuck*100);
 
 		int offset = 35;
-		g.drawString("Health: " + health, 20, offset); offset += 14;
+		g.drawString("Max Health: " + health, 20, offset); offset += 14;
 		g.drawString("Defense: " + defense, 20, offset); offset += 14;
 		g.drawString("Damage: " + damage, 20, offset); offset += 14;
 		g.drawString("Luck: " + luck + "%", 20, offset); offset += 14;

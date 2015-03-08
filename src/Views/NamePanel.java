@@ -28,6 +28,7 @@ public class NamePanel extends JPanel implements Observer
 		g.setColor(Color.black);
 		g.drawString(player.getName(), 20, 40);
 		g.drawString("@ lvl " + player.getLevel(), 20, 55);
+		g.drawString("with " + player.getHealth() + " health ", 20, 70);
 	}
 
 	@Override
