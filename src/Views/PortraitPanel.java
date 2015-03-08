@@ -1,6 +1,9 @@
 package Views;
 
 import javax.swing.*;
+
+import Utils.GamePaths;
+
 import java.awt.*;
 
 /**
@@ -9,6 +12,7 @@ import java.awt.*;
 public class PortraitPanel extends JPanel {
     public PortraitPanel(){
         add(new JLabel("Portrait"));
+        add(new JLabel(new ImageIcon(GamePaths.Portrait)));
         setBorder(BorderFactory.createLineBorder(Color.BLACK));
     }
 

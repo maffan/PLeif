@@ -15,4 +15,5 @@ public class GamePaths
 	public static String BackgroundMusic = "./resources/audio/music/bgmusic.mp3";
 	public static String CombatMusic = "./resources/audio/music/combatmusic.mp3";
 	public static String EndMusic = "./resources/audio/music/endmusic.mp3";
+	public static String Portrait = "./resources/pictures/portrait.png";
 }
