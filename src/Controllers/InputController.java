@@ -103,7 +103,8 @@ public class InputController implements ActionListener {
 			}
 		}
         else if(command[0].equals("attack") || command[0].equals("a")){
-            attackController.attack(command[1]);
+        	if(command.length == 2)
+        		attackController.attack(command[1]);
         }
 		else if(command[0].equals("save"))
 		{

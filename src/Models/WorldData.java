@@ -21,6 +21,8 @@ public class WorldData implements Serializable
 	public List<Item> items;
 	public List<Aesthetics> aes;
 	
+	public boolean isBossAlive = true;
+	
 	/**
 	 * Reads map file using MapFileReader and stores it.
 	 * @param mapPath Path to map file.
@@ -88,6 +90,8 @@ public class WorldData implements Serializable
     }
     
     public void removeEnemy(Enemy enemy){
+    	if(enemy.getStats().getEndurance() == 25)
+    		isBossAlive = false;
         enemies.remove(enemy);
     }
 

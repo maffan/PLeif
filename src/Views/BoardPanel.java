@@ -1,5 +1,6 @@
 package Views;
 
+import Models.Enemy;
 import Models.Entity;
 import Models.Player;
 import Models.SpriteID;
@@ -99,6 +100,14 @@ public class BoardPanel extends JPanel implements Observer
 				
 				g.drawImage(images.getImage(e.getSpriteID()), pX, pY, null);
 			}
+		}
+		
+		if(!world.isBossAlive)
+		{
+			g.setColor(Color.BLACK);
+			g.fillRect(0, 0, 500, 500);
+			g.setColor(Color.WHITE);
+			g.drawString("Du vann!", 250, 250);
 		}
 	}
 
