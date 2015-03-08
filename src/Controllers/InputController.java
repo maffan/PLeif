@@ -44,9 +44,15 @@ public class InputController implements ActionListener {
 		this.player = BoardPanel.getPlayer();
         this.lookController = new LookController(new OutputController(statusPanel.getOutputPanel()));
         this.attackController = new AttackController(new OutputController(statusPanel.getOutputPanel()),BoardPanel.world);
+        setAttackController(statusPanel);
         
         this.output = new OutputController(OutputPanelProvider.getOutputPanel());
 	}
+	
+	public void setAttackController(StatusPanel statusPanel){
+		this.attackController = new AttackController(new OutputController(statusPanel.getOutputPanel()),BoardPanel.world);
+	}
+	
 
     /**
      * Sets the InputPanel this controller is to read from
@@ -162,6 +168,14 @@ public class InputController implements ActionListener {
 		{
 			if(command.length == 2)
 				output.addLine(player.unequip(command[1]));
+		}
+		
+		else if(command[0].equals("volume")){
+			if(command.length == 1){}
+			else{
+			VolumeControl.changeVolume(Float.parseFloat(command[1]));
+			}
+			output.addLine("Volume: " +String.valueOf(VolumeControl.getVolume()));
 		}
 		else if(command[0].equals("supersecretcheatcode"))
 		{
