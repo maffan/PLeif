@@ -9,6 +9,7 @@ import Utils.GamePaths;
 import Utils.Images;
 
 import java.awt.*;
+import java.io.File;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -132,8 +133,13 @@ public class BoardPanel extends JPanel implements Observer
 
 	public void load()
 	{
-		world = FilesRW.loadFrom(GamePaths.WorldSave);
-		SetupWorldObservers();
+		if((new File(GamePaths.WorldSave)).exists())
+		{
+			world = FilesRW.loadFrom(GamePaths.WorldSave);
+			SetupWorldObservers();
+		}
+		else
+			JOptionPane.showMessageDialog(null, "No saved game exists.", "Error", 0);
 	}
 
 	@Override
