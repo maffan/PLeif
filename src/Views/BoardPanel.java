@@ -49,6 +49,7 @@ public class BoardPanel extends JPanel implements Observer
 		world.player.addObserver(InfoPanel.getNamePanelInstance());
 		world.player.addObserver(InfoPanel.getEquippedPanelInstance());
 		world.player.getStats().addObserver(InfoPanel.getStatsInfoPanelInstance());
+		world.player.iveChanged();
 		update(null, null);
 	}
 
@@ -131,9 +132,14 @@ public class BoardPanel extends JPanel implements Observer
 		return world.player;
 	}
 	
-	public void reset(){
-		world = FilesRW.loadFrom(GamePaths.StartState);
+	private void loadWorld(String path)
+	{
+		world = FilesRW.loadFrom(path);
 		SetupWorldObservers();
+	}
+	
+	public void reset(){
+		loadWorld(GamePaths.StartState);
 	}
 
 	public void save()
@@ -144,10 +150,7 @@ public class BoardPanel extends JPanel implements Observer
 	public void load()
 	{
 		if((new File(GamePaths.WorldSave)).exists())
-		{
-			world = FilesRW.loadFrom(GamePaths.WorldSave);
-			SetupWorldObservers();
-		}
+			loadWorld(GamePaths.WorldSave);
 		else
 			JOptionPane.showMessageDialog(null, "No saved game exists.", "Error", 0);
 	}

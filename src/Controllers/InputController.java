@@ -81,7 +81,7 @@ public class InputController implements ActionListener {
 	public void commandAction(String action)
 	{
 		String[] command = action.split(" ");
-		
+		player = BoardPanel.world.player;
 		//move
 		if(command[0].equals("move") || command[0].equals("m"))
 		{

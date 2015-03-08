@@ -257,4 +257,10 @@ public class Player extends Entity {
 	{
 		return isAlive;
 	}
+	
+	public void iveChanged()
+	{
+		setChanged();
+		notifyObservers();
+	}
 }
