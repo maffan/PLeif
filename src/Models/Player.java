@@ -17,6 +17,7 @@ public class Player extends Entity {
 	public Item weapon;
 	private List<Item> items;
 	
+	private boolean isAlive;
 	private int health;
 	private int xp;
 	private int lvl;
@@ -25,6 +26,7 @@ public class Player extends Entity {
 		super(x, y, name, SpriteID.Player);
 		this.stats = stats;
 		items = new LinkedList<Item>();
+		isAlive = true;
 		health = stats.getHealth();
 		xp = 0; lvl = 1;
 	}
@@ -155,9 +157,9 @@ public class Player extends Entity {
 		return "Nu skrev du fel va?";
 	}
 	
-	public String getHealth()
+	public int getHealth()
 	{
-		return Integer.toString(health);
+		return health;
 	}
 
 	public List<Item> getItems() {
@@ -238,9 +240,16 @@ public class Player extends Entity {
 		    	damage -= getEndurance()*random;
 		    }
 		    health -= damage;
+		    if(health <= 0)
+		    	isAlive = false;
 			setChanged();
 			notifyObservers();
 		}
 		return damage;
+	}
+	
+	public boolean isAlive()
+	{
+		return isAlive;
 	}
 }

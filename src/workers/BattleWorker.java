@@ -6,6 +6,7 @@ import Models.Player;
 import Models.Stats;
 import Models.WorldData;
 import Utils.BoardPanelProvider;
+import Views.BoardPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -29,8 +30,6 @@ public class BattleWorker extends SwingWorker<Boolean,Void> {
         return doBattle();
     }
 
-
-
     public BattleWorker(Player player, Enemy enemy, OutputController outputController, WorldData worldData) {
         this.player = player;
         this.enemy = enemy;
@@ -41,11 +40,10 @@ public class BattleWorker extends SwingWorker<Boolean,Void> {
     }
     
     private Boolean doBattle(){
-        Stats playerStats = player.getStats();
         Stats enemyStats = enemy.getStats();
         
         outputController.print("Striden startar!");
-        while(playerStats.getHealth() > 0){
+        while(player.isAlive()){
             if(playerEscaped()){
                 outputController.print("Du lyckades fly!");
                 try {
@@ -85,6 +83,13 @@ public class BattleWorker extends SwingWorker<Boolean,Void> {
                 e.printStackTrace();
             }
             outputController.addLine("Fienden ger igen och gör " + player.doAttack(enemy, false) + " enheter skada");
+            if(!player.isAlive())
+            {
+            	BoardPanel.iDied();
+            		
+            	return false;
+            }
+            	
             if(playerEscaped()){
                 outputController.print("Du lyckades fly!");
                 try {

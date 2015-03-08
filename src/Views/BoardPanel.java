@@ -4,6 +4,7 @@ import Models.Entity;
 import Models.Player;
 import Models.SpriteID;
 import Models.WorldData;
+import Utils.BoardPanelProvider;
 import Utils.FilesRW;
 import Utils.GamePaths;
 import Utils.Images;
@@ -145,5 +146,13 @@ public class BoardPanel extends JPanel implements Observer
 	@Override
 	public void update(Observable o, Object arg) {
 		repaint();
+	}
+
+	public static void iDied() {
+    	int option = JOptionPane.showConfirmDialog(null, "Skar ru' prova igen?", "YOU DIED!", JOptionPane.YES_NO_OPTION);
+    	if(option == 0)
+    		BoardPanelProvider.getBoardPanel().reset();
+    	if(option == 1)
+    		System.exit(0);
 	}
 }
