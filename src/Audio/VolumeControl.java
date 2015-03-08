@@ -13,8 +13,8 @@ public class VolumeControl
 	
     public static void changeVolume(float volume) {        
     Info source = Port.Info.SPEAKER;
-    //        source = Port.Info.LINE_OUT;
-    //        source = Port.Info.HEADPHONE;
+    Info source2 = Port.Info.HEADPHONE;
+    Info source3 = Port.Info.LINE_OUT;
 
         if (AudioSystem.isLineSupported(source)) 
         {
@@ -24,7 +24,38 @@ public class VolumeControl
                 outline.open();                
                 volumeControl = (FloatControl) outline.getControl(FloatControl.Type.VOLUME);                
                 volumeControl.setValue(volume);
-//                System.out.println("   new volume: " + volumeControl.getValue() );
+            } 
+            catch (LineUnavailableException ex) 
+            {
+                System.err.println("source not supported");
+                ex.printStackTrace();
+            }            
+        }
+        
+        if (AudioSystem.isLineSupported(source2)) 
+        {
+            try 
+            {
+                Port outline2 = (Port) AudioSystem.getLine(source2);
+                outline2.open();                
+                volumeControl = (FloatControl) outline2.getControl(FloatControl.Type.VOLUME);                
+                volumeControl.setValue(volume);
+            } 
+            catch (LineUnavailableException ex) 
+            {
+                System.err.println("source not supported");
+                ex.printStackTrace();
+            }            
+        }
+        
+        if (AudioSystem.isLineSupported(source3)) 
+        {
+            try 
+            {
+                Port outline3 = (Port) AudioSystem.getLine(source3);
+                outline3.open();                
+                volumeControl = (FloatControl) outline3.getControl(FloatControl.Type.VOLUME);                
+                volumeControl.setValue(volume);
             } 
             catch (LineUnavailableException ex) 
             {
