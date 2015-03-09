@@ -5,6 +5,10 @@ import java.io.*;
 import javax.swing.*;
 import java.util.Date;
 
+/**
+ * "Backside" of the chat, receives messages and displays them in chat
+ * @see Chat
+ */
 public class Reciever implements Runnable {
 	Thread activity = new Thread(this);
 	MulticastSocket so;
