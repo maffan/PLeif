@@ -71,6 +71,11 @@ public class WorldData implements Serializable
 		return false;
 	}
     
+    /**
+     * check if a cell contains an enemy
+     * @param point value(x,y)
+     * @return boolean
+     */
     public boolean hasEnemy(Point point){
         for(Enemy enemy : enemies){
             if(enemy.getX() == point.getX() && enemy.getY() == point.getY()){
@@ -80,6 +85,11 @@ public class WorldData implements Serializable
         return false;
     }
     
+    /**
+     * Get an enemy for the point 
+     * @param point value(x,y)
+     * @return enemy or null if enemy has been removed
+     */
     public Enemy getEnemy(Point point){
         for(Enemy enemy : enemies){
             if(enemy.getX() == point.getX() && enemy.getY() == point.getY()){
@@ -89,12 +99,20 @@ public class WorldData implements Serializable
         return null;
     }
     
+    /**
+     * removes enemy from list 
+     * @param enemy object
+     */
     public void removeEnemy(Enemy enemy){
     	if(enemy.getStats().getEndurance() == 25)
     		isBossAlive = false;
         enemies.remove(enemy);
     }
 
+    /**
+     * remove aesthetic object from list. 
+     * @param point value(x,y)
+     */
     public void removeAes(Point point) {
         for(Aesthetics aesthetics : aes){
             if(aesthetics.getX() == point.getX() && aesthetics.getY() == point.getY()){

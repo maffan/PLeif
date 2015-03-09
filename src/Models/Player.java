@@ -22,6 +22,12 @@ public class Player extends Entity {
 	private int xp;
 	private int lvl;
 
+	/**
+	 * @param x value
+	 * @param y value
+	 * @param name playername
+	 * @param stats player stats
+	 */
 	public Player(int x, int y, String name, Stats stats) {
 		super(x, y, name, SpriteID.Player);
 		this.stats = stats;
@@ -31,6 +37,9 @@ public class Player extends Entity {
 		xp = 0; lvl = 1;
 	}
 	
+	/* (non-Javadoc)
+	 * @see Models.Entity#getSpriteID()
+	 */
 	public SpriteID getSpriteID(){
 		if(this.armour != null && this.weapon != null){
 			return SpriteID.PlayerArmourSword;
@@ -44,18 +53,30 @@ public class Player extends Entity {
 		return SpriteID.Player;	
 	}
 
+	/**
+	 * adds adds an object and notifies the observers
+	 * @param e item object
+	 */
 	private void addItem(Item e) {
 		items.add(e);
 		setChanged();
 		notifyObservers();
 	}
 	
+	/**
+	 * @return stats for player
+	 */
 	public Stats getStats()
 	{
 		addObserver(InfoPanel.getStatsInfoPanelInstance());
 		return stats;
 	}
 
+	/**
+	 * moves the player across the map
+	 * @param direction 
+	 * @param max is to make sure you don't step outside of the map
+	 */
 	public void move(String direction, int max)
 	{
 		max--;
@@ -90,6 +111,10 @@ public class Player extends Entity {
 		}
 	}
 	
+	/**
+	 * Checks if item exists in cell. If it does returns item. 
+	 * @return true or false. 
+	 */
 	public boolean pickUpItem() {
 		boolean itemExists = false;
 		for(int i = 0; i < BoardPanel.world.items.size(); i++)
@@ -103,6 +128,11 @@ public class Player extends Entity {
 		return itemExists;
 	}
 	
+	/**
+	 * Equips an item using its placement in the list.
+	 * @param id value
+	 * @return string with information on wether or not the equip was successful
+	 */
 	public String equip(String id) {
 		if(!id.matches("\\d+"))
 		{
@@ -139,6 +169,11 @@ public class Player extends Entity {
 		}
 	}
 	
+	/**
+	 * Method used to unequip items from the player. Returns them to the inventory
+	 * @param string
+	 * @return string different response for success or failure
+	 */
 	public String unequip(String string) {
 		if(string.equals("armour"))
 		{
@@ -157,15 +192,26 @@ public class Player extends Entity {
 		return "Nu skrev du fel va?";
 	}
 	
+	/**
+	 * @return health
+	 */
 	public int getHealth()
 	{
 		return health;
 	}
 
+	/**
+	 * @return items list
+	 */
 	public List<Item> getItems() {
 		return items;
 	}
 	
+	/**
+	 * Increases player stats after defeating monsters.
+	 * notifies observers of changes. 
+	 * 
+	 */
 	public void levelUp()
 	{
 		xp++;
@@ -197,11 +243,18 @@ public class Player extends Entity {
 		notifyObservers();
 	}
 	
+	/**
+	 * @return string of lvl
+	 */
 	public String getLevel()
 	{
 		return Integer.toString(lvl);
 	}
 
+	/**
+	 * Method that heals the Player when moving around the map
+	 * 
+	 */
 	public void minorHeal() {
 		Random rng = new Random();
 		int heal = getHealth() + rng.nextInt(2);
@@ -211,26 +264,46 @@ public class Player extends Entity {
 		}
 	}
 	
+	/**
+	 * 
+	 * @return total damage stats
+	 */
 	private int getDamage()
 	{
 		return getStats().getDamage() + (weapon == null ? 0 : weapon.getStats().getDamage());
 	}
 	
+	/**
+	 * @return total luck stats
+	 */
 	private double getLuck()
 	{
 		return getStats().getLuck() + (weapon == null ? 0 : weapon.getStats().getLuck());
 	}
 	
+	/**
+	 * @return total endurance stats
+	 */
 	private int getEndurance()
 	{
 		return getStats().getEndurance() + (armour == null ? 0 : armour.getStats().getEndurance());
 	}
 	
+	/**
+	 * @return total max health
+	 */
 	private int getHealthMax()
 	{
 		return getStats().getHealth() + (armour == null ? 0 : armour.getStats().getHealth());
 	}
 	
+	/**
+	 * Method used to attack monsters 
+	 * 
+	 * @param e enemy object
+	 * @param isAttacking
+	 * @return damage returns damage done by player or enemy, depending on turn.
+	 */
 	public int doAttack(Enemy e, boolean isAttacking)
 	{
 		int damage = isAttacking ? getDamage() : e.getStats().getDamage();
@@ -253,11 +326,17 @@ public class Player extends Entity {
 		return damage;
 	}
 	
+	/**
+	 * @return true / false
+	 */
 	public boolean isAlive()
 	{
 		return isAlive;
 	}
 	
+	/**
+	 * Notifies observers
+	 */
 	public void iveChanged()
 	{
 		setChanged();
