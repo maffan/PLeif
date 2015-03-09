@@ -6,11 +6,17 @@ public class Help {
 	
 	static OutputController OC = new OutputController();
 	
+	/**
+	 * prints available commands for the player when called
+	 */
 	public static void help(){
 		OC.print("Available commands: move, look, attack, pickup, equip, unequip, chat, reset, save, load, exit, volume, help\n"
 				+ "type \"help [command]\" for more information about the selcted command");
 	}
 	
+	/**
+	 * @param command prints more detailed information about an input command
+	 */
 	public static void help(String command){
 		switch(command){
 		case "move":	OC.print("\"move [Direction]\" to move in the entered direction if nothing is blocking\n"

@@ -8,10 +8,16 @@ import Views.BoardPanel;
 public class BoardPanelProvider {
     private static BoardPanel boardPanel;
     
+    /**
+     * @param panel set current boardpanel
+     */
     public static void setBoardPanel(BoardPanel panel){
         boardPanel = panel;
     }
     
+    /**
+     * @return current boardpanel
+     */
     public static BoardPanel getBoardPanel(){
         return boardPanel;
     }

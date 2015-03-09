@@ -40,7 +40,7 @@ public class AudioThread extends Thread {
     }
 
     /** 
-     * Closes current soundplayer
+     * Closes current audiothread
      * 
      */
     public void close(){

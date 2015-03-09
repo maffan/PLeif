@@ -157,26 +157,41 @@ public class MapFileReader
         }
     }
     
+    /**
+     * @return player as playerobject
+     */
     public Player getPlayer()
     {
     	return player;
     }
     
+    /**
+     * @return a list of the maps enemies
+     */
     public List<Enemy> getListOfEnemies()
     {
 		return enemies;
     	
     }    
+    /**
+     * @return a list of the maps items
+     */
     public List<Item> getListOfItems()
     {
 		return items;
     	
     }    
+    /**
+     * @return a list of aesthetics on the map
+     */
     public List<Aesthetics> getListOfAestethics()
     {
 		return aes;
     }
 
+	/**
+	 * @return descriptions for the locations on the map
+	 */
 	public HashMap<Point, String> getDescriptions()
 	{
 		return desc;
