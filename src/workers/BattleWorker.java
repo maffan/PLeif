@@ -23,14 +23,17 @@ public class BattleWorker extends SwingWorker<Boolean,Void> {
     private int playerXPos;
     private int playerYPos;
 
-    public BattleWorker() {
-    }
-
     @Override
     protected Boolean doInBackground() throws Exception {
         return doBattle();
     }
-
+/**
+ * Handles combat data
+ * @param player
+ * @param enemy
+ * @param outputController
+ * @param worldData
+ */
     public BattleWorker(Player player, Enemy enemy, OutputController outputController, WorldData worldData) {
         this.player = player;
         this.enemy = enemy;
@@ -40,6 +43,10 @@ public class BattleWorker extends SwingWorker<Boolean,Void> {
         this.playerYPos = player.getY();
     }
     
+    /**
+     * Runs when entering combat, handles result
+     * @return true if monster is defeated false otherwise
+     */
     private Boolean doBattle(){
         Stats enemyStats = enemy.getStats();
         
@@ -114,6 +121,10 @@ public class BattleWorker extends SwingWorker<Boolean,Void> {
         return false;
     }
 
+    /**
+     * returns true or false if able to escape
+     * @return true if escaped
+     */
     private boolean playerEscaped() {
         return !(playerYPos == player.getY() && playerXPos == player.getX());
     }
