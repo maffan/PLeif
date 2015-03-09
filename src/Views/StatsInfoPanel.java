@@ -14,6 +14,9 @@ import java.util.Observer;
  */
 public class StatsInfoPanel extends JPanel implements Observer
 {
+    /**
+     * Initiates statsinfopanel
+     */
     public StatsInfoPanel(){
         add(new JLabel("StatsInfo"));
         setBorder(BorderFactory.createLineBorder(Color.BLACK));

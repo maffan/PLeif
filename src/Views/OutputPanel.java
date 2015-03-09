@@ -4,9 +4,16 @@ import javax.swing.*;
 
 import java.awt.*;
 
+/**
+ * @author Grupp3
+ * @version 2015-03-09
+ */
 public class OutputPanel extends JPanel {
     private JTextArea textArea;
     private int rows;
+    /**
+     * Initiates outputpanel
+     */
     public OutputPanel(){
         setLayout(new FlowLayout(FlowLayout.LEFT));
         textArea = new JTextArea();
@@ -16,6 +23,10 @@ public class OutputPanel extends JPanel {
         rows = 0;
     }
 
+    /**
+     * Removes old text and prints new text
+     * @param text new text 
+     */
     public void setText(String text){
         textArea.setText(text);
     }
@@ -26,6 +37,10 @@ public class OutputPanel extends JPanel {
     	super.paintComponent(g);
     }
 
+    /**
+     * Adds another line to outputfield
+     * @param text to add
+     */
     public void addLine(String text) {
         if(textArea.getText().equals("")){
             setText(text);

@@ -15,16 +15,29 @@ import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
+
+/**
+ * @author Grupp3
+ * @version 2015-03-08 
+ */
+
 public class GameFrame extends JFrame {
     public static final String TITLE = "Leif: Epic Adventures";
     private BoardPanel boardPanel;
     private static InfoPanel infoPanel;
     private static StatusPanel statusPanel;
     
+    /**
+     * Sets up the gui and starts the game
+     * @param args
+     */
     public static void main(String[] args) {
         new GameFrame();
     }
 
+    /**
+     * Initiates gui and game
+     */
     public GameFrame(){
         super(TITLE);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -53,6 +66,9 @@ public class GameFrame extends JFrame {
         
     }
 
+    /**
+     * Initiates menubar
+     */
     private void makeMenu() {
         JMenuBar menuBar = new JMenuBar();
         
@@ -125,6 +141,9 @@ public class GameFrame extends JFrame {
         setJMenuBar(menuBar);
     }
 
+    /**
+     * Build panels
+     */
     private void makePanels() {
         infoPanel = new InfoPanel();
         boardPanel = new BoardPanel();
@@ -136,12 +155,18 @@ public class GameFrame extends JFrame {
         add(statusPanel, BorderLayout.SOUTH);
     }
     
-    public static void infoPanelUpdate() // Moved these methods somewhere else.. ? MJ
+    /**
+     * Updates infopanel
+     */
+    public static void infoPanelUpdate()
     {
     	 infoPanel.revalidate();
     	 infoPanel.repaint();
     }
     
+    /**
+     * Updates statuspanel
+     */
     public static void statusPanelUpdate()
     {
     	statusPanel.revalidate();

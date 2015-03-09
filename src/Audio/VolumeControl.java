@@ -6,11 +6,19 @@ import javax.sound.sampled.Line.Info;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.Port;
 
+/**
+ * @author Tobias
+ * @version 2014-03-08
+ */
 public class VolumeControl 
 {
 
 	static FloatControl volumeControl;
 	
+    /**
+     * Change output volume
+     * @param volume, new volume
+     */
     public static void changeVolume(float volume) {        
     Info source = Port.Info.SPEAKER;
     Info source2 = Port.Info.HEADPHONE;
@@ -65,6 +73,9 @@ public class VolumeControl
         }
     }
 
+	/**
+	 * @return current volume
+	 */
 	public static float getVolume() {
 		if(volumeControl != null){
 			return volumeControl.getValue();

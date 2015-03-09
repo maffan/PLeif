@@ -14,6 +14,9 @@ public class InputPanel extends JPanel {
         init();
     }
 
+    /**
+     * Initiates inputpanel
+     */
     private void init() {
         initFields();
         setBorder(BorderFactory.createLineBorder(Color.BLACK));
@@ -21,6 +24,9 @@ public class InputPanel extends JPanel {
         makePanel();
     }
 
+    /**
+     * Creates inputpanel panels
+     */
     private void makePanel() {
         GridBagConstraints constraints = new GridBagConstraints();
         constraints.gridx = 0;
@@ -36,22 +42,36 @@ public class InputPanel extends JPanel {
         add(submitButton,constraints);
     }
 
+    /**
+     * Initiates inputfield and button
+     */
     private void initFields() {
         inputField = new JTextField(30);
         submitButton = new JButton("Submit");
     }
 
+    /**
+     * Set up listeners for inputfield and submit button
+     * @param listener current inputcontroller
+     */
     public void addSubmitController(ActionListener listener){
         submitButton.addActionListener(listener);
         inputField.addActionListener(listener);
     }
 
+    /**
+     * Returns input from inputfield
+     * @return inputfield as string
+     */
     public String getCommand() {
         String input = inputField.getText();
         inputField.setText("");
         return input;
     }
 
+    /**
+     * @return current inputfield
+     */
     public Component getTextField() {
         return inputField;
     }

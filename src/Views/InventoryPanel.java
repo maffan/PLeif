@@ -10,6 +10,9 @@ import javax.swing.*;
 
 public class InventoryPanel extends JPanel implements Observer
 {
+    /**
+     * Initiates inventorypanel
+     */
     public InventoryPanel(){
         add(new JLabel("Inventory"));
         setBorder(BorderFactory.createLineBorder(Color.BLACK));

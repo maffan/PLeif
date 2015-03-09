@@ -19,8 +19,11 @@ import java.util.Observer;
 
 import javax.swing.*;
 
+
 /**
- * Panel containing the central game area
+ * @author Grupp 3
+ * @version 2015-03-08
+ *
  */
 public class BoardPanel extends JPanel implements Observer
 {
@@ -44,6 +47,9 @@ public class BoardPanel extends JPanel implements Observer
 		SetupWorldObservers();
 	}
 
+	/**
+	 * Initates observers for all panels
+	 */
 	private void SetupWorldObservers()
 	{
 		world.player.addObserver(this);
@@ -115,6 +121,9 @@ public class BoardPanel extends JPanel implements Observer
 		}
 	}
 
+	/**
+	 * Loads map into system
+	 */
 	private void SetupWorld()
 	{
 		boolean loadSavedMap = false;
@@ -130,28 +139,43 @@ public class BoardPanel extends JPanel implements Observer
 		}
 	}
 
+	/**
+	 * @return current player
+	 */
 	public static Player getPlayer()
 	{
 		return world.player;
 	}
 	
+	/**
+	 * @param path loads world via FileRW
+	 */
 	private void loadWorld(String path)
 	{
 		world = FilesRW.loadFrom(path);
 		SetupWorldObservers();
 	}
 	
+	/**
+	 * resets the game
+	 */
 	public void reset(){
 		loadWorld(GamePaths.StartState);
 		InputController.setAttackController();
 		SoundPlayer.playBg();
 	}
 
+	/**
+	 * save current game to file
+	 */
 	public void save()
 	{
 		FilesRW.saveTo(world, GamePaths.WorldSave);
 	}
 
+	/**
+	 * load game from saved file
+	 */
 	public void load()
 	{
 		if((new File(GamePaths.WorldSave)).exists())
@@ -165,6 +189,9 @@ public class BoardPanel extends JPanel implements Observer
 		repaint();
 	}
 
+	/**
+	 * event if you die in the game
+	 */
 	public static void iDied() {
 		SoundPlayer.playEnd();
     	int option = JOptionPane.showConfirmDialog(null, "Skar ru' prova igen?", "YOU DIED!", JOptionPane.YES_NO_OPTION);

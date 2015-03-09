@@ -11,18 +11,27 @@ import java.awt.*;
 public class LookController {
     private OutputController outputController;
     
-    public LookController(){
-        
-    }
-
+    /**
+     * Sets outputcontroller
+     * @param outputController the outputcontroller to be set
+     */
     public LookController(OutputController outputController) {
         this.outputController = outputController;
     }
     
+    /**
+     * Fetches information about the current location
+     * @param point current point
+     */
     public void look(Point point){
     	outputController.print(BoardPanel.world.getDescription(point));
     }
 
+    /**
+     * Fetch information about a tile in another direction
+     * @param command input direction
+     * @param player current player
+     */
     public void look(String command, Player player) {
         if(command.equals("north") || command.equals("n")){
             look(new Point(player.getX(),player.getY()-1));

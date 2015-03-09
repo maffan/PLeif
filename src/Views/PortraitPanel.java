@@ -10,6 +10,9 @@ import java.awt.*;
  * Created by Marcus on 2/4/2015.
  */
 public class PortraitPanel extends JPanel {
+    /**
+     * Initiates portraitpanel
+     */
     public PortraitPanel(){
         add(new JLabel("Portrait"));
         add(new JLabel(new ImageIcon(GamePaths.Portrait)));

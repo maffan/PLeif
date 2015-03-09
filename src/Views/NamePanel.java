@@ -11,8 +11,12 @@ import java.util.Observer;
 /**
  * Created by Marcus on 2/4/2015.
  */
+
 public class NamePanel extends JPanel implements Observer
 {
+    /**
+     * Initiates namepanel 
+     */
     public NamePanel(){
         add(new JLabel("Name and Level"));
         setBorder(BorderFactory.createLineBorder(Color.BLACK));

@@ -15,6 +15,9 @@ public class InfoPanel extends JPanel{
     private static EquippedPanel equippedPanel;
     private static InventoryPanel inventoryPanel;
 
+    /**
+     * Sets up infopanel
+     */
     public InfoPanel(){
         setPreferredSize(new Dimension(200,500));
         setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
@@ -23,6 +26,9 @@ public class InfoPanel extends JPanel{
         makePanels();
     }
 
+    /**
+     * Creates infopanel panels
+     */
     private void makePanels() {
         namePanel = new NamePanel();
         portraitPanel = new PortraitPanel();
@@ -36,20 +42,32 @@ public class InfoPanel extends JPanel{
         add(inventoryPanel);
     }
 
+    /**
+     * @return current inventorypanel
+     */
     public static InventoryPanel getInventoryPanelInstance()
     {
     	return inventoryPanel;
     }
 
+	/**
+	 * @return current namepanel
+	 */
 	public static NamePanel getNamePanelInstance()
 	{
 		return namePanel;
 	}
 
+	/**
+	 * @return current statsinfopanel
+	 */
 	public static StatsInfoPanel getStatsInfoPanelInstance() {
 		return statsInfoPanel;
 	}
 
+	/**
+	 * @return current equippedpanel as observer
+	 */
 	public static Observer getEquippedPanelInstance() {
 		return equippedPanel;
 	}

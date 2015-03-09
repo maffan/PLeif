@@ -13,6 +13,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
+/**
+ * @author Grupp 3
+ * @version 2015-03-08
+ */
 
 /**
  * Controller for handling input from the user
@@ -85,17 +89,18 @@ public class InputController implements ActionListener {
 		String command = inputPanel.getCommand().toLowerCase().trim();
 		commandAction(command);
 	}
-
+/**
+ * Calls the method connected to input
+ * @param action inputstring
+ */
 	public void commandAction(String action)
 	{
 		String[] command = action.split(" ");
 		player = BoardPanel.world.player;
-		//move
 		if(command[0].equals("move") || command[0].equals("m"))
 		{
 			BoardPanel.world.player.move(command[1], mapWidth);
 		}
-		//riktning direkt
 		else if(command[0].equals("north") || command[0].equals("west") || command[0].equals("east") || command[0].equals("south")
                 || command[0].equals("n") || command[0].equals("e") || command[0].equals("s") || command[0].equals("w")){
 			BoardPanel.world.player.move(command[0], mapWidth);

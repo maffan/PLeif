@@ -18,14 +18,21 @@ public class AttackController {
     public AttackController() {
     }
 
+    /**
+     * Initiates a new AttackController
+     * @param outputController The outputController to be used for printing output
+     * @param worldData The worldData that contains the player and enemies
+     */
     public AttackController(OutputController outputController, WorldData worldData) {
         this.outputController = outputController;
         this.worldData = worldData;
         player = worldData.player;
     }
-    
+    /**
+     * Ckecks if an attack can be made and if so initiates a BattleController
+     * @param command Direction for the attack
+     */
     public void attack(String command){
-//    	worldData = BoardPanel.world;
         if(command.equals("north") || command.equals("n")){
             if(worldData.hasEnemy(new Point(player.getX(), player.getY()-1))){
                 BattleWorker worker = new BattleWorker(player, worldData.getEnemy(new Point(player.getX(),player.getY()-1)),outputController,worldData);

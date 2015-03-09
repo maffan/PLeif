@@ -12,7 +12,11 @@ import java.util.Observer;
  * Created by Marcus on 2/4/2015.
  */
 public class EquippedPanel extends JPanel implements Observer {
-    public EquippedPanel(){
+    
+	/**
+	 * Sets up equippedpanel
+	 */
+	public EquippedPanel(){
         add(new JLabel("Equipped"));
         setBorder(BorderFactory.createLineBorder(Color.BLACK));
     }

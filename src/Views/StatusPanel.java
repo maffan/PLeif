@@ -13,6 +13,9 @@ public class StatusPanel extends JPanel{
     private InputPanel inputPanel;
     private OutputPanel outputPanel;
 
+    /**
+     * Initiates statuspanel
+     */
     public StatusPanel(){
         setPreferredSize(new Dimension(500,100));
         setBorder(BorderFactory.createLineBorder(Color.BLACK));
@@ -20,6 +23,9 @@ public class StatusPanel extends JPanel{
         makePanels();
     }
 
+    /**
+     * Creates statuspanel panels
+     */
     private void makePanels() {
         outputPanel = new OutputPanel();
         OutputPanelProvider.setOutPutPanel(outputPanel);
@@ -29,14 +35,23 @@ public class StatusPanel extends JPanel{
     }
 
 
+    /**
+     * @return current inputpanel
+     */
     public InputPanel getInputPanel() {
         return inputPanel;
     }
     
+    /**
+     * @return current outputpanel
+     */
     public OutputPanel getOutputPanel() { 
         return outputPanel; 
     }
 
+    /**
+     * @param listener set actionlistener for statuspanel
+     */
     public void addInputListener(ActionListener listener) {
         inputPanel.addSubmitController(listener);
     }
