@@ -55,6 +55,15 @@ public class SoundPlayer {
 			System.out.println("No audioplayer running");
 		}
 	}
+
+	public static void playVictory() {
+		if(audio != null && (! audio.player.isComplete()) ){
+			audio.close();
+		}
+		audio = new AudioThread(GamePaths.VictoryMusic,false);
+		audio.start(); 
+		
+	}
 	
 	
 }

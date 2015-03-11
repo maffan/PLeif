@@ -117,7 +117,7 @@ public class BoardPanel extends JPanel implements Observer
 			g.fillRect(0, 0, 500, 500);
 			g.setColor(Color.WHITE);
 			g.drawString("Du vann!", 250, 250);
-			SoundPlayer.playEnd();
+			SoundPlayer.playVictory();
 		}
 	}
 
@@ -154,6 +154,8 @@ public class BoardPanel extends JPanel implements Observer
 	{
 		world = FilesRW.loadFrom(path);
 		SetupWorldObservers();
+		InputController.setAttackController();
+		SoundPlayer.playBg();
 	}
 	
 	/**
