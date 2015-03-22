@@ -1,6 +1,7 @@
 package Models;
 
 /**
+ * Specific variables for items
  * Created by Marcus on 2/3/2015.
  *
  */

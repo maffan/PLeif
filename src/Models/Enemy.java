@@ -1,6 +1,7 @@
 package Models;
 
 /**
+ * Specific variables for enemies.
  * @author joh
  * @version 2015-03-03
  */

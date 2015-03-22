@@ -37,8 +37,8 @@ public class Player extends Entity {
 		xp = 0; lvl = 1;
 	}
 	
-	/* (non-Javadoc)
-	 * @see Models.Entity#getSpriteID()
+	/**
+	 * @return Players current sprite, based on equipped objects
 	 */
 	public SpriteID getSpriteID(){
 		if(this.armour != null && this.weapon != null){

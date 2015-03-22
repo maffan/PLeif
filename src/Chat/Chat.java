@@ -23,7 +23,7 @@ public class Chat extends JFrame implements ActionListener{
 	JButton exit		= new JButton("Disconnect");
 	
 	/**
-	 * sets variables to default values
+	 * Sets variables to default values
 	 * @see #initiateChat(String)
 	 * @throws IOException If something goes wrong with the connection
 	 */
@@ -36,7 +36,7 @@ public class Chat extends JFrame implements ActionListener{
 	}
 	
 	/**
-	 * sets variables to arguments
+	 * Sets variables to arguments
 	 * @param name The name to be displayed
 	 * @param gAdr The IP-address which to connect to 
 	 * @param portNr The Portnumber which to connect to
@@ -86,7 +86,7 @@ public class Chat extends JFrame implements ActionListener{
 	}
 	
 	/**
-	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 * actionListener for input and exit
 	 */
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == input){

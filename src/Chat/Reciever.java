@@ -20,6 +20,9 @@ public class Reciever implements Runnable {
 		activity.start();
 	}
 	
+	/**
+	 * Starts chat loop that receives packages and prints into chat window
+	 */
 	public void run(){
 		byte[] data = new byte[1024];
 		while(true)

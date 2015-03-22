@@ -56,6 +56,9 @@ public class SoundPlayer {
 		}
 	}
 
+	/**
+	 * Plays victorymusic
+	 */
 	public static void playVictory() {
 		if(audio != null && (! audio.player.isComplete()) ){
 			audio.close();

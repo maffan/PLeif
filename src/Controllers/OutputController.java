@@ -4,6 +4,7 @@ import Utils.OutputPanelProvider;
 import Views.OutputPanel;
 
 /**
+ * Handles text output, text the user will read during the game
  * Created by Marcus on 2/23/2015.
  */
 public class OutputController {

@@ -25,6 +25,10 @@ public class AudioThread extends Thread {
         this.loop = loop;
     }
 
+    /** 
+     * Loads file entered into constuctor as a new thread and starts the music, will loop is loop boolean is set. 
+     * 
+     */
     public void run() {
 
         try {

@@ -119,7 +119,7 @@ public class Stats extends Observable implements Serializable
     }
 
     /**
-     * sets weight, notifies obeserver
+     * sets weight, notifies observer
      * @param weight
      */
     public void setWeight(int weight) {

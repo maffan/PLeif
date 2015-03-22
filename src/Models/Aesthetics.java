@@ -1,6 +1,7 @@
 package Models;
 
 /**
+ * Applied to entities in the code to identify if they have collision 
  * @author joh
  * @version 2015-02-25
  */

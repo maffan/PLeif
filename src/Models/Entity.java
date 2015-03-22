@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.util.Observable;
 
 /**
+ * Base class for visible objects
  * @author joh
  * @version 2015-03-08
  */

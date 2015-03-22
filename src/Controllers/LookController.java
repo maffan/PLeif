@@ -6,6 +6,7 @@ import Views.BoardPanel;
 import java.awt.*;
 
 /**
+ * Handles look command
  * Created by Marcus on 2/23/2015.
  */
 public class LookController {
