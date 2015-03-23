@@ -10,6 +10,7 @@ import java.util.Random;
 /**
  * @author joh
  * @version 2015-03-07
+ *  class containings methods for the playable character
  */
 public class Player extends Entity {
 	private Stats stats;

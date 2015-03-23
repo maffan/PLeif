@@ -7,6 +7,7 @@ import java.util.Observer;
 
 /**
  * Created by Marcus on 2/4/2015.
+ * class for the info panel, creates name, portrait, statsinfo, equipped and inventory -panel objects
  */
 public class InfoPanel extends JPanel{
     private static NamePanel namePanel;

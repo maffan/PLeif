@@ -14,15 +14,15 @@ public class Entity extends Observable implements Serializable
 	private Point p;
 	private SpriteID id;
 	private String name;
-	
+
 	/**
 	 * Empty constructor
 	 */
 	public Entity()
 	{
-		
+
 	}
-	
+
 	/**
 	 * @param x value
 	 * @param y value
@@ -35,7 +35,7 @@ public class Entity extends Observable implements Serializable
 		this.id = id;
 		this.name = name;
 	}
-	
+
 	/**
 	 * @return SpriteID of Entity
 	 */
@@ -43,7 +43,7 @@ public class Entity extends Observable implements Serializable
 	{
 		return id;
 	}
-	
+
 	/**
 	 * @return name of Entity
 	 */
@@ -51,7 +51,7 @@ public class Entity extends Observable implements Serializable
 	{
 		return name;
 	}
-	
+
 	/**
 	 * @return x-value of Entity
 	 */
@@ -59,7 +59,7 @@ public class Entity extends Observable implements Serializable
 	{
 		return p.x;
 	}
-	
+
 	/**
 	 * @return y-value of Entity
 	 */
@@ -67,24 +67,24 @@ public class Entity extends Observable implements Serializable
 	{
 		return p.y;
 	}
-	
+
 	/**
 	 * @param x value to set for Entity
 	 */
 	public void setX(int x)
 	{
 		p.x = x;
-        setChanged();
-        notifyObservers();
+		setChanged();
+		notifyObservers();
 	}
-	
+
 	/**
 	 * @param y value to set for Entity
 	 */
 	public void setY(int y)
 	{
 		p.y = y;
-        setChanged();
-        notifyObservers();
+		setChanged();
+		notifyObservers();
 	}
 }

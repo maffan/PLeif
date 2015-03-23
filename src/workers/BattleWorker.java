@@ -14,6 +14,7 @@ import java.awt.*;
 
 /**
  * Created by Marcus on 2/27/2015.
+ * Battleworker class, a swing worker class
  */
 public class BattleWorker extends SwingWorker<Boolean,Void> {
     private Player player;
@@ -23,6 +24,10 @@ public class BattleWorker extends SwingWorker<Boolean,Void> {
     private int playerXPos;
     private int playerYPos;
 
+    /** 
+     * @see javax.swing.SwingWorker#doInBackground()
+     * lets battles be done in a background thread
+     */
     @Override
     protected Boolean doInBackground() throws Exception {
         return doBattle();

@@ -5,6 +5,7 @@ import java.util.Random;
 /**
  * @author joh
  * @version 2015-03-07
+ * class with stats for player, monster and items
  */
 public class MobStats
 {

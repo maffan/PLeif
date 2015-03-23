@@ -7,8 +7,11 @@ import java.util.Observable;
  * Created by Marcus on 2/3/2015.
  */
  
- //Testar kommentarer
-    //En kommentar till
+ 
+/**
+ * @author Tobias
+ * stats class containing constructor used by items and return methods for variables contained
+ */
 public class Stats extends Observable implements Serializable
 {
     private int health;

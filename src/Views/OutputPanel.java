@@ -7,6 +7,7 @@ import java.awt.*;
 /**
  * @author Grupp3
  * @version 2015-03-09
+ * class for the output panel
  */
 public class OutputPanel extends JPanel {
     private JTextArea textArea;
@@ -31,6 +32,10 @@ public class OutputPanel extends JPanel {
         textArea.setText(text);
     }
     
+    /** (non-Javadoc)
+     * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
+     * updates the output panel
+     */
     @Override
     public void paintComponent(Graphics g)
     {

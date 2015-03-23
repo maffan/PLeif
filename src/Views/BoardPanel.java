@@ -23,7 +23,7 @@ import javax.swing.*;
 /**
  * @author Grupp 3
  * @version 2015-03-08
- *
+ *  class for the boardpanel that adds the game world
  */
 public class BoardPanel extends JPanel implements Observer
 {
@@ -61,6 +61,10 @@ public class BoardPanel extends JPanel implements Observer
 		update(null, null);
 	}
 
+	/** 
+	 * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
+	 *  method that paints all aestetics & entities on the map 
+	 */
 	@Override
 	public void paintComponent(Graphics g)
 	{

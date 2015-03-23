@@ -11,6 +11,7 @@ import java.util.Observer;
 
 /**
  * Created by Marcus on 2/4/2015.
+ * class for stats info panel, showing current PC stats
  */
 public class StatsInfoPanel extends JPanel implements Observer
 {
@@ -22,6 +23,10 @@ public class StatsInfoPanel extends JPanel implements Observer
         setBorder(BorderFactory.createLineBorder(Color.BLACK));
     }
     
+    /**
+     * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
+     * gets and paints current stats for PC
+     */
     @Override
 	public void paintComponent(Graphics g)
 	{
@@ -48,6 +53,10 @@ public class StatsInfoPanel extends JPanel implements Observer
 		g.drawString("Space: " + stats.getWeight(), 20, offset);
 	}
 
+	/**
+	 * @see java.util.Observer#update(java.util.Observable, java.lang.Object)
+	 * calls the repaint method
+	 */
 	@Override
 	public void update(Observable arg0, Object arg1){
 		repaint();

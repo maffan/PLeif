@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 
 /**
  * Created by Marcus on 2/4/2015.
+ * class for the input panel
  */
 public class InputPanel extends JPanel {
     private JTextField inputField;

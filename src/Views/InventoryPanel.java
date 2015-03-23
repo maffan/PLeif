@@ -8,6 +8,10 @@ import java.util.Observer;
 
 import javax.swing.*;
 
+/**
+ * @author Tobias 
+ *  class for the inventory panel
+ */
 public class InventoryPanel extends JPanel implements Observer
 {
     /**
@@ -18,6 +22,10 @@ public class InventoryPanel extends JPanel implements Observer
         setBorder(BorderFactory.createLineBorder(Color.BLACK));
     }
     
+    /**
+     * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
+     * paints item names in the inventory panel 
+     */
     @Override
 	public void paintComponent(Graphics g)
 	{
@@ -33,6 +41,10 @@ public class InventoryPanel extends JPanel implements Observer
 		}
 	}
 
+	/**
+	 * @see java.util.Observer#update(java.util.Observable, java.lang.Object)
+	 * calls the repaint method
+	 */
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		repaint();

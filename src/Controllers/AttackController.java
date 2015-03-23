@@ -10,11 +10,18 @@ import java.awt.*;
 /**
  * Created by Marcus on 2/27/2015.
  */
+/**
+ * @author Tobias
+ * Class that handles the playable characters attacks
+ */
 public class AttackController {
     private Player player;
     private OutputController outputController;
     private WorldData worldData;
 
+    /**
+     * empty constructor
+     */
     public AttackController() {
     }
 
@@ -29,7 +36,7 @@ public class AttackController {
         player = worldData.player;
     }
     /**
-     * Ckecks if an attack can be made and if so initiates a BattleController
+     * Checks if an attack can be made and if so initiates a BattleController
      * @param command Direction for the attack
      */
     public void attack(String command){

@@ -4,6 +4,7 @@ import Views.OutputPanel;
 
 /**
  * Created by Marcus on 3/3/2015.
+ * sets up the output panel
  */
 public class OutputPanelProvider {
     private static OutputPanel outputPanel;

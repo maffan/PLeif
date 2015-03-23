@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 
 /**
  * Created by Marcus on 2/4/2015.
+ * status panel class creates input and output -panel objects
  */
 public class StatusPanel extends JPanel{
     private InputPanel inputPanel;

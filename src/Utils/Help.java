@@ -2,6 +2,10 @@ package Utils;
 
 import Controllers.*;
 
+/**
+ * @author Tobias
+ * class for the help command
+ */
 public class Help {
 	
 	static OutputController OC = new OutputController();
